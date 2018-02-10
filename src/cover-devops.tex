@@ -1,0 +1,130 @@
+%\section{DevOps supplementary worksheet}
+
+\begin{minipage}[t]{1\textwidth}
+
+% Dear Sir / Madam,
+
+% from what I read in the job description, I think this position suits me perfectly: I've been developing both backend and frontend for years by my own, and also three years as my full-time job. Right now, a part from a small startup where I'm in charge of all the development, I'm working in a consulting company where I face daily large-scale problems where I'm required to lead the development of complex solution or, more often, designing environments or "making things better", such as improving the performance of a software or evolve the architecture of multi-layer applications.
+
+Following there's a brief description of my main tasks in my latest positions...
+
+\end{minipage}
+
+\sectionspace
+
+%----------%
+% HotVenue %
+%----------%
+
+\begin{minipage}[t]{0.33\textwidth} % The left column takes up 33% of the text width of the page
+
+\runsubsection{HotVenue}
+\descript{| CTO}
+
+\begin{tightitemize}
+\item Release Automation
+\item Serverless (AWS)
+\item Cloud Automation (AWS)
+\end{tightitemize}
+
+\end{minipage} % The end of the left column
+\hfill
+\begin{minipage}[t]{0.66\textwidth} % The right column takes up 66% of the text width of the page
+
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+
+Because all the investments for this startup went in the hardware and in the development of the mobile application, the back-end part was built with no money for the cloud environment. To do so I used the free-tier of the AWS infrastructure, trying to adopt as many AWS products as possible, not to have many dedicated instances that would cost a lot.
+
+Right now the application is structured as follows:
+
+\begin{tightitemize}
+\item All the code is stored in two GitHub \textbf{public repositories} (one for the application server and one for the asynchronous workers) while the configuration parameters (database connection strings, private info, etc) are handled in environment variables of the build tool.
+\item Whenever the code is pushed, the compilation starts on an external \textbf{Continuous Integration} tool: CircleCI.
+\item The \textbf{building phase} consists in the download of all dependencies, unit testing, compilation of the \textbf{Docker image}, test of the Docker image via cURL, push of the image in the \textbf{AWS ECR}, deploy of the new image. If the push happened in the workers repository, the code is packaged and uploaded to \textbf{AWS S3} and deploy on the \textbf{AWS Lambda} functions.
+\end{tightitemize}
+
+Right now I'm making a transition from a containerized architecture to a \textbf{serverless} one. This allows me to save money on the server instances and use the AWS build tool, \textbf{CodePipeline} and \textbf{CodeBuild} (the only reason I'm using CircleCI right now is its ability to compile Docker images out of the box). This is even better for my architecture since I can handle complex dependencies in the pipeline, make parallel tasks, and handle AWS Automation in a native way (mostly with \textbf{CloudFormation}).
+
+\end{minipage} % The end of the right column
+
+\sectionspace
+
+%----------%
+% Moviri 2 %
+%----------%
+
+\begin{minipage}[t]{0.33\textwidth} % The left column takes up 33% of the text width of the page
+
+\runsubsection{Moviri}
+\descript{| APM Specialist}
+
+\begin{tightitemize}
+\item Release Automation
+\item Cloud Automation \& PaaS
+\item Operational Intelligence
+\item Application Testing \& Monitoring
+\end{tightitemize}
+
+\end{minipage} % The end of the left column
+\hfill
+\begin{minipage}[t]{0.66\textwidth} % The right column takes up 66% of the text width of the page
+
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+
+As a Consultant in a society which cares about performance, I've seen plenty of projects involving Automation (Release, Cloud, Testing, etc).
+
+I can sum up the most important:
+
+\begin{tightitemize}
+\item Cloud Automation with \textbf{CloudFoundry}: I worked for a big Italian telco player to ease developers' job. The biggest challenge they were facing was to give every developer the same environment to develop/test applications. We modelized their environment to have, for each application, the minimum set of machine to be used. In this way developers don't have to setup databases/services on their laptops, but a \textbf{dedicated environment} is setup in seconds for their own.
+\item Release Automation with \textbf{Jenkins}: we had a couple of customers that had a very long deployment chain and needed to automatize the whole process. We set up a \textbf{multi environment build and deploy process} which, starting from a git repository, did the compilation, unit and integration testing, functional testing, performance testing and, in the end, deployment on the specified environment. The deployment itself wasn't entirely automatized, but happened only after the acceptance of the manager in charge (for 0-day fixes), or during certain nights (in scheduled maintenance periods). 
+\end{tightitemize}
+
+Other fields I was involved into were:
+
+\begin{tightitemize}
+\item \textbf{Big Data \& Operational Intelligence}: my task was to collect log/machine data/metrics from thousands of servers/appliance all around the customer infrastracture and organize + correlate them into dashboards for various targets, from business to operative ones. The most important tool used to accomplish this was \textbf{Splunk}.
+\item \textbf{Application Monitoring}: with products like \textbf{New Relic} and \textbf{DynaTrace} I set up monitoring infrastractures to understand why applications behave incorrectly. These products can correlate applicative calls to follow all the user flow from the Front End to the Database layers.
+\item \textbf{Performance Testing}: one of the most important aspect of a piece of software is "how much traffic can it handle?". Creating Virtual Users with products like \textbf{HPE LoadRunner} or \textbf{Apache JMeter} we can answer that question.
+\end{tightitemize}
+
+\end{minipage} % The end of the right column
+
+\sectionspace
+
+%----------%
+% Graffiti %
+%----------%
+
+\begin{minipage}[t]{0.33\textwidth} % The left column takes up 33% of the text width of the page
+
+\runsubsection{Graffiti 2000}
+\descript{| Web Developer}
+
+\begin{tightitemize}
+\item Lead Developer
+\item Evangelist
+\end{tightitemize}
+
+\end{minipage} % The end of the left column
+\hfill
+\begin{minipage}[t]{0.66\textwidth} % The right column takes up 66% of the text width of the page
+
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+
+Shortly after taking my job, it became apparent that the website creation process (mostly for not-so-complex websites) was too long, so that we missed a lot of customers because we were "good" only on big and complex projects. 
+
+I used my experience in the Open Source / PHP world to convince the CTO to start using Wordpress and begin trusting also on third parts plugins and themes. After few months I wasn't alone any more and we also managed to start a new business line that provides low-cost websites in 2-3 days. It was also possible thanks to the introduction of .git for the versioning, NodeJS build tools to ease the assets retrieve and compilation and an automated deployment system (really basic) that allows us to deploy changes on the testing environment on our own.
+
+At the end of my experience there the situation was:
+
+\begin{tightitemize}
+\item The custom CMS / Framework was confined to \textbf{legacy} projects
+\item \textbf{Wordpress} was the standard "de facto" to build new websites
+\item Without the maintenance of the custom CMS, backend developers could focus on more exiting projects
+\item \textbf{NodeJS} was introduced as the language for "new complex projects" where Wordpress couldn't fit
+\end{tightitemize}
+
+\end{minipage} % The end of the right column
+
+%----------------------------------------------------------------------------------------
