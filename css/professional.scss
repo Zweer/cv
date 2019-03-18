@@ -1,0 +1,95 @@
+---
+# mmm
+---
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400, 400i,700');
+
+$color: #7D203F;
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+header {
+  border-bottom: 2px solid #b2b2b2;
+
+  padding-top: 33px;
+  padding-bottom: 21px;
+
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: 34.5px;
+  line-height: 36px;
+  color: $color;
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 19.5px;
+  margin-top: 4.5px;
+  color: #666;
+
+  + p {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+}
+
+h3 {
+  font-size: 21px;
+  line-height: 22.5px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  margin-bottom: 6px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 19.5px;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 19.5px;
+}
+
+h6 {
+  font-size: 12px;
+  font-style: italic;
+  line-height: 13.5px;
+  color: #666;
+}
+
+.cv__links {
+  font-size: 12px;
+
+  li {
+    margin-top: 13.5px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  i {
+    width: 16px;
+    text-align: center;
+
+    margin-left: 5px;
+
+    color: $color;
+  }
+}
+

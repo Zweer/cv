@@ -1,0 +1,115 @@
+first-name: Niccolò
+last-name: Olivieri Achille
+title: Senior Software Engineer
+abstract: >-
+  Tech enthusiast, geek, nerd saving money to open a chiringuito in Formentera
+email: niccolo@olivieriachille.com
+phone: +39 3886465482
+location: Milan, Italy
+
+links:
+  linkedin: https://www.linkedin.com/in/niccoloolivieri/
+  github: https://github.com/Zweer
+
+works:
+  - position: Senior Software Engineer
+    company: ThinkOpen
+    from: 07/2017
+    to: now
+    tasks:
+      - Tech & Team Leader
+      - Realtime Chatbot
+      - Cloud Architect
+  - position: APM Specialist
+    company: Moviri
+    from: 07/2015
+    to: 07/2017
+    tasks:
+      - Synthetic & Real User Monitoring (web & mobile applications)
+      - Operational Analytics
+      - Cloud Automation & PaaS
+  - position: Software Developer
+    company: Travelnuts
+    from: 07/2013
+    to: 09/2015
+    tasks:
+      - Developed a hydra, web application with many goals and different font ends
+      - Coordinate the development of the application and its interactions with a mobile app
+  - position: FrontEnd Web Developer
+    company: Graffiti 2000
+    from: 10/2012
+    to: 06/2015
+    tasks:
+      - Lead the development of websites with Wordpress/PHP and Node.js
+      - Expert in UX and Browser Visual Effects
+  - position: Performance Specialist
+    company: Moviri
+    from: 12/2010
+    to: 09/2012
+    tasks:
+      - Consultant, Project Manager, Performance and Diagnostics Specialist
+      - Real-time reporting
+      - Capacity & Load Testing
+  - position: Webmaster
+    company: Many small works
+    from: 09/2004
+    to: 09/2016
+    tasks:
+      - Realization of many small websites forindividuals or small companies
+
+skills:
+  - AWS
+  - NodeJs
+  - Cloud
+  - Log
+  - APM
+  - PerfOps
+  - DevOps
+
+projects:
+  - name: Luxi
+    date: 05/2017
+    descriptions:
+      - 👑 Hackaton @ H Farm
+      - Augmented reality
+  - name: HotVenue
+    date: 05/2016 – 05/2017
+    descriptions:
+      - Startup
+      - Conteinerized server -> serverless
+  - name: Puro Gusto
+    date: 05/2016
+    descriptions:
+      - 👑 Hackaton @ H Farm
+      - Mobile app
+  - name: Alfred
+    date: 11/2015
+    descriptions:
+      - 💰 Hackaton @ Facile.it
+      - Virtual assistant
+
+educations:
+  - name: Computer Engineering
+    school: Politecnico di Milano
+    date: 12/2010
+
+teachings:
+  - name: Workshop & Academy
+    school: ThinkOpen
+    courses:
+      - Alexa vs Google Home
+      - AWS Overview
+      - Serverless
+      - NodeJs from zero to hero
+  - name: Workshop
+    school: Graffiti 2000
+    courses:
+      - From Responsive to Mobile First
+
+interests:
+  - Home Automation
+  - Bot
+  - Cloud
+  - OWL
+  - Startup
+  - Serverless
