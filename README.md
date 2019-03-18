@@ -1,3 +1,0 @@
-# My Curriculum Vitae
-
-I'm using [Overleaf](https://www.overleaf.com) to compile it...
