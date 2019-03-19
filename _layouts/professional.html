@@ -34,7 +34,7 @@
     </header>
 
     <div class="row">
-        <div class="col-sm-8 cv__works">
+        <div class="col-sm-8 cv__section cv__works">
             <h3>Work experience</h3>
 
             {% for work in who.works %}
@@ -43,7 +43,7 @@
                 <h5>{{ work.company }}</h5>
                 <h6>{{ work.from }} - {{ work.to }}</h6>
 
-                <ul>
+                <ul class="list-unstyled">
                     {% for task in work.tasks %}
                     <li>{{ task }}</li>
                     {% endfor %}
@@ -54,7 +54,7 @@
 
         <div class="col-sm-4">
             <div class="row">
-                <div class="col cv__skills">
+                <div class="col cv__section cv__skills">
                     <h3>Skills</h3>
 
                     {% for skill in who.skills %}
@@ -64,12 +64,12 @@
             </div>
 
             <div class="row">
-                <div class="col cv__projects">
+                <div class="col cv__section cv__projects">
                     <h3>Projects</h3>
 
                     {% for project in who.projects %}
                     <h4>{{ project.name }} <span>{{ project.date }}</span></h4>
-                    <ul>
+                    <ul class="list-unstyled">
                         {% for description in project.descriptions %}
                         <li>{{ description }}</li>
                         {% endfor %}
@@ -79,7 +79,7 @@
             </div>
 
             <div class="row">
-                <div class="col cv__education">
+                <div class="col cv__section cv__education">
                     <h3>Education</h3>
 
                     {% for education in who.educations %}
@@ -91,14 +91,14 @@
             </div>
 
             <div class="row">
-                <div class="col cv__teaching">
+                <div class="col cv__section cv__teaching">
                     <h3>Teaching experience</h3>
 
                     {% for teaching in who.teachings %}
                     <h4>{{ teaching.name }}</h4>
                     <h5>{{ teaching.school }}</h5>
 
-                    <ul>
+                    <ul class="list-unstyled">
                         {% for course in teaching.courses %}
                         <li>{{ course }}</li>
                         {% endfor %}
@@ -108,7 +108,7 @@
             </div>
 
             <div class="row">
-                <div class="col cv__interests">
+                <div class="col cv__section cv__interests">
                     <h3>Interests</h3>
 
                     {% for interest in who.interests %}
