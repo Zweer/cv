@@ -20,7 +20,11 @@
             <p>{{ who.abstract }}</p>
         </div>
 
-        <div class="col-sm text-center"></div>
+        <div class="col-sm text-center">
+            <div class="cv__picture">
+                <img src="/img/nic.jpg" alt="{{ who.first-name }} {{ who.last-name }}">
+            </div>
+        </div>
 
         <div class="col-sm text-right">
             <ul class="list-unstyled cv__links">
@@ -38,7 +42,7 @@
             <h3>Work experience</h3>
 
             {% for work in who.works %}
-            <div class="work">
+            <div>
                 <h4>{{ work.position }}</h4>
                 <h5>{{ work.company }}</h5>
                 <h6>{{ work.from }} - {{ work.to }}</h6>
