@@ -55,7 +55,7 @@ works:
     from: 09/2004
     to: 09/2016
     tasks:
-      - Realization of many small websites forindividuals or small companies
+      - Realization of many small websites for individuals or small companies
 
 skills:
   - AWS
@@ -113,3 +113,53 @@ interests:
   - OWL
   - Startup
   - Serverless
+
+worksDetailed:
+  - company: HotVenue
+    position: CTO
+    tasks:
+      - Release Automation
+      - Serverless (AWS)
+      - Cloud Automation (AWS)
+    description: |
+      Because all the investments for this startup went in the hardware and in the development of the mobile application, the back-end part was built with no money for the cloud environment. To do so I used the free-tier of the AWS infrastructure, trying to adopt as many AWS products as possible, not to have many dedicated instances that would cost a lot.
+
+      Right now the application is structured as follows:
+      - All the code is stored in two GitHub **public repositories** (one for the application server and one for the asynchronous workers) while the configuration parameters (database connection strings, private info, etc) are handled in environment variables of the build tool.
+      - Whenever the code is pushed, the compilation starts on an external **Continuous Integration** tool: CircleCI.
+      - The **building phase** consists in the download of all dependencies, unit testing, compilation of the **Docker image**, test of the Docker image via cURL, push of the image in the **AWS ECR**, deploy of the new image. If the push happened in the workers repository, the code is packaged and uploaded to **AWS S3** and deploy on the **AWS Lambda** functions.
+
+      Right now I'm making a transition from a containerized architecture to a **serverless** one. This allows me to save money on the server instances and use the AWS build tool, **CodePipeline** and **CodeBuild** (the only reason I'm using CircleCI right now is its ability to compile Docker images out of the box). This is even better for my architecture since I can handle complex dependencies in the pipeline, make parallel tasks, and handle AWS Automation in a native way (mostly with **CloudFormation**).
+  - company: Moviri
+    position: APM Specialist
+    tasks:
+      - Release Automation
+      - Cloud Automation & PaaS
+      - Operational Intelligence
+      - Application Testing & Monitoring
+    description: |
+      As a Consultant in a society which cares about performance, I've seen plenty of projects involving Automation (Release, Cloud, Testing, etc).
+
+      I can sum up the most important:
+      - Cloud Automation with **CloudFoundry**: I worked for a big Italian telco player to ease developers' job. The biggest challenge they were facing was to give every developer the same environment to develop/test applications. We modelized their environment to have, for each application, the minimum set of machine to be used. In this way developers don't have to setup databases/services on their laptops, but a **dedicated environment** is setup in seconds for their own.
+      - Release Automation with **Jenkins**: we had a couple of customers that had a very long deployment chain and needed to automatize the whole process. We set up a **multi environment build and deploy process** which, starting from a git repository, did the compilation, unit and integration testing, functional testing, performance testing and, in the end, deployment on the specified environment. The deployment itself wasn't entirely automatized, but happened only after the acceptance of the manager in charge (for 0-day fixes), or during certain nights (in scheduled maintenance periods).
+
+      Other fields I was involved into were:
+      - **Big Data & Operational Intelligence**: my task was to collect log/machine data/metrics from thousands of servers/appliance all around the customer infrastracture and organize + correlate them into dashboards for various targets, from business to operative ones. The most important tool used to accomplish this was **Splunk**.
+      - **Application Monitoring**: with products like **New Relic** and **DynaTrace** I set up monitoring infrastractures to understand why applications behave incorrectly. These products can correlate applicative calls to follow all the user flow from the Front End to the Database layers.
+      - **Performance Testing**: one of the most important aspect of a piece of software is "how much traffic can it handle?". Creating Virtual Users with products like **HPE LoadRunner** or **Apache JMeter** we can answer that question.
+  - company: Grattifi 2000
+    position: Web Developer
+    tasks:
+      - Lead Developer
+      - Evangelist
+    description: |
+      Shortly after taking my job, it became apparent that the website creation process (mostly for not-so-complex websites) was too long, so that we missed a lot of customers because we were "good" only on big and complex projects.
+
+      I used my experience in the Open Source / PHP world to convince the CTO to start using Wordpress and begin trusting also on third parts plugins and themes. After few months I wasn't alone any more and we also managed to start a new business line that provides low-cost websites in 2-3 days. It was also possible thanks to the introduction of .git for the versioning, NodeJS build tools to ease the assets retrieve and compilation and an automated deployment system (really basic) that allows us to deploy changes on the testing environment on our own.
+
+      At the end of my experience there the situation was:
+      - The custom CMS/Framework was confined to **legacy** projects
+      - **Wordpress** was the standard "defacto" to build new websites
+      - Without the maintenance of the custom CMS, backend developers could focus on more exiting projects
+      - **NodeJS** was introduced as the language for "new complex projects" where Wordpress couldn't fit

@@ -24,6 +24,10 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: inherit;
+
+  @media print {
+    text-decoration: none !important;
+  }
 }
 
 header {
@@ -174,7 +178,7 @@ header > :first-child,
 .cv__section {
   margin-bottom: 24px;
 
-  ul {
+  ul.list-unstyled {
     margin-bottom: 16.5px;
 
     li {
@@ -221,4 +225,16 @@ header > :first-child,
 
   margin-right: 4.5px;
   margin-bottom: 10.5px;
+}
+
+.cv__worksDetailed {
+  padding: 0 50px;
+
+  > div {
+    margin-top: 60px;
+  }
+}
+
+.cv__worksDetailed__description {
+  font-size: 1.2rem;
 }

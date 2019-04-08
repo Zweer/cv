@@ -123,6 +123,23 @@
         </div>
     </div>
 
+    <div class="row cv__section cv__worksDetailed">
+        {% for work in who.worksDetailed %}
+        <div class="col-sm-4">
+            <h5><strong>{{ work.company }}</strong> | {{ work.position }}</h5>
+            <ul class="list-unstyled">
+                {% for task in work.tasks %}
+                <li>{{ task }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-sm-8 cv__worksDetailed__description">
+            {{ work.description | markdownify }}
+        </div>
+        {% endfor %}
+    </div>
+
     {{ content }}
 </div>
 </body>
