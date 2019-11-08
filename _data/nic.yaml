@@ -102,10 +102,6 @@ teachings:
       - AWS Overview
       - Serverless
       - NodeJs from zero to hero
-  - name: Workshop
-    school: Graffiti 2000
-    courses:
-      - From Responsive to Mobile First
 
 interests:
   - Home Automation
