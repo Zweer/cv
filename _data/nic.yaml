@@ -13,13 +13,15 @@ links:
 
 works:
   - position: Senior Software Engineer
-    company: ThinkOpen
+    company: Reply
     from: 07/2017
     to: now
     tasks:
-      - Tech & Team Leader in CRM / Backend Projects
+      - Tech & Team Leader in CRM (Salesforce) and Backend Projects
       - Realtime Chatbot
-      - Cloud Architect (IaaS + PaaS)
+      - Cloud Architect using IaaS (AWS), PaaS (Heroku) and CRM (Salesforce)
+    description: |
+
   - position: APM Specialist
     company: Moviri
     from: 07/2015
@@ -73,16 +75,19 @@ projects:
     descriptions:
       - 👑 Hackaton @ H Farm
       - Augmented reality
+      - Face recognition
+      - Retail fashion
   - name: HotVenue
     date: 05/2016 – 05/2017
     descriptions:
       - Startup
-      - Conteinerized server -> serverless
+      - Video booth
   - name: Puro Gusto
     date: 05/2016
     descriptions:
       - 👑 Hackaton @ H Farm
       - Mobile app
+      - Food & Beverage
   - name: Alfred
     date: 11/2015
     descriptions:
@@ -116,9 +121,14 @@ worksDetailed:
     position: Senior Software Engineer
     tasks:
       - Tech & Team Leader
-      - Cloud Architect (Heroku + AWS)
+      - Cloud Architect (AWS + Heroku + Salesforce)
     description: |
+      In a company where the core business is Salesforce, I was, at first, in charge of everything that wasn't CRM related: from realtime chatbots, backends for customer portals and other cloud related projects. In all these projects I was the technical leader, meaning that:
+      - I decided the architecture and the infrastracture of the application, along with the other technical leaders and the customer. The interaction with the other applications and systems was also my duty.
+      - Supporting the Project Manager in the relationship with the customer to better understand the technicalities and giving advice on the best way (for everyone) to implement something.
+      - Being the focal point to support and manage other developers both for "my" project and for the ones related to it.
 
+      After some time I also start handling Salesforce projects, trying to give the perspective of someone who's not used to that product, in a sort of "independent" way, far from someone who only used Salesforce and tries to sponsor it everywhere. This took me to the role of Architect in a more general sense, putting together the Salesforce world with what's outside.
   - company: HotVenue
     position: CTO
     tasks:
@@ -133,7 +143,7 @@ worksDetailed:
       - Whenever the code is pushed, the compilation starts on an external **Continuous Integration** tool: CircleCI.
       - The **building phase** consists in the download of all dependencies, unit testing, compilation of the **Docker image**, test of the Docker image via cURL, push of the image in the **AWS ECR**, deploy of the new image. If the push happened in the workers repository, the code is packaged and uploaded to **AWS S3** and deploy on the **AWS Lambda** functions.
 
-      Right now I'm making a transition from a containerized architecture to a **serverless** one. This allows me to save money on the server instances and use the AWS build tool, **CodePipeline** and **CodeBuild** (the only reason I'm using CircleCI right now is its ability to compile Docker images out of the box). This is even better for my architecture since I can handle complex dependencies in the pipeline, make parallel tasks, and handle AWS Automation in a native way (mostly with **CloudFormation**).
+      At the end of this experience I was making a transition from a containerized architecture to a **serverless** one. This allowed me to save money on the server instances and use the AWS build tool, **CodePipeline** and **CodeBuild** (the only reason I'm using CircleCI right now is its ability to compile Docker images out of the box). This is even better for my architecture since I can handle complex dependencies in the pipeline, make parallel tasks, and handle AWS Automation in a native way (mostly with **CloudFormation**).
   - company: Moviri
     position: APM Specialist
     tasks:
