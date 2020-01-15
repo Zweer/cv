@@ -237,4 +237,5 @@ header > :first-child,
 
 .cv__worksDetailed__description {
   font-size: 1.2rem;
+  page-break-inside: avoid;
 }
