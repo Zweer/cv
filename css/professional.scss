@@ -239,14 +239,14 @@ header > :first-child,
   font-size: 1.2rem;
 
   @media print {
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   &:nth-child(4n) {
-    page-break-after: always;
+    break-after: page;
 
     @media print {
-      page-break-after: always;
+      break-after: page;
     }
   }
 }
