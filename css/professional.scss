@@ -241,4 +241,12 @@ header > :first-child,
   @media print {
     page-break-inside: avoid;
   }
+
+  &:nth-child(4n) {
+    page-break-after: always;
+
+    @media print {
+      page-break-after: always;
+    }
+  }
 }
