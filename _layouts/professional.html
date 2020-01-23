@@ -100,7 +100,7 @@
 
                     {% for teaching in who.teachings %}
                     <h4>{{ teaching.name }}</h4>
-                    <h5>{{ teaching.school }}</h5>
+                    {% if teaching.school %}<h5>{{ teaching.school }}</h5>{% endif %}
 
                     <ul class="list-unstyled">
                         {% for course in teaching.courses %}

@@ -12,7 +12,7 @@ links:
   github: https://github.com/Zweer
 
 works:
-  - position: Senior Software Engineer
+  - position: Senior Software Engineer (Salesforce Certified)
     company: Reply
     from: 07/2017
     to: now
@@ -22,7 +22,7 @@ works:
       - Cloud Architect using IaaS (AWS), PaaS (Heroku) and CRM (Salesforce)
     description: |
 
-  - position: APM Specialist
+  - position: APM Specialist (Splunk Certified)
     company: Moviri
     from: 07/2015
     to: 07/2017
@@ -35,7 +35,7 @@ works:
     from: 07/2013
     to: 09/2015
     tasks:
-      - \"Hydra\", web application with many goals and different font ends
+      - "Hydra", web application with many goals and different font ends
       - Coordinate the development of the application and its interactions with a mobile app
   - position: FrontEnd Web Developer
     company: Graffiti 2000
@@ -101,12 +101,12 @@ educations:
 
 teachings:
   - name: Workshop & Academy
-    school: ThinkOpen
     courses:
       - Alexa vs Google Home
       - AWS Overview
       - Serverless
       - NodeJs from zero to hero
+      - Responsive vs. Mobile First
 
 interests:
   - Home Automation
