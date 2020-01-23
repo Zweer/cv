@@ -35,7 +35,7 @@ works:
     from: 07/2013
     to: 09/2015
     tasks:
-      - "Hydra", web application with many goals and different font ends
+      - "\"Hydra\", web application with many goals and different font ends"
       - Coordinate the development of the application and its interactions with a mobile app
   - position: FrontEnd Web Developer
     company: Graffiti 2000
