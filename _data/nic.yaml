@@ -12,16 +12,22 @@ links:
   github: https://github.com/Zweer
 
 works:
+  - position: IT Project Manager
+    company: BePower
+    from: 03/2020
+    to: now
+    tasks:
+      - Coordinator upon different applications/projects
+      - Counterpart for different contractors
+      - Cloud Architect (AWS)
   - position: Senior Software Engineer (Salesforce Certified)
     company: ThinkOpen @ Reply
     from: 07/2017
-    to: now
+    to: 04/2020
     tasks:
       - Tech & Team Leader in CRM (Salesforce) and Backend Projects
       - Realtime Chatbot
       - Cloud Architect using IaaS (AWS), PaaS (Heroku) and CRM (Salesforce)
-    description: |
-
   - position: APM Specialist (Splunk Certified)
     company: Moviri
     from: 07/2015
