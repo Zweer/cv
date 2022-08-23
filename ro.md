@@ -3,13 +3,13 @@ layout: budapest
 first-name: Rossella
 last-name: Romeo
 title: Coadiutore Amministrativo
-image: img/ro.jpg
+image: assets/images/ro.jpg
 email: rossella.romeo07@gmail.com
 pec: rossella.romeo@arubapec.it
 phone: +39 3468881811
 location: Campomorone (GE), Italy
 links:
-  linkedin: https://www.linkedin.com/in/rossellaromeo84/
+  linkedin: https://www.linkedin.com/in/rossellaromeo84
 abstract: Sono una ragazza molto solare ed empatica
 skills:
   - windows
@@ -56,14 +56,14 @@ works:
       - Gestione dell'utenza allo sportello
       - Accettazione presso l'hub vaccinale
       - Inserimento dei dati nei software gestionali i per visite preassuntive/di controllo periodico/di rientro da malattia/esami tossicologici e colloqui di fine rapporto
-education:
+educations:
   - structure: Università degli Studi Niccolò Cusano
     location: Roma
     from: 2018
     to: 2020
     title: Laurea triennale in Scienze Politiche e Relazioni Internazionali
     tasks:
-      - Voto finale: 110/110
+      - "Voto finale: 110/110"
       - Inglese
       - Geografia economico - politica
       - Storia delle Relazioni Internazionali
@@ -75,7 +75,7 @@ education:
     to: 2003
     title: Diploma di Perito Aziendale e Corrispondente in Lingue Estere
     tasks:
-      - Voto finale: 100/100
+      - "Voto finale: 100/100"
       - Inglese
       - Francese
       - Tedesco

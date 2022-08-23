@@ -8,13 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="css/budapest.css">
+    <link rel="stylesheet" href="assets/css/budapest.css">
 </head>
 <body>
     <div class="container">
         <div class="row h-100">
-            <div class="col-3 cv__sidebar">
-                <div class="col col-8 offset-2 cv__picture mt-5 mb-4">
+            <div class="col-3 cv__sidebar pt-5 pb-5">
+                <div class="col col-8 offset-2 cv__picture mb-4">
                     <img src="{{ page.image }}" alt="{{ page.first-name }} {{ page.last-name }}">
                 </div>
     
@@ -60,21 +60,21 @@
                 </div>
             </div>
 
-            <div class="col-9">
-                <header class="row">
+            <div class="col-9 cv__main pt-5 pb-5">
+                <header class="row justify-content-between">
                     <div class="col-6">
-                        <h1>{{ page.first-name }} {{ page.last-name }}</h1>
+                        <h1 class="mb-0">{{ page.first-name }} {{ page.last-name }}</h1>
                         <p>{{ page.title }}</p>
                     </div>
 
-                    <div class="col-4 offset-2">
+                    <div class="col-auto">
                         <ul class="list-unstyled cv__links">
-                            {% if who.email %}<li><a href="mailto:{{ who.email }}">{{ who.email }} <i class="fas fa-envelope"></i></a></li>{% endif %}
-                            {% if who.pec %}<li><a href="mailto:{{ who.pec }}">{{ who.pec }} <i class="fas fa-envelope"></i></a></li>{% endif %}
-                            {% if who.phone %}<li><a href="tel:{{ who.phone }}">{{ who.phone }} <i class="fas fa-mobile-alt"></i></a></li>{% endif %}
-                            {% if who.location %}<li><a href="https://maps.google.com/?q={{ who.location }}" target="_blank">{{ who.location }} <i class="fas fa-map-marker-alt"></i></a></li>{% endif %}
-                            {% if who.links.linkedin %}<li><a href="{{ who.links.linkedin }}" target="_blank">{{ who.links.linkedin | replace: "https://", "" | replace: "www.", "" }} <i class="fab fa-linkedin-in"></i></a></li>{% endif %}
-                            {% if who.links.github %}<li><a href="{{ who.links.github }}" target="_blank">{{ who.links.github | replace: "https://", "" | replace: "www.", "" }} <i class="fab fa-github"></i></a></li>{% endif %}
+                            {% if page.email %}<li><a href="mailto:{{ page.email }}"><i class="fa-solid fa-fw fa-envelope"></i>{{ page.email }}</a></li>{% endif %}
+                            {% if page.pec %}<li><a href="mailto:{{ page.pec }}"><i class="fa-solid fa-fw fa-envelope"></i>{{ page.pec }}</a></li>{% endif %}
+                            {% if page.phone %}<li><a href="tel:{{ page.phone }}"><i class="fa-solid fa-fw fa-mobile-alt"></i>{{ page.phone }}</a></li>{% endif %}
+                            {% if page.location %}<li><a href="https://maps.google.com/?q={{ page.location }}" target="_blank"><i class="fa-solid fa-fw fa-map-marker-alt"></i>{{ page.location }}</a></li>{% endif %}
+                            {% if page.links.linkedin %}<li><a href="{{ page.links.linkedin }}" target="_blank"><i class="fa-brands fa-fw fa-linkedin-in"></i>{{ page.links.linkedin | replace: "https://", "" | replace: "www.", "" }}</i></a></li>{% endif %}
+                            {% if page.links.github %}<li><a href="{{ page.links.github }}" target="_blank"><i class="fa-brands fa-fw fa-github"></i>{{ page.links.github | replace: "https://", "" | replace: "www.", "" }}</a></li>{% endif %}
                         </ul>
                     </div>
                 </header>
