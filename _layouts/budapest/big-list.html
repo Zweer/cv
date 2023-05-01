@@ -5,20 +5,38 @@
 
     <div class="col-12">
         {% for element in include.list %}
-        <div class="row gx-5">
+        <div class="row mb-3 gx-5">
             <div class="col-3 cv__section__header">
                 <h4 class="mb-1">{{ element.structure }}</h4>
+                {% if element.part-time %}<span>Part time</span>{% endif %}
                 <h5 class="mb-0">{{ element.location }}</h5>
                 <h6>{{ element.from }} - {{ element.to }}</h6>
             </div>
             
             <div class="col-9 cv__section__body">
                 <h3 class="mb-1">{{ element.title }}</h3>
+
+                {% if element.tasks %}
                 <ul>
                     {% for task in element.tasks %}
                     <li>{{ task }}</li>
                     {% endfor %}
                 </ul>
+                {% endif %}
+
+                {% if element.tasks-extended  %}
+                <ul class="d-none">
+                    {% for task in element.tasks-extended %}
+                    <li>{{ task }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if element.skills %}
+                {% for skill in element.skills %}
+                    <span class="badge text-bg-secondary">{{ skill }}</span>
+                {% endfor %}
+                {% endif %}
             </div>
         </div>
         {% endfor %}
