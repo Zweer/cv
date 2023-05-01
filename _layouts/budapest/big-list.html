@@ -16,17 +16,15 @@
             <div class="col-9 cv__section__body">
                 <h3 class="mb-1">{{ element.title }}</h3>
 
-                {% if element.tasks %}
-                <ul>
-                    {% for task in element.tasks %}
-                    <li>{{ task }}</li>
-                    {% endfor %}
-                </ul>
+                {% if page.extended and element.tasks-extended %}
+                    {% assign tasks = element.tasks-extended %}
+                {% else %}
+                    {% assign tasks = element.tasks %}
                 {% endif %}
 
-                {% if element.tasks-extended  %}
-                <ul class="d-none">
-                    {% for task in element.tasks-extended %}
+                {% if tasks %}
+                <ul>
+                    {% for task in tasks %}
                     <li>{{ task }}</li>
                     {% endfor %}
                 </ul>
