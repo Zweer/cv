@@ -4,6 +4,17 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700|Oswald:400,700');
 
+* {
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 – 15.3, Edge */
+    color-adjust: exact !important;                 /* Firefox 48 – 96 */
+    print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
+}
+
+@page {
+    size: A4;
+    margin: 1cm;
+}
+
 :root {
     --font-family-lato: Lato, serif;
     --font-family-oswald: Oswald, serif;
@@ -60,9 +71,9 @@ a {
     color: var(--sidebar-color);
 
     > .col + .col + .col {
-        margin-top: 2.5rem;
+        margin-top: 1.5rem;
         border-top: 1px solid var(--sidebar-color);
-        padding-top: 2.5rem;
+        padding-top: 1.5rem;
     }
 }
 
@@ -118,23 +129,30 @@ a {
     .cv__section__body {
         position: relative;
 
-        box-shadow: 
-            0px 5px 0px 0px white,
-            -1px 5px 0px 0px var(--main-border);
+        // box-shadow: 
+        //     0px 5px 0px 0px white,
+        //     -1px 5px 0px 0px var(--main-border);
+        border-left: 1px solid var(--main-border);
 
         &::before {
             content: "";
 
             position: absolute;
-            top: .2rem;
-            left: -.4rem;
+            top: 0;
+            left: -.5rem;
 
-            width: .8rem;
-            height: .8rem;
+            width: 1rem;
+            height: 1rem;
 
             background-color: var(--main-border);
 
             border-radius: 50%;
+        }
+
+        @media print {
+            break-inside: avoid;
+
+            border-left-width: 1pt;
         }
     }
 }

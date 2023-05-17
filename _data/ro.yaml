@@ -9,6 +9,7 @@ location: Campomorone (GE), Italy
 links:
   linkedin: https://www.linkedin.com/in/rossellaromeo84
 abstract: Sono una ragazza molto solare ed empatica
+
 skills:
   - windows
   - office
@@ -19,9 +20,11 @@ skills:
   - gestione ordini
   - gestione hotel
   - scrittura veloce
+
 certifications:
   - ECDL
   - ECDL Advanced
+
 languages:
   - name: italian
     level: mother tongue
@@ -31,10 +34,12 @@ languages:
     level: B1
   - name: german
     level: A1
+
 hobbies:
   - pole dance
   - trekking
   - volontariato
+
 works:
   - structure: Asl 3 - Liguria
     location: Genova, Liguria, Italia
@@ -64,6 +69,7 @@ works:
       - Formazione sul campo
       - Gestione delle emergenze
       - Ascolto attivo
+  
   - structure: RFI Rete ferroviaria italiana
     location: Genova, Liguria, Italia
     from: 07/2021
@@ -88,19 +94,37 @@ works:
       - Operazioni di segreteria 
       - Supporto amministrativo al personale medico/paramedico 
       - Affiancamento al personale amministrativo senior
+  
   - structure: Coop Liguria
     part-time: true
     location: Genova, Liguria Italia
     from: 11/2020
     to: 04/2021
     title: Allieva addetta alle operazioni ausiliare di vendita
-  - structure: Studio professionale di consulenza fiscale e del lavoro R. Gaglioti
+    tasks:
+      - Picking multicliente e multiordine, con riaggregazione spese
+      - Ricezione ordini in real time e individuazione percorsi ottimi
+    tasks-extended:
+      - Picking per singolo articolo
+      - Gestione delle posizioni degli articoli in punto vendita
+      - Individuazione percorsi ottimi di prelievo
+      - Picking multicliente e multiordine
+      - Ricezione ordini in real time
+      - Sistema di riaggregazione spese
+      - Gestione prodotti peso variabile
+      - Gestione stoccaggio prodotti freschi e surgelati
+      - Sostituzione automatica
+  
+  - structure: Studio di consulenza fiscale e del lavoro R. Gaglioti
     part-time: true
     location: Palmi, Calabria, Italia
     from: 07/2015
     to: 05/2018
     title: Impiegata
     tasks:
+      - Redazione della contrattualistica, interfaccia Inail, F24
+      - Elaborazione comunicazioni online con centri per l'impiego, istituti ed enti di previdenza
+    tasks-extended:
       - Redazione della contrattualistica
       - Elaborazione comunicazioni online con centri per l'impiego, istituti ed enti di previdenza
       - Aggiornamento anagrafiche dei dipendenti
@@ -110,6 +134,7 @@ works:
       - Elaborazione F24
       - Invio pagamenti telematici
       - Attività di supporto ai colleghi
+  
   - structure: Casa vacanze Beverly Village
     part-time: true
     location: Palmi, Calabria, Italia
@@ -123,6 +148,7 @@ works:
       - Gestione prenotazioni
       - Gestione profilo aziendale sul portale Booking
       - Pagamenti e prima nota
+  
   - structure: AG.E.C. Resort****
     part-time: true
     location: Bagnara Calabra, Calabria, Italia
@@ -136,7 +162,8 @@ works:
       - Gestione prenotazioni
       - Gestione profilo aziendale sul portale Booking
       - Pagamenti e prima nota
-  - structure: Enogastronomica Romagnola Srl (Fiera Natalidea/Fiera Primavera presso Fiera di Genova))
+  
+  - structure: Fiera Natalidea / Fiera Primavera presso Fiera di Genova
     location: Genova, Liguria, Italia
     from: 12/2010
     to: 12/2011
@@ -148,6 +175,7 @@ works:
       - Gestione cassa
       - Pulizia delle attrezzature del bar
       - Rifornimento e gestione del banco
+  
   - structure: DIRE (Dipartimento di Ricerche Europee)
     location: Genova, Liguria, Italia
     from: 11/2010
@@ -157,6 +185,7 @@ works:
       - Attività a tempo parziale (150 ore) presso l'Università degli Studi di Genova
       - Accoglienza studenti
       - Mansioni d'ordine e di segreteria
+  
   - structure: Tempor Srl
     location: Genova, Liguria, Italia
     from: 03/2003
@@ -180,6 +209,7 @@ educations:
       - Storia delle Relazioni Internazionali
       - Istituzioni di Diritto Pubblico
       - Economia Politica
+  
   - structure: Istituto Tecnico Commerciale Statale L. Einaudi - G. Casaregis
     location: Genova
     from: 1998
@@ -192,6 +222,7 @@ educations:
       - Tedesco
       - Trattamento testi
       - Economia aziendale
+  
   - structure: AxL S.p.A – Agenzia per il Lavoro
     location: Brescia
     from: 06/2021
@@ -207,6 +238,7 @@ educations:
       - Gestione di una newsletter
       - Advertising sui social network
       - Uso della lingua inglese nel mondo del business
+  
   - structure: Ente di formazione Manager S.r.l.
     location: Torino
     from: 05/2020
@@ -225,6 +257,7 @@ educations:
       - Scelta della tipologia di colloquio da utilizzare
       - Assessment center: prove di gruppo e prove individuali
       - Stesura della scheda candidato
+  
   - structure: Ente di formazione Abea S.r.l.
     location: Milano
     from: 04/2020
