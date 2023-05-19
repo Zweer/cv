@@ -1,0 +1,273 @@
+first-name: Rossella
+last-name: Romeo
+title: Administrative Assistant
+image: assets/images/ro.jpg
+email: rossella.romeo07@gmail.com
+pec: rossella.romeo@arubapec.it
+phone: +39 3468881811
+location: Campomorone (GE), Italy
+links:
+  linkedin: https://www.linkedin.com/in/rossellaromeo84
+abstract: I am a very cheerful and empathetic girl.
+
+skills:
+  - windows
+  - office
+  - browser
+  - internet
+  - email
+  - social network
+  - order management
+  - hotel management
+  - fast typing
+
+certifications:
+  - ECDL
+  - ECDL Advanced
+
+languages:
+  - name: Italian
+    level: Mother Tongue
+  - name: English
+    level: B2
+  - name: French
+    level: B1
+  - name: German
+    level: A1
+
+hobbies:
+  - pole dance
+  - trekking
+  - volunteering
+
+works:
+  - structure: ASL 3 - Liguria
+    location: Genoa, Liguria, Italy
+    from: 09/13/2021
+    to: now
+    title: Administrative Assistant
+    tasks:
+      - Classification, filing, and registration of documents, maintaining an organized system for paper and digital documents, placing purchase orders, managing hospital bureaucratic procedures (deaths, disappearances, etc.)
+      - Management of agreements, from research of existing contracts to signing new/extended contracts (with formal authorization)
+      - Internal and external communication management through email and certified email (PEC), including drafting and sending internal notes and formal responses to external complaints
+    tasks-extended:
+      - Classification and registration of documents
+      - Drafting of drafts
+      - Drafting and sending of communications
+      - Compilation of documents and forms
+      - Internal and external communication management through email and certified email
+      - Maintenance of an organized system for paper and digital document storage
+      - Research of documentation through the company's Intranet system
+      - Interaction with internal departments for information and document exchange
+      - Analysis of user reports and assignment of resolution tasks based on competence
+      - Secretarial activities for Hospital Medical Management
+      - Writing texts using word processing software
+    skills:
+      - Proactivity
+      - Complaint management
+      - Prioritization
+      - On-the-job training
+      - Emergency management
+      - Active listening
+
+  - structure: RFI Italian Rail Network
+    location: Genoa, Liguria, Italy
+    from: 07/2021
+    to: 08/2021
+    title: Customer Service Representative
+    tasks:
+      - Customer service at the counter, acceptance at the vaccination hub, renewal of licenses through the driver's portal, switchboard operation
+      - Data entry in management software for pre-employment/check-up/return-from-sickness/toxicological tests and end-of-contract interviews
+      - Collection and registration of documents for issuing/renewing nautical and land licenses
+      - POS payments, cash register opening and closing, and submission of corresponding documents to the Revenue Agency
+      - Support for medical/paramedical staff
+      - Assisting administrative staff
+    tasks-extended:
+      - Customer service at the counter
+      - Acceptance at the vaccination hub
+      - Data entry in management software for pre-employment/check-up/return-from-sickness/toxicological tests and end-of-contract interviews
+      - Collection and registration of documents for issuing/renewing nautical and land licenses
+      - Renewal of licenses through the driver's portal
+      - POS payments
+      - Cash register opening and closing, and submission of corresponding documents to the Revenue Agency
+      - Switchboard operation
+      - Secretarial operations
+      - Administrative support for medical/paramedical staff
+      - Assisting senior administrative staff
+
+  - structure: Coop Liguria
+    part-time: true
+    location: Genoa, Liguria, Italy
+    from: 11/2020
+    to: 04/2021
+    title: Trainee Auxiliary Sales Operator
+    tasks:
+      - Multi-client and multi-order picking with expense aggregation
+      - Real-time order reception and identification of optimal routes
+    tasks-extended:
+      - Single-item picking
+      - Management of product positions in the store
+      - Identification of optimal picking routes
+      - Multi-client and multi-order picking
+      - Real-time order reception
+      - Expense aggregation system
+      - Variable-weight product management
+      - Fresh and frozen product storage management
+      - Automatic replacement
+
+  - structure: R. Gaglioti Tax and Labor Consulting Studio
+    part-time: true
+    location: Palmi, Calabria, Italy
+    from: 07/2015
+    to: 05/2018
+    title: Employee
+    tasks:
+      - Preparation of contracts, interaction with INAIL, F24
+      - Online communication with employment centers, institutes, and social security institutions
+    tasks-extended:
+      - Preparation of contracts
+      - Online communication with employment centers, institutes, and social security institutions
+      - Employee data updates
+      - Monitoring and management of the attendance tracking system
+      - Data processing for payroll slips
+      - INAIL self-assessment
+      - F24 processing
+      - Electronic payment submission
+      - Support activities for colleagues
+
+  - structure: Beverly Village Vacation Home
+    part-time: true
+    location: Palmi, Calabria, Italy
+    from: 11/2013
+    to: 09/2014
+    title: Receptionist
+    tasks:
+      - Welcome and assistance to customers
+      - Internal customer management
+      - Check-in and check-out operations
+      - Reservation management
+      - Management of the company profile on the Booking portal
+      - Payments and financial records
+
+  - structure: AG.E.C. Resort****
+    part-time: true
+    location: Bagnara Calabra, Calabria, Italy
+    from: 05/2013
+    to: 09/2013
+    title: Receptionist
+    tasks:
+      - Welcome and assistance to customers
+      - Internal customer management
+      - Check-in and check-out operations
+      - Reservation management
+      - Management of the company profile on the Booking portal
+      - Payments and financial records
+
+  - structure: Fiera Natalidea / Fiera Primavera at Fiera di Genova
+    location: Genoa, Liguria, Italy
+    from: 12/2010
+    to: 12/2011
+    title: Customer Service Cashier (On-call contracts)
+    tasks:
+      - Customer welcome at the bar
+      - Preparation of coffee service
+      - Counter service
+      - Cash management
+      - Cleaning of bar equipment
+      - Counter replenishment and management
+
+  - structure: DIRE (Department of European Research)
+    location: Genoa, Liguria, Italy
+    from: 11/2010
+    to: 03/2011
+    title: Receptionist
+    tasks:
+      - Part-time activities (150 hours) at the University of Genoa
+      - Student reception
+      - Administrative and secretarial tasks
+
+  - structure: Tempor Srl
+    location: Genoa, Liguria, Italy
+    from: 03/2003
+    to: 03/2003
+    title: Receptionist (internship)
+    tasks:
+      - School internship at a temporary employment agency
+      - Candidate welcome at the branch
+      - Database management
+      - Simple secretarial tasks
+
+educations:
+  - structure: Niccolò Cusano University
+    location: Rome
+    from: 2018
+    to: 2020
+    title: Bachelor's Degree in Political Science and International Relations
+    tasks:
+      - "Final grade: 110/110"
+      - English
+      - Economic-political geography
+      - History of International Relations
+      - Public Law Institutions
+      - Political Economy
+
+  - structure: State Commercial Technical Institute L. Einaudi - G. Casaregis
+    location: Genoa
+    from: 1998
+    to: 2003
+    title: Diploma as Business Expert and Correspondent in Foreign Languages
+    tasks:
+      - "Final grade: 100/100"
+      - English
+      - French
+      - German
+      - Word processing
+      - Business economics
+
+  - structure: AxL S.p.A – Employment Agency
+    location: Brescia
+    from: 06/2021
+    to: 06/2021
+    title: Certificate of Participation in the Online Course on Digital Marketing and Business English (40 hours)
+    tasks:
+      - The role of a social media manager
+      - Creating an editorial plan
+      - Marketing and communication through Facebook
+      - Brand promotion through Instagram
+      - Networking on Linkedin
+      - Managing a blog with Wordpress
+      - Newsletter management
+      - Advertising on social networks
+      - Using English in the business world
+
+  - structure: Manager S.r.l. Training Institute
+    location: Turin
+    from: 05/2020
+    to: 05/2020
+    title: Certificate of Participation in the Online Course on Human Resources Management (80 hours)
+    tasks:
+      - Introduction to personnel administration
+      - Interpersonal communication
+      - Analysis of transferable skills
+      - Development and definition of the professional profile
+      - Effective job advertisements
+      - Resume screening: profile selection criteria
+      - Selection tests: types
+      - Job interviews: choosing the style and areas of inquiry
+      - Designing questions based on research objectives
+      - Choosing the appropriate interview type to use
+      - Assessment center: group exercises and individual assessments
+      - Candidate profile creation
+
+  - structure: Abea S.r.l. Training Institute
+    location: Milan
+    from: 04/2020
+    to: 04/2020
+    title: Certificate of Participation in the Online Course on Logistics and Warehouse Management (72 hours)
+    tasks:
+      - Performance indicators: KPIs
+      - Reorder Level, Fixed Period, Safety Stock, and out-of-stock situations
+      - Material Requirement Planning and Just-in-Time
+      - Inventory valuation methods (LIFO, FIFO, Average Cost)
+      - Picking methods: Batch vs Order and Transversal vs Return
+      - Supply Chain and
