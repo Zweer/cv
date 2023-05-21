@@ -8,37 +8,40 @@ phone: +39 3468881811
 location: Campomorone (GE), Italy
 links:
   linkedin: https://www.linkedin.com/in/rossellaromeo84
-abstract: Sono una ragazza molto solare ed empatica
+abstract: Coadiutore amministrativo, proattiva, appassionata di tecnologia, comunicazione digitale e di digital transformation
 
 skills:
-  - windows
-  - office
-  - browser
-  - internet
-  - email
-  - social network
-  - gestione ordini
-  - gestione hotel
+  - atteggiamento empatico
+  - propensione all'ascolto
+  - comportamento assertivo
   - scrittura veloce
+  - folium
+  - areas
+  - time management
+  - task prioritization
+  - digital awereness
+  - team leading
+  - autonomia
 
 certifications:
   - ECDL
   - ECDL Advanced
 
 languages:
-  - name: italian
-    level: mother tongue
-  - name: english
+  - name: italiano
+    level: madre lingua
+  - name: inglese
     level: B2
-  - name: french
+  - name: francese
     level: B1
-  - name: german
+  - name: tedesco
     level: A1
 
 hobbies:
   - pole dance
   - trekking
   - volontariato
+  - second hand
 
 works:
   - structure: Asl 3 - Liguria
@@ -47,9 +50,9 @@ works:
     to: now
     title: Coadiutore amministrativo
     tasks:
-      - Classificazione, archiviazione e protocollazione degli atti, mantenimento di un'organizzato sistema di archiviazione dei documenti cartacei e digitali, invio ordini d'acquisto, gestione pratiche burocratiche ospedaliere (decessi, sparizioni, ecc)
-      - Gestione (previa autorizzazione formale) convenzioni dalla ricerca del contratto in essere alla stipula del nuovo / proroga del presente contratto
-      - Gestione comunicazioni interne ed esterne attraverso mail e pec, dall'elaborazione e l'inoltro di note interne, alla stesura di risposte ufficiali per l'utenza esterna in seguito a lamentele formali
+      - Classificazione, archiviazione e protocollazione degli atti, mantenimento di un'organizzato sistema di archiviazione dei documenti cartacei e digitali, invio ordini d'acquisto, gestione pratiche burocratiche ospedaliere (decessi, ricerca scomparsi, ecc)
+      - Gestione (previa autorizzazione formale) convenzioni, dalla ricerca del contratto in essere alla stipula del nuovo / proroga del presente contratto
+      - Gestione comunicazioni interne ed esterne attraverso mail e pec; elaborazione e inoltro di note interne, stesura di risposte ufficiali per l'utenza esterna in seguito a segnalazioni formali
     tasks-extended:
       - Classificazione e protocollazione degli atti
       - Redazione bozze di nota
@@ -80,8 +83,7 @@ works:
       - Inserimento dei dati nei software gestionali i per visite preassuntive/di controllo periodico/di rientro da malattia/esami tossicologici e colloqui di fine rapporto
       - Raccolta e registrazione dei documenti per l'emissione/rinnovo delle patenti nautiche e terrestri
       - Pagamenti con POS, apertura e chiusura della cassa ed invio dei corrispettivi all'Agenzia delle Entrate
-      - Supporto al personale medico/paramedico
-      - Affiancamento al personale amministrativo
+      - Gestione delle pratiche burocratiche, in supporto al personale medico/paramedico
     tasks-extended:
       - Gestione dell'utenza allo sportello 
       - Accettazione presso l'hub vaccinale 
@@ -103,7 +105,7 @@ works:
     title: Allieva addetta alle operazioni ausiliare di vendita
     tasks:
       - Picking multicliente e multiordine, con riaggregazione spese
-      - Ricezione ordini in real time e individuazione percorsi ottimi
+      - Ricezione ordini in real time e individuazione percorsi ottimali di acquisizione della merce
     tasks-extended:
       - Picking per singolo articolo
       - Gestione delle posizioni degli articoli in punto vendita
@@ -122,7 +124,7 @@ works:
     to: 05/2018
     title: Impiegata
     tasks:
-      - Redazione della contrattualistica, interfaccia Inail, F24
+      - Redazione della contrattualistica dipendenti, autoliquidazione Inail, elaborazione dati per cedolini paga
       - Elaborazione comunicazioni online con centri per l'impiego, istituti ed enti di previdenza
     tasks-extended:
       - Redazione della contrattualistica
@@ -142,6 +144,10 @@ works:
     to: 09/2014
     title: Addetta alla reception
     tasks:
+      - Accoglienza, assistenza e gestione interna del cliente
+      - Gestione prenotazioni e profilo aziendale su Booking
+      - Pagamenti e prima nota
+    tasks-extended:
       - Accoglienza 
       - Assistenza e gestione interna del cliente 
       - Operazioni di check in e check out
@@ -156,6 +162,10 @@ works:
     to: 09/2013
     title: Addetta alla reception
     tasks:
+      - Accoglienza, assistenza e gestione interna del cliente
+      - Gestione prenotazioni e profilo aziendale su Booking
+      - Pagamenti e prima nota
+    tasks-extended:
       - Accoglienza 
       - Assistenza e gestione interna del cliente 
       - Operazioni di check in e check out
@@ -169,6 +179,9 @@ works:
     to: 12/2011
     title: Cassiere servizio clienti (Contratti a chiamata)
     tasks:
+      - Accoglienza e servizio di bar
+      - Gestione cassa e banco, rifornimento merce
+    tasks-extended:
       - Accoglienza della clientela al bar
       - Preparazione del servizio del caffè
       - Servizio al banco
@@ -194,7 +207,7 @@ works:
     tasks:
       - Stage scolastico presso Agenzia di Lavoro interinale
       - Accoglienza dei candidati in filiale
-      - Gestione database
+      - Inserimento dati nel database aziendale
       - Mansioni di segreteria semplice
 educations:
   - structure: Università degli Studi Niccolò Cusano
@@ -220,10 +233,9 @@ educations:
       - Inglese
       - Francese
       - Tedesco
-      - Trattamento testi
       - Economia aziendale
   
-  - structure: AxL S.p.A – Agenzia per il Lavoro
+  - structure: AxL S.p.A - Agenzia per il Lavoro
     location: Brescia
     from: 06/2021
     to: 06/2021
@@ -249,13 +261,13 @@ educations:
       - La comunicazione interpersonale
       - Analisi delle competenze trasversali
       - Elaborazione e definizione del profilo professionale
-      - Gli annunci di ricerca: annuncio efficace
-      - Lo screening dei curricula: criteri di scelta del profilo
-      - Test di selezione: tipologie
-      - Il colloquio di selezione: scelta dello stile e delle aree d’indagine
+      - "Gli annunci di ricerca: annuncio efficace"
+      - "Lo screening dei curricula: criteri di scelta del profilo"
+      - "Test di selezione: tipologie"
+      - "Il colloquio di selezione: scelta dello stile e delle aree d'indagine"
       - Individuazione delle domande in base agli obiettivi di ricerca
       - Scelta della tipologia di colloquio da utilizzare
-      - Assessment center: prove di gruppo e prove individuali
+      - "Assessment center: prove di gruppo e prove individuali"
       - Stesura della scheda candidato
   
   - structure: Ente di formazione Abea S.r.l.
@@ -264,10 +276,10 @@ educations:
     to: 04/2020
     title: Attestato di partecipazione al Corso online di Gestione Logistica e Magazzino (72 ore)
     tasks:
-      - Gli indici delle prestazioni: i KPI
+      - "Gli indici delle prestazioni: i KPI"
       - Livello di Riordino, Periodo Fisso, Scorta di Sicurezza e situazioni di "out-of-stock"
       - Material Requirement Planning e "Just in Time"
       - Metodi di valorizzazione delle scorte (LIFO, FIFO, Costo Medio)
-      - I metodi di picking: Batch vs Order e Trasversal vs Return
+      - "I metodi di picking: Batch vs Order e Trasversal vs Return"
       - Supply Chain e Outsourcing Logistico
       - Procedure di preparazione delle spedizioni
