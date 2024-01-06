@@ -224,7 +224,7 @@ educations:
       - Word processing
       - Business economics
 
-  - structure: AxL S.p.A – Employment Agency
+  - structure: AxL S.p.A - Employment Agency
     location: Brescia
     from: 06/2021
     to: 06/2021
@@ -251,12 +251,12 @@ educations:
       - Analysis of transferable skills
       - Development and definition of the professional profile
       - Effective job advertisements
-      - Resume screening: profile selection criteria
-      - Selection tests: types
-      - Job interviews: choosing the style and areas of inquiry
+      - "Resume screening: profile selection criteria"
+      - "Selection tests: types"
+      - "Job interviews: choosing the style and areas of inquiry"
       - Designing questions based on research objectives
       - Choosing the appropriate interview type to use
-      - Assessment center: group exercises and individual assessments
+      - "Assessment center: group exercises and individual assessments"
       - Candidate profile creation
 
   - structure: Abea S.r.l. Training Institute
@@ -265,9 +265,9 @@ educations:
     to: 04/2020
     title: Certificate of Participation in the Online Course on Logistics and Warehouse Management (72 hours)
     tasks:
-      - Performance indicators: KPIs
+      - "Performance indicators: KPIs"
       - Reorder Level, Fixed Period, Safety Stock, and out-of-stock situations
       - Material Requirement Planning and Just-in-Time
       - Inventory valuation methods (LIFO, FIFO, Average Cost)
-      - Picking methods: Batch vs Order and Transversal vs Return
+      - "Picking methods: Batch vs Order and Transversal vs Return"
       - Supply Chain and
