@@ -12,7 +12,7 @@
 
 @page {
     size: A4;
-    margin: 1cm;
+    margin: 0;
 }
 
 :root {
@@ -75,6 +75,12 @@ a {
         border-top: 1px solid var(--sidebar-color);
         padding-top: 1.5rem;
     }
+
+    .cv__hobbies {
+        @media print {
+            border-top: 0 !important;
+        }
+    }
 }
 
 .cv__picture {
@@ -124,6 +130,23 @@ a {
     h3 {
         font-size: 1rem;
         text-transform: none;
+    }
+
+    &.cv__section__work_experience {
+        .cv__section__3,
+        .cv__section__8 {
+            @media print {
+                padding-top: 1.5rem;
+            }
+        }
+    }
+
+    &.cv__section__education {
+        .cv__section__3 {
+            @media print {
+                padding-top: 1.5rem;
+            }
+        }
     }
 
     .cv__section__body {

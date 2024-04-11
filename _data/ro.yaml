@@ -49,8 +49,49 @@ hobbies:
 works:
   - structure: Asl 3 - Liguria
     location: Genova, Liguria, Italia
-    from: 13/09/2021
+    from: 15/01/2024
     to: now
+    title: Assistente amministrativo
+    tasks:
+      - Redazione, classificazione, archiviazione e protocollazione degli atti, mantenimento di un'organizzato sistema di archiviazione dei documenti cartacei e digitali, invio ordini d'acquisto, gestione pratiche burocratiche ospedaliere (rifiuti, decessi, ricerca scomparsi, ecc)
+      - Supporto amministrativo e organizzativo al personale interno, interlocuzione con i servizi interni per lo scambio di informazioni e documenti, compilazione di documenti e modulistica nel rispetto delle policy
+      - Gestione comunicazioni interne ed esterne attraverso mail e pec; elaborazione e inoltro di note interne, stesura di risposte ufficiali per l'utenza esterna in seguito a segnalazioni formali
+    tasks-extended:
+      - Corrispondenza telefonica e via mail
+      - Classificazione e protocollazione degli atti
+      - Mantenimento di un sistema organizzato di archiviazione dei documenti cartacei e digitali
+      - Compilazione del registro di carico e scarico dei rifiuti ospedalieri
+      - Ricezione delle segnalazioni da parte dei cittadini - utenti ed assegnazione della pratica di risoluzione per competenza
+      - Invio di ordini elettronici tramite NSO
+      - Trasmissione di dati e flussi informativi per rilevazioni statistiche mensili 
+      - Redazione bozze di nota
+      - Redazione ed invio di comunicazioni 
+      - Stesura di testi mediante l'utilizzo di videoscrittura 
+      - Interlocuzione con i servizi interni per lo scambio di informazioni e documenti 
+      - Supporto amministrativo e organizzativo al personale interno
+      - Compilazione di documenti e modulistica nel rispetto delle policy
+      - Piena riservatezza verso dati e informazioni
+    skills:
+      - Riservatezza 
+      - Identificazione degli obiettivi
+      - Gestione delle priorita
+      - Attenzione al dettaglio
+      - Comunicazione scritta
+      - Ordini di acquisto
+      - Proattività
+      - Gestione reclami
+      - Competenze analitiche
+      - Gestione delle emergenze
+      - Ascolto attivo
+      - Time management
+      - Competenze organizzative
+      - Affidabilità
+      - Responsabilità professionale
+
+  - structure: Asl 3 - Liguria
+    location: Genova, Liguria, Italia
+    from: 13/09/2021
+    to: 14/01/2024
     title: Coadiutore amministrativo
     tasks:
       - Classificazione, archiviazione e protocollazione degli atti, mantenimento di un'organizzato sistema di archiviazione dei documenti cartacei e digitali, invio ordini d'acquisto, gestione pratiche burocratiche ospedaliere (decessi, ricerca scomparsi, ecc)
