@@ -14,21 +14,22 @@ links:
 
 skills:
   - AWS
-  - NodeJs
+  # - NodeJs
   - Cloud
-  - Log
+  # - Log
   - APM
-  - PerfOps
+  # - PerfOps
   - DevOps
+  - Mgmt
 
 works:
   - position: Head of IT Delivery
-    company: BePower
+    company: BePower (Plenitude BeCharge)
     from: 03/2020
     to: now
     tasks:
-      - Coordinator upon different applications/projects
-      - Counterpart for different contractors
+      - Team of 20+ people, analysts, PMs, devs, testers
+      - Projects coordinator + interface with business
       - Cloud Architect (AWS)
 
   - position: Senior Software Engineer (Salesforce Certified)
@@ -38,7 +39,7 @@ works:
     tasks:
       - Tech & Team Leader in CRM (Salesforce) and Backend Projects
       - Realtime Chatbot
-      - Cloud Architect using IaaS (AWS), PaaS (Heroku) and CRM (Salesforce)
+      - Cloud Architect using IaaS (AWS), PaaS (Heroku) and CRM
 
   - position: APM Specialist (Splunk Certified)
     company: Moviri
@@ -54,7 +55,7 @@ works:
     from: 07/2013
     to: 09/2015
     tasks:
-      - "\"Hydra\", web application with many goals and different font ends"
+      - "\"Hydra\", web application with many goals and frontends"
       - Coordinate the development of the application and its interactions with a mobile app
 
   - position: FrontEnd Web Developer
@@ -62,7 +63,7 @@ works:
     from: 10/2012
     to: 06/2015
     tasks:
-      - Lead the development of websites with Wordpress/PHP and Node.js
+      - Lead developer for Wordpress/PHP and Node.js
       - Expert in UX and Browser Visual Effects
 
   - position: Performance Specialist
@@ -70,7 +71,7 @@ works:
     from: 12/2010
     to: 09/2012
     tasks:
-      - Consultant, Project Manager, Performance and Diagnostics Specialist
+      - Consultant, Performance and Diagnostics Specialist
       - Real-time reporting
       - Capacity & Load Testing
 
@@ -79,7 +80,7 @@ works:
     from: 09/2004
     to: 09/2016
     tasks:
-      - Realization of many small websites for individuals or small companies
+      - Realization of small websites for individuals or companies
 
 projects:
   - name: Luxi
@@ -117,6 +118,8 @@ educations:
 teachings:
   - name: Workshop & Academy
     courses:
+      - Electric Mobility
+      - CI/CD, an opinionated guide
       - Alexa vs Google Home
       - AWS Overview
       - Serverless
@@ -133,7 +136,7 @@ interests:
   - Serverless
 
 worksDetailed:
-  - company: BePower
+  - company: BePower (Plenitude BeCharge)
     position: Head of IT Delivery
     tasks:
       - Team Management
