@@ -1,4 +1,0 @@
----
-layout: budapest
-person: ro
----

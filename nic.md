@@ -1,4 +1,0 @@
----
-layout: professional
-who: nic
----
