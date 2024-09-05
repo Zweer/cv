@@ -1,10 +1,10 @@
 % a mashup of hipstercv, friggeri and twenty cv
+% https://www.overleaf.com/latex/templates/simple-hipster-cv/cnpkkjdkyhhw
 % https://www.latextemplates.com/template/twenty-seconds-resumecv
 % https://www.latextemplates.com/template/friggeri-resume-cv
 
-\documentclass[lighthipster]{simplehipstercv}
+\documentclass[lighthipster]{simple-hipster}
 % available options are: darkhipster, lighthipster, pastel, allblack, grey, verylight, withoutsidebar
-% withoutsidebar
 \usepackage[utf8]{inputenc}
 \usepackage[default]{raleway}
 \usepackage[margin=1cm, a4paper]{geometry}
@@ -18,9 +18,9 @@
 \setlength{\rightcolwidth}{0.75\textwidth}
 
 %------------------------------------------------------------------
-\title{New Simple CV}
-\author{\LaTeX{} Ninja}
-\date{June 2019}
+\title{Rossella Romeo CV}
+\author{\LaTeX{} Rossella Romeo}
+\date{August 2024}
 
 \pagestyle{empty}
 \begin{document}
@@ -31,7 +31,7 @@
 
 \section*{Start}
 
-\simpleheader{headercolour}{Jack}{Sparrow}{Captain}{white}
+\simpleheader{headercolour}{Rossella}{Romeo}{Assistente amministrativa di direzione}{white}
 
 
 
@@ -39,7 +39,7 @@
 
 % this has to be here so the paracols starts..
 \subsection*{}
-\vspace{4em}
+\vspace{2em}
 
 \setlength{\columnsep}{1.5cm}
 \columnratio{0.23}[0.75]
@@ -56,53 +56,70 @@
 {\setasidefontcolour
 \flushright
 \begin{center}
-    \roundpic{jack.jpg}
+    \roundpic{../../images/ro.jpg}
 \end{center}
 
-\bg{cvgreen}{white}{About me}\\[0.5em]
+\bg{cvgreen}{white}{dicono di me}\\[0.5em]
 
-{\footnotesize
-\lorem\lorem\lorem}
+{
+  \footnotesize
+  Assistente amministrativo di Direzione Medica Ospedaliera, proattiva, appassionata di tecnologia, comunicazione digitale e di digital transformation
+}
 \bigskip
 
-\bg{cvgreen}{white}{personal} \\[0.5em]
-Jack Sparrow
+% \bg{cvgreen}{white}{personal} \\[0.5em]
+% Jack Sparrow
+%
+% nationality: English
+%
+% 1690
+%
+% \bigskip
 
-nationality: English
+% \bg{cvgreen}{white}{aree di specializzazione} \\[0.5em]
+%
+% executive assistant ~•~ team leading ~•~ digital awerenes ~•~ problem solving
+%
+% \bigskip
 
-1690
+
 
 \bigskip
 
-\bg{cvgreen}{white}{Areas of specialization} \\[0.5em]
+\bg{cvgreen}{white}{skill}\\[0.5em]
 
-Privateering ~•~ Bucaneering ~•~ Parler ~•~ Rum
-
-\bigskip
-
-
+atteggiamento empatico ~•~ propensione all'ascolto ~•~ comportamento assertivo ~•~ scrittura veloce ~•~ folium ~•~ piattaforma areas ~•~ time management ~•~ digital awereness ~•~ team leading ~•~ autonomia ~•~ doti organizzative ~•~ propensione alla crescita ~•~ problem solving ~•~ lateral thinking
 
 \bigskip
 
-\bg{cvgreen}{white}{Interests}\\[0.5em]
+\bg{cvgreen}{white}{hobby}\\[0.5em]
 
-\lorem
+\texttt{pole dance} ~/~ \texttt{yoga} \\
+\texttt{trekking} \\
+\texttt{second hand} \\
+
 \bigskip
 
-\bg{cvgreen}{white}{Interests}\\[0.5em]
+\bg{cvgreen}{white}{lingue}\\[0.5em]
 
-\texttt{R} ~/~ \texttt{Android} ~/~ \texttt{Linux}
+\texttt{italiano} \\
+\texttt{inglese (B2)} \\
+\texttt{francese (B1)} \\
+\texttt{tedesco (A1)} \\
 
-\texttt{R} ~/~ \texttt{Android} ~/~ \texttt{Linux}
+\bigskip
 
-\texttt{R} ~/~ \texttt{Android} ~/~ \texttt{Linux}
+\bg{cvgreen}{white}{certificazioni / corsi}\\[0.5em]
 
-\vspace{4em}
+\texttt{ECDL} \\
+\texttt{ECDL Advanced} \\
+\texttt{Digital Marketing e Business English} \\
+\texttt{Gestione Risorse Umane} \\
+\texttt{Gestione Logistica e Magazzino} \\
 
-\infobubble{\faAt}{cvgreen}{white}{jack@sparrow.org}
-\infobubble{\faTwitter}{cvgreen}{white}{@sparrow}
-\infobubble{\faFacebook}{cvgreen}{white}{Jack Sparrow}
-\infobubble{\faGithub}{cvgreen}{white}{sparrow}
+% \infobubble{\faAt}{cvgreen}{white}{rossella.romeo07@gmail.com}
+% \infobubble{\faAt}{cvgreen}{white}{rossella.romeo@arubapec.it}
+% \infobubble{\faLinkedin}{cvgreen}{white}{rossellaromeo84}
 
 \phantom{turn the page}
 
@@ -112,72 +129,77 @@ Privateering ~•~ Bucaneering ~•~ Parler ~•~ Rum
 \switchcolumn
 
 \small
-\section*{Short Resumé}
+\section*{Resumé}
 
-\begin{tabular}{r| p{0.5\textwidth} c}
-    \cvevent{2018--2021}{Captain of the Black Pearl}{Lead}{East Indies \color{cvred}}{Finally got the goddamn ship back.\lorem\lorem\lorem}{disney.png} \\
-    \cvevent{2016--2017}{Captain of the Black Pearl}{Lead}{Tortuga \color{cvred}}{Found a secret treasure, lost the ship. \lorem\lorem}{medal.jpeg}
+\begin{tabular}{r | p{0.5\textwidth}}
+    \cvevent{2021.09 -- presente}{Assistente amministrativo}{ASL3 Liguria}{Genova, Liguria, Italy}{Redazione, classificazione, archiviazione e protocollazione degli atti, mantenimento di un'organizzato sistema di archiviazione dei documenti cartacei e digitali, invio ordini d'acquisto, gestione pratiche burocratiche ospedaliere (rifiuti, decessi, ricerca scomparsi, ecc) \newline Supporto amministrativo e organizzativo al personale interno, interlocuzione con i servizi interni per lo scambio di informazioni e documenti, compilazione di documenti e modulistica nel rispetto delle policy \newline Gestione comunicazioni interne ed esterne attraverso mail e pec; elaborazione e inoltro di note interne, stesura di risposte ufficiali per l'utenza esterna in seguito a segnalazioni formali} \\ \\
+    \cvevent{2015 -- 2018}{Impiegata}{Studio di consulenza fiscale e del lavoro R. Gaglioti}{Palmi, Calabria, Italy}{Redazione della contrattualistica dipendenti, autoliquidazione Inail, elaborazione dati per cedolini paga \newline Elaborazione comunicazioni online con centri per l'impiego, istituti ed enti di previdenza}
 \end{tabular}
-\vspace{3em}
 
-\begin{minipage}[t]{0.35\textwidth}
-\section*{Degrees}
-\begin{tabular}{r p{0.6\textwidth} c}
-    \cvdegree{1710}{Captain}{Certified}{Tortuga Uni \color{headerblue}}{}{disney.png} \\
-    \cvdegree{1715}{Bucaneering}{M.A.}{London \color{headerblue}}{}{medal.jpeg} \\
-    \cvdegree{1720}{Bucaneering}{B.A.}{London \color{headerblue}}{}{medal.jpeg}
+% \vspace{1em}
+
+\section*{Titoli}
+\begin{tabular}{r p{0.6\textwidth}}
+    \cvdegree{in corso}{Laurea Magistrale in Amministrazione e Politiche Pubbliche}{Genova}{Università degli Studi di Genova \color{headerblue}} \\
+    \cvdegree{2020}{Laurea Triennale in Scienze Politiche e Relazioni Internazionali}{Roma}{Università degli Studi Niccolò Cusano \color{headerblue}} \\
+    \cvdegree{2003}{Diploma di Perito Aziendale e Corrispondente in Lingue Estere}{Genova}{Istituto Tecnico Commerciale Statale L. Einaudi - G. Casaregis} \\
 \end{tabular}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.3\textwidth}
-\section*{Programming}
-\begin{tabular}{r @{\hspace{0.5em}}l}
-     \bg{skilllabelcolour}{iconcolour}{html, css} &  \barrule{0.4}{0.5em}{cvpurple}\\
-     \bg{skilllabelcolour}{iconcolour}{\LaTeX} & \barrule{0.55}{0.5em}{cvgreen} \\
-     \bg{skilllabelcolour}{iconcolour}{python} & \barrule{0.5}{0.5em}{cvpurple} \\
-     \bg{skilllabelcolour}{iconcolour}{R} & \barrule{0.25}{0.5em}{cvpurple} \\
-     \bg{skilllabelcolour}{iconcolour}{javascript} & \barrule{0.1}{0.5em}{cvpurple} \\
-\end{tabular}
-\end{minipage}
+
+% \section*{Programming}
+% \begin{tabular}{r @{\hspace{0.5em}}l}
+%      \bg{skilllabelcolour}{iconcolour}{html, css} &  \barrule{0.4}{0.5em}{cvpurple}\\
+%      \bg{skilllabelcolour}{iconcolour}{\LaTeX} & \barrule{0.55}{0.5em}{cvgreen} \\
+%      \bg{skilllabelcolour}{iconcolour}{python} & \barrule{0.5}{0.5em}{cvpurple} \\
+%      \bg{skilllabelcolour}{iconcolour}{R} & \barrule{0.25}{0.5em}{cvpurple} \\
+%      \bg{skilllabelcolour}{iconcolour}{javascript} & \barrule{0.1}{0.5em}{cvpurple} \\
+% \end{tabular}
+
+% \vspace{1em}
 
 \section*{Curriculum}
 \begin{tabular}{r| p{0.5\textwidth} c}
-    \cvevent{2018--2021}{Captain of the Black Pearl}{Lead}{East Indies \color{cvred}}{Finally got the goddamn ship back. \lorem}{disney.png} \\
-    \cvevent{2019}{Freelance Pirate}{Bucaneering}{Tortuga \color{cvred}}{This and that. The usual, aye?  \lorem}{medal.jpeg} \\
+    \cvevent{2021.07 -- 2021.08}{Impiegata a contatto diretto con il pubblico}{RFI Rete Ferroviaria italiana}{Genova, Liguria, Italy}{Gestione dell'utenza allo sportello, accettazione presso l'hub vaccinale, rinnovo delle patenti tramite il portale dell'automobilista, centralino \newline Gestione delle pratiche burocratiche, in supporto al personale medico/paramedico} \\ \\
+    \cvevent{2020.11 -- 2021.04}{Allieva addetta alle operazioni ausiliare di vendita}{Coop Liguria}{Genova, Liguria, Italy}{Picking multicliente e multiordine, con riaggregazione spese \newline Ricezione ordini in real time e individuazione percorsi ottimali di acquisizione della merce} \\ \\
+    \cvevent{2013.11 -- 2014.09}{Addetta alla reception}{Casa vacanze Beverly Village}{Palmi, Calabria, Italy}{Accoglienza, assistenza e gestione interna del cliente \newline Gestione prenotazioni e profilo aziendale su Booking \newline Pagamenti e prima nota} \\ \\
+    \cvevent{2013.05 -- 2013.09}{Addetta alla reception}{AG.E.C. Resort****}{Palmi, Calabria, Italy}{Accoglienza, assistenza e gestione interna del cliente \newline Gestione prenotazioni e profilo aziendale su Booking \newline Pagamenti e prima nota} \\ \\
+    % \cvevent{2010.12 -- 2011.12}{Cassiere servizio clienti}{Contratti a chiamata @ Fiera di Genova}{Genova, Liguria, Italy}{Accoglienza e servizio di bar \newline Gestione cassa e banco, rifornimento merce} \\ \\
+    % \cvevent{2010.11 -- 2011.03}{Addetta alla reception}{DIRE (Dipartimento di Ricerche Europee)}{Genova, Liguria, Italy}{Attività a tempo parziale (150 ore) presso l'Università degli Studi di Genova \newline Accoglienza studenti \newline Mansioni d'ordine e di segreteria} \\ \\
 \end{tabular}
-\vspace{3em}
 
-\begin{minipage}[t]{0.3\textwidth}
-\section*{Certificates \& Grants}
-\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.55\textwidth}}
-    1708 & Captain's Certificates \\
-    1710 & Travel grant \\
-    1715--1716 & Grant from the Pirate's Company
-\end{tabular}
-\bigskip
+\vspace{1em}
 
-\section*{Languages}
-\begin{tabular}{l | ll}
-\textbf{English} & C2 & {\phantom{x}\footnotesize mother tongue} \\
-\textbf{French} & C2 & \pictofraction{\faCircle}{cvgreen}{3}{black!30}{1}{\tiny} \\
-\textbf{Spanish} & C2 & \pictofraction{\faCircle}{cvgreen}{1}{black!30}{3}{\tiny} \\
-\textbf{Italian} & C2 & \pictofraction{\faCircle}{cvgreen}{3}{black!30}{1}{\tiny}
-\end{tabular}
-\bigskip
+% \begin{minipage}[t]{0.3\textwidth}
+% \section*{Certificates \& Grants}
+% \begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.55\textwidth}}
+%     1708 & Captain's Certificates \\
+%     1710 & Travel grant \\
+%     1715--1716 & Grant from the Pirate's Company
+% \end{tabular}
+% \bigskip
 
-\end{minipage}\hfill
-\begin{minipage}[t]{0.3\textwidth}
-\section*{Publications}
-\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.7\textwidth}}
-    1729 & \emph{How I almost got killed by Lady Swan}, Tortuga Printing Press. \\
-    1720 & ``Privateering for Beginners'', in: \emph{The Pragmatic Pirate} (1/1720).
-\end{tabular}
-\bigskip
+% \section*{Languages}
+% \begin{tabular}{l | ll}
+% \textbf{English} & C2 & {\phantom{x}\footnotesize mother tongue} \\
+% \textbf{French} & C2 & \pictofraction{\faCircle}{cvgreen}{3}{black!30}{1}{\tiny} \\
+% \textbf{Spanish} & C2 & \pictofraction{\faCircle}{cvgreen}{1}{black!30}{3}{\tiny} \\
+% \textbf{Italian} & C2 & \pictofraction{\faCircle}{cvgreen}{3}{black!30}{1}{\tiny}
+% \end{tabular}
+% \bigskip
 
-\section*{Talks}
-\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.6\textwidth}}
-    Nov. 1726 & ``How I lost my ship (\& and how to get it back)'', at: \emph{Annual Pirate's Conference} in Tortuga, Nov. 1726.
-\end{tabular}
-\end{minipage}
+% \end{minipage}\hfill
+% \begin{minipage}[t]{0.3\textwidth}
+% \section*{Publications}
+% \begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.7\textwidth}}
+%     1729 & \emph{How I almost got killed by Lady Swan}, Tortuga Printing Press. \\
+%     1720 & ``Privateering for Beginners'', in: \emph{The Pragmatic Pirate} (1/1720).
+% \end{tabular}
+% \bigskip
+
+% \section*{Talks}
+% \begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.6\textwidth}}
+%     Nov. 1726 & ``How I lost my ship (\& and how to get it back)'', at: \emph{Annual Pirate's Conference} in Tortuga, Nov. 1726.
+% \end{tabular}
+% \end{minipage}
 
 
 
@@ -192,7 +214,19 @@ Privateering ~•~ Bucaneering ~•~ Parler ~•~ Rum
 \setlength{\parindent}{0pt}
 \begin{minipage}[t]{\rightcolwidth}
 \begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
-{\small Jack Sparrow \icon{\faEnvelopeO}{cvgreen}{} The Black Pearl \icon{\faMapMarker}{cvgreen}{} Tortuga \icon{\faPhone}{cvgreen}{} 0099/333 5647380 \newline\icon{\faAt}{cvgreen}{} \protect\url{jack@sparrow.com}
+{
+  \footnotesize Rossella Romeo
+  % \icon{\faEnvelopeO}{cvgreen}{} Campomorone, Genova
+  \icon{\faMapMarker}{cvgreen}{} Campomorone, Genova
+  \icon{\faPhone}{cvgreen}{} +39 3468881811
+  \newline
+  \icon{\faAt}{cvgreen}{} \protect\url{rossella.romeo07@gmail.com}
+  \icon{\faAt}{cvgreen}{} \protect\url{rossella.romeo@arubapec.it}
+  \newline
+  \icon{\faLinkedin}{cvgreen}{} \protect\url{https://www.linkedin.com/in/rossellaromeo84}
+  \newline
+  \newline
+  \tiny{Autorizzo il trattamento dei miei dati personali ai sensi del Decreto Legislativo 101/2018 e dell'art. 13 GDPR (Regolamento UE 2016/679).}
 }
 \end{center}
 \end{minipage}
