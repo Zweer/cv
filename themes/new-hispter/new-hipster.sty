@@ -1,0 +1,36 @@
+%%%%%%%%%%%%%%%%%%%%%%%%% Packages %%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[margin=0cm]{geometry}
+\usepackage[default]{raleway} % Fancy font
+\usepackage{fontawesome}      % Provides icons for the contact details
+
+\usepackage[most]{tcolorbox}
+\newtcolorbox{bgbox}[1][]{nobeforeafter,leftright skip=0pt,boxrule=0pt,enhanced jigsaw,sharp corners,#1}
+
+\usepackage{float}
+\usepackage[colorlinks = true, urlcolor = cvtext, linkcolor = cvtext]{hyperref}
+
+\usepackage{enumitem}        % To redefine spacing in lists
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
+
+\usepackage{titlesec} % Allows creating custom \sections
+\titleformat{\section}{\scshape\Large\raggedright}{}{0em}{}[\titlerule] % smallcaps, Large, continuous line - looks better if two columns, might look a bit too dramatic if just one ;)
+\titlespacing{\section}{0pt}{12pt}{5pt} % Spacing around titles {<left spacing>}{<before spacing>}{<after spacing>}
+
+%%%%%%%%%%%%%%%%%%%%%%%% Variables %%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength{\headerheight}
+\newlength{\rightcolwidth}
+\newlength{\leftcolwidth}
+\setlength{\headerheight}{3cm}
+\setlength{\leftcolwidth}{0.28\textwidth}
+\setlength{\rightcolwidth}{0.7\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%% New Commands %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\cvevent}[5]{
+  \footnotesize{#1} & \textbf{#2} \\
+  \footnotesize{#4 \color{cvlocation}\faMapMarker} & \footnotesize\textsc{#3} \\
+  & \color{black!70}\footnotesize{#5}
+}
+\newcommand{\cvdegree}[4]{
+  {#1} & \textbf{#2} \newline \textsc{#3} $\cdot$ {#4 {\color{cvuniversity}\phantom{i}\footnotesize ~\faUniversity}}
+}
+

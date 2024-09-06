@@ -1,48 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%% Initialization %%%%%%%%%%%%%%%%%%%%%%
-\documentclass[11pt, a4paper]{article}
-
-\usepackage[margin=0cm]{geometry}
-\usepackage[default]{raleway} % Fancy font
-\usepackage{fontawesome}      % Provides icons for the contact details
-
-\usepackage[most]{tcolorbox}
-\newtcolorbox{bgbox}[1][]{nobeforeafter,leftright skip=0pt,boxrule=0pt,enhanced jigsaw,sharp corners,#1}
-
-\usepackage{float}
-\usepackage[colorlinks = true, urlcolor = cvgray, linkcolor = cvgray]{hyperref}
-
-\usepackage{enumitem}        % To redefine spacing in lists
-\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
-
-\usepackage{titlesec} % Allows creating custom \sections
-\titleformat{\section}{\scshape\Large\raggedright}{}{0em}{}[\titlerule] % smallcaps, Large, continuous line - looks better if two columns, might look a bit too dramatic if just one ;)
-\titlespacing{\section}{0pt}{12pt}{5pt} % Spacing around titles {<left spacing>}{<before spacing>}{<after spacing>}
-
-%%%%%%%%%%%%%%%%%%%%%%%% Variables %%%%%%%%%%%%%%%%%%%%%%%%%
-\newlength{\headerheight}
-\newlength{\rightcolwidth}
-\newlength{\leftcolwidth}
-\setlength{\headerheight}{3cm}
-\setlength{\leftcolwidth}{0.28\textwidth}
-\setlength{\rightcolwidth}{0.7\textwidth}
-
-%%%%%%%%%%%%%%%%%%%%%% New Commands %%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\cvevent}[5]{
-  \footnotesize{#1} & \textbf{#2} \\
-  \footnotesize{#4 \color{cvred}\faMapMarker} & \footnotesize\textsc{#3} \\
-  & \color{black!70}\footnotesize{#5}
-}
-\newcommand{\cvdegree}[4]{
-  {#1} & \textbf{#2} \newline \textsc{#3} $\cdot$ {#4 {\color{headerblue}\phantom{i}\footnotesize ~\faUniversity}}
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%% Colors %%%%%%%%%%%%%%%%%%%%%%%%%%
-\definecolor{cvgreen}{HTML}{3B9E80}
-\colorlet{cvlightgreen}{cvgreen!30}
-\colorlet{cvlightlightgreen}{cvgreen!10}
-\definecolor{cvgray}{HTML}{646464}
-\definecolor{headerblue}{HTML}{2EB6E1}
-\definecolor{cvred}{HTML}{E1592E}
+\documentclass[pastel-red]{new-hipster}
+% pastel-green
+% pastel-red
+% light-metal
+% dark-metal
+% all-black
+% grey
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Rossella Romeo CV}
@@ -52,22 +15,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-\begin{bgbox}[height=\headerheight,width=\textwidth,colback=cvlightgreen,beforeafter skip=0pt]
+\begin{bgbox}[height=\headerheight,width=\textwidth,colback=cvheader,beforeafter skip=0pt]
   \vspace{2em}
-  \color{cvgray}
+  \color{cvheadertext}
   \centering
   \Huge Rossella \textbf{Romeo} \\
   \normalsize Assistente amministrativa di direzione
 \end{bgbox}
 \noindent
-\begin{bgbox}[height=\paperheight-\headerheight,width=\leftcolwidth,colback=cvlightlightgreen]
+\begin{bgbox}[height=\paperheight-\headerheight,width=\leftcolwidth,colback=cvsidebar]
   \begin{figure}[H]
     \centering
     \tikz
     \draw [path picture={ \node at (path picture bounding box.center){\includegraphics[height=3.5cm]{../../images/ro.jpg}} ;}] (0,0) circle (1.7cm) ;
   \end{figure}
 
-  \color{cvgray}
+  \color{cvsidebartext}
   \vspace*{-2ex}
 
   \section{Chi sono}
@@ -76,11 +39,11 @@
 
   \section{Contatti}
   \scriptsize
-  \faAt\ \href{mailto:rossella.romeo07@gmail.com}{rossella.romeo07@gmail.com} \\
-  \faAt\ \href{mailto:rossella.romeo@arubapec.it}{rossella.romeo@arubapec.it} \\
+  \faAt\ \href{mailto:rossella.romeo07@gmail.com}{\color{cvsidebartext}{rossella.romeo07@gmail.com}} \\
+  \faAt\ \href{mailto:rossella.romeo@arubapec.it}{\color{cvsidebartext}{rossella.romeo@arubapec.it}} \\
   \faPhone\ +39\,346\,888\,18\,11 \\
   \faEnvelopeO\ Campomorone (GE), Italy \\
-  \faLinkedin\ \href{https://www.linkedin.com/in/rossellaromeo84}{linkedin.com/in/rossellaromeo84}
+  \faLinkedin\ \href{https://www.linkedin.com/in/rossellaromeo84}{\color{cvsidebartext}{linkedin.com/in/rossellaromeo84}}
 
   \section{Info personali}
   \small
@@ -131,6 +94,7 @@
   \end{itemize}
 \end{bgbox}
 \begin{bgbox}[height=\paperheight-\headerheight,width=\rightcolwidth,colback=white]
+  \color{cvtext}
   \section*{Resumé}
   \begin{tabular}{r | p{0.7\textwidth}}
     \cvevent{2021.09 -- presente}{Coadiutore -> Assistente amministrativo}{ASL3 Liguria}{Genova, Liguria, Italy}{Redazione, classificazione, archiviazione e protocollazione degli atti, mantenimento di un'organizzato sistema di archiviazione dei documenti cartacei e digitali, invio ordini d'acquisto, gestione pratiche burocratiche ospedaliere (rifiuti, decessi, ricerca scomparsi, ecc) \newline Supporto amministrativo e organizzativo al personale interno, interlocuzione con i servizi interni per lo scambio di informazioni e documenti, compilazione di documenti e modulistica nel rispetto delle policy \newline Gestione comunicazioni interne ed esterne attraverso mail e pec; elaborazione e inoltro di note interne, stesura di risposte ufficiali per l'utenza esterna in seguito a segnalazioni formali} \\ \\
