@@ -27,6 +27,15 @@ async function renderCv(dataFilename: string): Promise<void> {
   } else {
     writeFileSync(join(buildFolder, dataFilename.replace('yaml', 'tex')), latexString);
   }
+
+  readdirSync(join(themeFolder, data.theme))
+    .filter((file) => file.endsWith('.cls') || file.endsWith('.sty'))
+    .forEach((file) =>
+      writeFileSync(
+        join(buildFolder, file),
+        readFileSync(join(themeFolder, data.theme, file), 'utf8'),
+      ),
+    );
 }
 
 async function main(): Promise<void> {

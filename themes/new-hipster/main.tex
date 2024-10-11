@@ -1,0 +1,117 @@
+%%%%%%%%%%%%%%%%%%%%%% Initialization %%%%%%%%%%%%%%%%%%%%%%
+\documentclass[{{ variant }}]{new-hipster}
+% pastel-green
+% pastel-red
+% light-metal
+% dark-metal
+% all-black
+% grey
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%
+\title{ {{ name }} {{ surname }} CV }
+\author{\LaTeX{} {{ name }} {{ surname }} }
+\date{August 2024}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{bgbox}[height=\headerheight,width=\textwidth,colback=cvheader,beforeafter skip=0pt]
+  \vspace{2em}
+  \color{cvheadertext}
+  \centering
+  \Huge {{ name }} \textbf{ {{ surname }} } \\
+  \normalsize {{ title }}
+\end{bgbox}
+\noindent
+\begin{bgbox}[height=\paperheight-\headerheight,width=\leftcolwidth,colback=cvsidebar]
+  \begin{figure}[H]
+    \centering
+    \tikz
+    \draw [path picture={ \node at (path picture bounding box.center){\includegraphics[height=3.5cm]{ {{ image }} }} ;}] (0,0) circle (1.7cm) ;
+  \end{figure}
+
+  \color{cvsidebartext}
+  \vspace*{-2ex}
+
+  \section{Chi sono}
+  \small
+  {{ abstract }}
+
+  \section{Contatti}
+  \scriptsize
+  \faAt\ \href{mailto:{{ email }}}{\color{cvsidebartext}{ {{ email }}} } \\
+  \faAt\ \href{mailto:{{ pec }}}{\color{cvsidebartext}{ {{ pec }} }} \\
+  \faPhone\ {{ phone | replace: " ", "\\," }} \\
+  \faEnvelopeO\ {{ location }} \\
+  \faLinkedin\ \href{ {{ links.linkedin }} }{\color{cvsidebartext}{ {{ links.linkedin | replace: "https://www.", "" }} }}
+
+  \section{Info personali}
+  \small
+  %Year of birth: \textbf{1861} \\
+  Cittadinanza: \textbf{ {{ citizenship | capitalize }} } \\
+  Lingue parlate:
+  \begin{itemize}
+    {% for language in languages %}
+      \item {{ language.name | capitalize }} ({{ language.level }})
+    {% endfor %}
+  \end{itemize}
+
+  \section{Skills}
+  \footnotesize
+  \begin{itemize}
+    {% for skill in skills %}
+      \item {{ skill }}
+    {% endfor %}
+  \end{itemize}
+
+  \section{Certificazioni}
+  \footnotesize
+  \begin{itemize}
+    {% for certification in certifications %}
+      \item {{ certification }}
+    {% endfor %}
+  \end{itemize}
+
+  \section{Hobbies}
+  \footnotesize
+  \begin{itemize}
+    {% for hobby in hobbies %}
+      \item {{ hobby }}
+    {% endfor %}
+  \end{itemize}
+\end{bgbox}
+\begin{bgbox}[height=\paperheight-\headerheight,width=\rightcolwidth,colback=white]
+  \color{cvtext}
+  \section*{Resumé}
+  \begin{tabular}{r | p{0.7\textwidth}}
+    {% assign resume = works | where: "resume", true %}
+    {% for work in resume %}
+    \cvevent{ {{ work.from }} -- {{ work.to}} }{ {{ work.title }} }{ {{ work.structure }} }{ {{ work.location }} }{ {% for task in work.tasks %} {{ task }} {%- if forloop.last == false -%}\newline{%- endif -%}{% endfor %} } \\ \\
+    {% endfor %}
+  \end{tabular}
+
+  \vspace{1em}
+
+  \section*{Titoli}
+  \footnotesize
+  \begin{tabular}{r p{0.8\textwidth}}
+    {% for education in educations %}
+    \cvdegree{ {{ education.to }} }{ {{ education.title }} }{ {{ education.location }} }{ {{ education.structure }} } \\
+    {% endfor %}
+  \end{tabular}
+
+  \vspace{1em}
+
+  \section*{Curriculum}
+  \begin{tabular}{r| p{0.7\textwidth} c}
+    {% assign curriculum = works | where: "resume", false %}
+    {% for work in curriculum %}
+    \cvevent{ {{ work.from }} -- {{ work.to}} }{ {{ work.title }} }{ {{ work.structure }} }{ {{ work.location }} }{ {% for task in work.tasks %} {{ task }} {%- if forloop.last == false -%}\newline{%- endif -%}{% endfor %} } \\ \\
+    {% endfor %}
+  \end{tabular}
+
+  \vspace{1.5ex}
+  \centering\tiny Autorizzo il trattamento dei miei dati personali ai sensi del Decreto Legislativo 101/2018 e dell'art. 13 GDPR (Regolamento UE 2016/679).
+\end{bgbox}
+
+\end{document}

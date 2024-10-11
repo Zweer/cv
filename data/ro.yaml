@@ -1,27 +1,27 @@
-theme: lux-sleek
-first-name: Rossella
-last-name: Romeo
-title: Assistente amministrativo di Direzione Medica Ospedaliera
-image: ./images/ro.jpg
+theme: new-hipster
+variant: pastel-red
+name: Rossella
+surname: Romeo
+title: Assistente amministrativo di direzione
+image: ../images/ro.jpg
 email: rossella.romeo07@gmail.com
 pec: rossella.romeo@arubapec.it
-phone: +39 3468881811
+phone: +39 346 888 18 11
 location: Campomorone (GE), Italy
+citizenship: italiana
 links:
   linkedin: https://www.linkedin.com/in/rossellaromeo84
-abstract: Assistente amministrativo di Direzione Medica Ospedaliera, proattiva, appassionata di tecnologia, comunicazione digitale e di digital transformation
+abstract: Assistente amministrativa di Direzione Medica Ospedaliera, proattiva, appassionata di tecnologia, comunicazione digitale e di digital transformation
 
 skills:
   - atteggiamento empatico
-  - propensione all'ascolto
+  # - propensione all'ascolto
   - comportamento assertivo
-  - scrittura veloce
-  - folium
-  - piattaforma areas
+  # - folium, piattaforma areas
   - time management
   - digital awereness
   - team leading
-  - autonomia
+  # - autonomia
   - doti organizzative
   - propensione alla crescita
   - problem solving
@@ -30,6 +30,9 @@ skills:
 certifications:
   - ECDL
   - ECDL Advanced
+  - Digital Marketing e Business English
+  - Gestione Risorse Umane
+  - Gestione Logistica e Magazzino
 
 languages:
   - name: italiano
@@ -43,91 +46,114 @@ languages:
 
 hobbies:
   - pole dance
+  - yoga
   - trekking
-  - volontariato
   - second hand
 
 works:
-  - structure: Asl 3 - Liguria
-    location: Genova, Liguria, Italia
-    from: 15/01/2024
-    to: now
-    title: Assistente amministrativo
+  - structure: ASL3 Liguria
+    location: Genova, Liguria, Italy
+    from: '2021.09'
+    to: presente
+    title: Coadiutore -> Assistente amministrativo
+    resume: true
     tasks:
       - Redazione, classificazione, archiviazione e protocollazione degli atti, mantenimento di un'organizzato sistema di archiviazione dei documenti cartacei e digitali, invio ordini d'acquisto, gestione pratiche burocratiche ospedaliere (rifiuti, decessi, ricerca scomparsi, ecc)
       - Supporto amministrativo e organizzativo al personale interno, interlocuzione con i servizi interni per lo scambio di informazioni e documenti, compilazione di documenti e modulistica nel rispetto delle policy
       - Gestione comunicazioni interne ed esterne attraverso mail e pec; elaborazione e inoltro di note interne, stesura di risposte ufficiali per l'utenza esterna in seguito a segnalazioni formali
     tasks-extended:
-      - Corrispondenza telefonica e via mail
-      - Classificazione e protocollazione degli atti
-      - Mantenimento di un sistema organizzato di archiviazione dei documenti cartacei e digitali
-      - Compilazione del registro di carico e scarico dei rifiuti ospedalieri
-      - Ricezione delle segnalazioni da parte dei cittadini - utenti ed assegnazione della pratica di risoluzione per competenza
-      - Invio di ordini elettronici tramite NSO
-      - Trasmissione di dati e flussi informativi per rilevazioni statistiche mensili
-      - Redazione bozze di nota
-      - Redazione ed invio di comunicazioni
-      - Stesura di testi mediante l'utilizzo di videoscrittura
-      - Interlocuzione con i servizi interni per lo scambio di informazioni e documenti
-      - Supporto amministrativo e organizzativo al personale interno
-      - Compilazione di documenti e modulistica nel rispetto delle policy
-      - Piena riservatezza verso dati e informazioni
     skills:
-      - Riservatezza
-      - Identificazione degli obiettivi
-      - Gestione delle priorita
-      - Attenzione al dettaglio
-      - Comunicazione scritta
-      - Ordini di acquisto
-      - Proattività
-      - Gestione reclami
-      - Competenze analitiche
-      - Gestione delle emergenze
-      - Ascolto attivo
-      - Time management
-      - Competenze organizzative
-      - Affidabilità
-      - Responsabilità professionale
 
-  - structure: Asl 3 - Liguria
-    location: Genova, Liguria, Italia
-    from: 13/09/2021
-    to: 14/01/2024
-    title: Coadiutore amministrativo
+  - structure: Studio di consulenza fiscale e del lavoro R. Gaglioti
+    location: Palmi, Calabria, Italy
+    from: '2015'
+    to: '2018'
+    title: Impiegata
+    resume: true
     tasks:
-      - Classificazione, archiviazione e protocollazione degli atti, mantenimento di un'organizzato sistema di archiviazione dei documenti cartacei e digitali, invio ordini d'acquisto, gestione pratiche burocratiche ospedaliere (decessi, ricerca scomparsi, ecc)
-      - Gestione (previa autorizzazione formale) convenzioni, dalla ricerca del contratto in essere alla stipula del nuovo / proroga del presente contratto
-      - Gestione comunicazioni interne ed esterne attraverso mail e pec; elaborazione e inoltro di note interne, stesura di risposte ufficiali per l'utenza esterna in seguito a segnalazioni formali
+      - Redazione della contrattualistica dipendenti, autoliquidazione Inail, elaborazione dati per cedolini paga
+      - Elaborazione comunicazioni online con centri per l'impiego, istituti ed enti di previdenza
     tasks-extended:
-      - Classificazione e protocollazione degli atti
-      - Redazione bozze di nota
-      - Redazione ed invio di comunicazioni
-      - Compilazione di documenti e modulistica
-      - Gestione comunicazioni interne ed esterne attraverso la posta elettronica e la posta elettronica certificata
-      - Mantenimento di un sistema organizzato di archiviazione dei documenti cartacei e digitali
-      - Ricerca di documentazione attraverso il sistema Intranet aziendale
-      - Interlocuzione con i servizi interni per lo scambio di informazioni e documenti
-      - Analisi delle segnalazioni da parte degli utenti ed assegnazione pratica di risoluzione per competenza
-      - Attività di segreteria di Direzione Medica Ospedaliera
-      - Stesura di testi mediante l'utilizzo di videoscrittura
     skills:
-      - Proattività
-      - Gestione dei reclami
-      - Gestione delle priorità
-      - Formazione sul campo
-      - Gestione delle emergenze
-      - Ascolto attivo
 
-  - structure: RFI Rete ferroviaria italiana
-    location: Genova, Liguria, Italia
-    from: 07/2021
-    to: 08/2021
+  # - structure: Asl 3 - Liguria
+  #   location: Genova, Liguria, Italia
+  #   from: 15/01/2024
+  #   to: now
+  #   title: Assistente amministrativo
+  #   tasks:
+  #     - Redazione, classificazione, archiviazione e protocollazione degli atti, mantenimento di un'organizzato sistema di archiviazione dei documenti cartacei e digitali, invio ordini d'acquisto, gestione pratiche burocratiche ospedaliere (rifiuti, decessi, ricerca scomparsi, ecc)
+  #     - Supporto amministrativo e organizzativo al personale interno, interlocuzione con i servizi interni per lo scambio di informazioni e documenti, compilazione di documenti e modulistica nel rispetto delle policy
+  #     - Gestione comunicazioni interne ed esterne attraverso mail e pec; elaborazione e inoltro di note interne, stesura di risposte ufficiali per l'utenza esterna in seguito a segnalazioni formali
+  #   tasks-extended:
+  #     - Corrispondenza telefonica e via mail
+  #     - Classificazione e protocollazione degli atti
+  #     - Mantenimento di un sistema organizzato di archiviazione dei documenti cartacei e digitali
+  #     - Compilazione del registro di carico e scarico dei rifiuti ospedalieri
+  #     - Ricezione delle segnalazioni da parte dei cittadini - utenti ed assegnazione della pratica di risoluzione per competenza
+  #     - Invio di ordini elettronici tramite NSO
+  #     - Trasmissione di dati e flussi informativi per rilevazioni statistiche mensili
+  #     - Redazione bozze di nota
+  #     - Redazione ed invio di comunicazioni
+  #     - Stesura di testi mediante l'utilizzo di videoscrittura
+  #     - Interlocuzione con i servizi interni per lo scambio di informazioni e documenti
+  #     - Supporto amministrativo e organizzativo al personale interno
+  #     - Compilazione di documenti e modulistica nel rispetto delle policy
+  #     - Piena riservatezza verso dati e informazioni
+  #   skills:
+  #     - Riservatezza
+  #     - Identificazione degli obiettivi
+  #     - Gestione delle priorita
+  #     - Attenzione al dettaglio
+  #     - Comunicazione scritta
+  #     - Ordini di acquisto
+  #     - Proattività
+  #     - Gestione reclami
+  #     - Competenze analitiche
+  #     - Gestione delle emergenze
+  #     - Ascolto attivo
+  #     - Time management
+  #     - Competenze organizzative
+  #     - Affidabilità
+  #     - Responsabilità professionale
+
+  # - structure: Asl 3 - Liguria
+  #   location: Genova, Liguria, Italia
+  #   from: 13/09/2021
+  #   to: 14/01/2024
+  #   title: Coadiutore amministrativo
+  #   tasks:
+  #     - Classificazione, archiviazione e protocollazione degli atti, mantenimento di un'organizzato sistema di archiviazione dei documenti cartacei e digitali, invio ordini d'acquisto, gestione pratiche burocratiche ospedaliere (decessi, ricerca scomparsi, ecc)
+  #     - Gestione (previa autorizzazione formale) convenzioni, dalla ricerca del contratto in essere alla stipula del nuovo / proroga del presente contratto
+  #     - Gestione comunicazioni interne ed esterne attraverso mail e pec; elaborazione e inoltro di note interne, stesura di risposte ufficiali per l'utenza esterna in seguito a segnalazioni formali
+  #   tasks-extended:
+  #     - Classificazione e protocollazione degli atti
+  #     - Redazione bozze di nota
+  #     - Redazione ed invio di comunicazioni
+  #     - Compilazione di documenti e modulistica
+  #     - Gestione comunicazioni interne ed esterne attraverso la posta elettronica e la posta elettronica certificata
+  #     - Mantenimento di un sistema organizzato di archiviazione dei documenti cartacei e digitali
+  #     - Ricerca di documentazione attraverso il sistema Intranet aziendale
+  #     - Interlocuzione con i servizi interni per lo scambio di informazioni e documenti
+  #     - Analisi delle segnalazioni da parte degli utenti ed assegnazione pratica di risoluzione per competenza
+  #     - Attività di segreteria di Direzione Medica Ospedaliera
+  #     - Stesura di testi mediante l'utilizzo di videoscrittura
+  #   skills:
+  #     - Proattività
+  #     - Gestione dei reclami
+  #     - Gestione delle priorità
+  #     - Formazione sul campo
+  #     - Gestione delle emergenze
+  #     - Ascolto attivo
+
+  - structure: RFI Rete Ferroviaria italiana
+    location: Genova, Liguria, Italy
+    from: '2021.07'
+    to: '2021.08'
     title: Impiegata a contatto diretto con il pubblico
+    resume: false
     tasks:
       - Gestione dell'utenza allo sportello, accettazione presso l'hub vaccinale, rinnovo delle patenti tramite il portale dell'automobilista, centralino
-      - Inserimento dei dati nei software gestionali i per visite preassuntive/di controllo periodico/di rientro da malattia/esami tossicologici e colloqui di fine rapporto
-      - Raccolta e registrazione dei documenti per l'emissione/rinnovo delle patenti nautiche e terrestri
-      - Pagamenti con POS, apertura e chiusura della cassa ed invio dei corrispettivi all'Agenzia delle Entrate
       - Gestione delle pratiche burocratiche, in supporto al personale medico/paramedico
     tasks-extended:
       - Gestione dell'utenza allo sportello
@@ -144,10 +170,11 @@ works:
 
   - structure: Coop Liguria
     part-time: true
-    location: Genova, Liguria Italia
-    from: 11/2020
-    to: 04/2021
+    location: Genova, Liguria, Italy
+    from: '2020.11'
+    to: '2021.04'
     title: Allieva addetta alle operazioni ausiliare di vendita
+    resume: false
     tasks:
       - Picking multicliente e multiordine, con riaggregazione spese
       - Ricezione ordini in real time e individuazione percorsi ottimali di acquisizione della merce
@@ -162,32 +189,33 @@ works:
       - Gestione stoccaggio prodotti freschi e surgelati
       - Sostituzione automatica
 
-  - structure: Studio di consulenza fiscale e del lavoro R. Gaglioti
-    part-time: true
-    location: Palmi, Calabria, Italia
-    from: 07/2015
-    to: 05/2018
-    title: Impiegata
-    tasks:
-      - Redazione della contrattualistica dipendenti, autoliquidazione Inail, elaborazione dati per cedolini paga
-      - Elaborazione comunicazioni online con centri per l'impiego, istituti ed enti di previdenza
-    tasks-extended:
-      - Redazione della contrattualistica
-      - Elaborazione comunicazioni online con centri per l'impiego, istituti ed enti di previdenza
-      - Aggiornamento anagrafiche dei dipendenti
-      - Monitoraggio e gestione del sistema di rilevazione presenze
-      - Elaborazione dei dati per i cedolini paga
-      - Autoliquidazione Inail
-      - Elaborazione F24
-      - Invio pagamenti telematici
-      - Attività di supporto ai colleghi
+  # - structure: Studio di consulenza fiscale e del lavoro R. Gaglioti
+  #   part-time: true
+  #   location: Palmi, Calabria, Italia
+  #   from: 07/2015
+  #   to: 05/2018
+  #   title: Impiegata
+  #   tasks:
+  #     - Redazione della contrattualistica dipendenti, autoliquidazione Inail, elaborazione dati per cedolini paga
+  #     - Elaborazione comunicazioni online con centri per l'impiego, istituti ed enti di previdenza
+  #   tasks-extended:
+  #     - Redazione della contrattualistica
+  #     - Elaborazione comunicazioni online con centri per l'impiego, istituti ed enti di previdenza
+  #     - Aggiornamento anagrafiche dei dipendenti
+  #     - Monitoraggio e gestione del sistema di rilevazione presenze
+  #     - Elaborazione dei dati per i cedolini paga
+  #     - Autoliquidazione Inail
+  #     - Elaborazione F24
+  #     - Invio pagamenti telematici
+  #     - Attività di supporto ai colleghi
 
   - structure: Casa vacanze Beverly Village
     part-time: true
-    location: Palmi, Calabria, Italia
-    from: 11/2013
-    to: 09/2014
+    location: Palmi, Calabria, Italy
+    from: '2013.11'
+    to: '2014.09'
     title: Addetta alla reception
+    resume: false
     tasks:
       - Accoglienza, assistenza e gestione interna del cliente
       - Gestione prenotazioni e profilo aziendale su Booking
@@ -203,9 +231,10 @@ works:
   - structure: AG.E.C. Resort****
     part-time: true
     location: Bagnara Calabra, Calabria, Italia
-    from: 05/2013
-    to: 09/2013
+    from: '2013.05'
+    to: '2013.09'
     title: Addetta alla reception
+    resume: false
     tasks:
       - Accoglienza, assistenza e gestione interna del cliente
       - Gestione prenotazioni e profilo aziendale su Booking
@@ -218,48 +247,56 @@ works:
       - Gestione profilo aziendale sul portale Booking
       - Pagamenti e prima nota
 
-  - structure: Fiera Natalidea / Fiera Primavera presso Fiera di Genova
-    location: Genova, Liguria, Italia
-    from: 12/2010
-    to: 12/2011
-    title: Cassiere servizio clienti (Contratti a chiamata)
-    tasks:
-      - Accoglienza e servizio di bar
-      - Gestione cassa e banco, rifornimento merce
-    tasks-extended:
-      - Accoglienza della clientela al bar
-      - Preparazione del servizio del caffè
-      - Servizio al banco
-      - Gestione cassa
-      - Pulizia delle attrezzature del bar
-      - Rifornimento e gestione del banco
+  # - structure: Fiera Natalidea / Fiera Primavera presso Fiera di Genova
+  #   location: Genova, Liguria, Italia
+  #   from: 12/2010
+  #   to: 12/2011
+  #   title: Cassiere servizio clienti (Contratti a chiamata)
+  #   tasks:
+  #     - Accoglienza e servizio di bar
+  #     - Gestione cassa e banco, rifornimento merce
+  #   tasks-extended:
+  #     - Accoglienza della clientela al bar
+  #     - Preparazione del servizio del caffè
+  #     - Servizio al banco
+  #     - Gestione cassa
+  #     - Pulizia delle attrezzature del bar
+  #     - Rifornimento e gestione del banco
 
-  - structure: DIRE (Dipartimento di Ricerche Europee)
-    location: Genova, Liguria, Italia
-    from: 11/2010
-    to: 03/2011
-    title: Addetta alla reception
-    tasks:
-      - Attività a tempo parziale (150 ore) presso l'Università degli Studi di Genova
-      - Accoglienza studenti
-      - Mansioni d'ordine e di segreteria
+  # - structure: DIRE (Dipartimento di Ricerche Europee)
+  #   location: Genova, Liguria, Italia
+  #   from: 11/2010
+  #   to: 03/2011
+  #   title: Addetta alla reception
+  #   tasks:
+  #     - Attività a tempo parziale (150 ore) presso l'Università degli Studi di Genova
+  #     - Accoglienza studenti
+  #     - Mansioni d'ordine e di segreteria
 
-  - structure: Tempor Srl
-    location: Genova, Liguria, Italia
-    from: 03/2003
-    to: 03/2003
-    title: Addetta alla reception (stage)
-    tasks:
-      - Stage scolastico presso Agenzia di Lavoro interinale
-      - Accoglienza dei candidati in filiale
-      - Inserimento dati nel database aziendale
-      - Mansioni di segreteria semplice
+  # - structure: Tempor Srl
+  #   location: Genova, Liguria, Italia
+  #   from: 03/2003
+  #   to: 03/2003
+  #   title: Addetta alla reception (stage)
+  #   tasks:
+  #     - Stage scolastico presso Agenzia di Lavoro interinale
+  #     - Accoglienza dei candidati in filiale
+  #     - Inserimento dati nel database aziendale
+  #     - Mansioni di segreteria semplice
+
 educations:
+  - structure: Università degli Studi di Genova
+    location: Genova
+    from: 2022
+    to: in corso
+    title: Laurea Magistrale in Amministrazione e Politiche Pubbliche
+    tasks:
+
   - structure: Università degli Studi Niccolò Cusano
     location: Roma
     from: 2018
     to: 2020
-    title: Laurea triennale in Scienze Politiche e Relazioni Internazionali
+    title: Laurea Triennale in Scienze Politiche e Relazioni Internazionali
     tasks:
       - "Voto finale: 110/110"
       - Inglese
@@ -280,40 +317,40 @@ educations:
       - Tedesco
       - Economia aziendale
 
-  - structure: AxL S.p.A - Agenzia per il Lavoro
-    location: Brescia
-    from: 06/2021
-    to: 06/2021
-    title: Attestato di partecipazione al Corso online di Digital Marketing e Business English (40 ore)
-    tasks:
-      - La figura del social media manager
-      - Stesura di un piano editoriale
-      - Marketing e comunicazione via Facebook
-      - Pubblicizzazione di un brand via Instagram
-      - Fare networking attraverso Linkedin
-      - Gestione di un blog creato con wordpresss
-      - Gestione di una newsletter
-      - Advertising sui social network
-      - Uso della lingua inglese nel mondo del business
+  # - structure: AxL S.p.A - Agenzia per il Lavoro
+  #   location: Brescia
+  #   from: 06/2021
+  #   to: 06/2021
+  #   title: Attestato di partecipazione al Corso online di Digital Marketing e Business English (40 ore)
+  #   tasks:
+  #     - La figura del social media manager
+  #     - Stesura di un piano editoriale
+  #     - Marketing e comunicazione via Facebook
+  #     - Pubblicizzazione di un brand via Instagram
+  #     - Fare networking attraverso Linkedin
+  #     - Gestione di un blog creato con wordpresss
+  #     - Gestione di una newsletter
+  #     - Advertising sui social network
+  #     - Uso della lingua inglese nel mondo del business
 
-  - structure: Ente di formazione Manager S.r.l.
-    location: Torino
-    from: 05/2020
-    to: 05/2020
-    title: Attestato di partecipazione al Corso online di Addetto alla Gestione delle Risorse Umane (80 ore)
-    tasks:
-      - Cenni di amministrazione del personale
-      - La comunicazione interpersonale
-      - Analisi delle competenze trasversali
-      - Elaborazione e definizione del profilo professionale
-      - "Gli annunci di ricerca: annuncio efficace"
-      - "Lo screening dei curricula: criteri di scelta del profilo"
-      - "Test di selezione: tipologie"
-      - "Il colloquio di selezione: scelta dello stile e delle aree d'indagine"
-      - Individuazione delle domande in base agli obiettivi di ricerca
-      - Scelta della tipologia di colloquio da utilizzare
-      - "Assessment center: prove di gruppo e prove individuali"
-      - Stesura della scheda candidato
+  # - structure: Ente di formazione Manager S.r.l.
+  #   location: Torino
+  #   from: 05/2020
+  #   to: 05/2020
+  #   title: Attestato di partecipazione al Corso online di Addetto alla Gestione delle Risorse Umane (80 ore)
+  #   tasks:
+  #     - Cenni di amministrazione del personale
+  #     - La comunicazione interpersonale
+  #     - Analisi delle competenze trasversali
+  #     - Elaborazione e definizione del profilo professionale
+  #     - "Gli annunci di ricerca: annuncio efficace"
+  #     - "Lo screening dei curricula: criteri di scelta del profilo"
+  #     - "Test di selezione: tipologie"
+  #     - "Il colloquio di selezione: scelta dello stile e delle aree d'indagine"
+  #     - Individuazione delle domande in base agli obiettivi di ricerca
+  #     - Scelta della tipologia di colloquio da utilizzare
+  #     - "Assessment center: prove di gruppo e prove individuali"
+  #     - Stesura della scheda candidato
 
   - structure: Ente di formazione Abea S.r.l.
     location: Milano
