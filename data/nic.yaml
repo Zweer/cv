@@ -1,13 +1,14 @@
-theme: lux-sleek
-first-name: Niccolò
-last-name: Olivieri Achille
+theme: new-hipster
+variant: pastel-red
+language: en
+name: Niccolò
+surname: Olivieri Achille
 title: Head of IT Delivery
-image: ./images/nic.jpg
+image: ../images/nic.jpg
 email: niccolo@olivieriachille.com
-phone: +39 3886465482
+phone: +39 388 64 65 482
 location: Milan, Italy
-abstract: >-
-  Tech enthusiast, gamer, geek, nerd saving money to open a chiringuito in Formentera
+abstract: Tech enthusiast, gamer, geek, nerd saving money to open a chiringuito in Formentera
 
 links:
   linkedin: https://www.linkedin.com/in/niccoloolivieri/
@@ -19,67 +20,87 @@ skills:
   - Cloud
   # - Log
   - APM
-  # - PerfOps
+  - PerfOps
   - DevOps
   - Mgmt
 
+languages:
+  - name: italian
+    level: mother tongue
+  - name: english
+    level: C1
+
 works:
-  - position: Head of IT Delivery
-    company: BePower (Plenitude BeCharge)
-    from: 03/2020
+  - title: Head of IT Delivery
+    structure: BePower (Plenitude on the Road)
+    location: Milan, Italy
+    from: '2020.03'
     to: now
+    resume: true
     tasks:
       - Team of 20+ people, analysts, PMs, devs, testers
       - Projects coordinator + interface with business
       - Cloud Architect (AWS)
 
-  - position: Senior Software Engineer (Salesforce Certified)
-    company: ThinkOpen @ Reply
-    from: 07/2017
-    to: 04/2020
+  - title: Senior Software Engineer (Salesforce Certified)
+    structure: ThinkOpen @ Reply
+    location: Milan, Italy
+    from: '2017.07'
+    to: '2020.04'
+    resume: true
     tasks:
       - Tech & Team Leader in CRM (Salesforce) and Backend Projects
       - Realtime Chatbot
       - Cloud Architect using IaaS (AWS), PaaS (Heroku) and CRM
 
-  - position: APM Specialist (Splunk Certified)
-    company: Moviri
-    from: 07/2015
-    to: 07/2017
+  - title: APM Specialist (Splunk Certified)
+    structure: Moviri
+    location: Milan, Italy
+    from: '2015.07'
+    to: '2017.07'
+    resume: true
     tasks:
       - Synthetic & Real User Monitoring (web & mobile applications)
       - Operational Analytics
       - Cloud Automation & PaaS
 
-  - position: Software Developer
-    company: Travelnuts
-    from: 07/2013
-    to: 09/2015
+  - title: Software Developer
+    structure: Travelnuts
+    location: San Francisco, California, USA
+    from: '2013.07'
+    to: '2015.09'
+    resume: false
     tasks:
       - "\"Hydra\", web application with many goals and frontends"
       - Coordinate the development of the application and its interactions with a mobile app
 
-  - position: FrontEnd Web Developer
-    company: Graffiti 2000
-    from: 10/2012
-    to: 06/2015
+  - title: FrontEnd Web Developer
+    structure: Graffiti 2000
+    location: Arco, Trentino, Italy
+    from: '2012.10'
+    to: '2015.06'
+    resume: false
     tasks:
       - Lead developer for Wordpress/PHP and Node.js
       - Expert in UX and Browser Visual Effects
 
-  - position: Performance Specialist
-    company: Moviri
-    from: 12/2010
-    to: 09/2012
+  - title: Performance Specialist
+    structure: Moviri
+    location: Milan, Italy
+    from: '2010.12'
+    to: '2012.09'
+    resume: false
     tasks:
       - Consultant, Performance and Diagnostics Specialist
       - Real-time reporting
       - Capacity & Load Testing
 
-  - position: Webmaster
-    company: Many small works
-    from: 09/2004
-    to: 09/2016
+  - title: Webmaster
+    structure: Many small works
+    location: Milan, Italy
+    from: '2004.09'
+    to: '2016.09'
+    resume: false
     tasks:
       - Realization of small websites for individuals or companies
 
@@ -112,9 +133,11 @@ projects:
       - Virtual assistant
 
 educations:
-  - name: Computer Engineering
-    school: Politecnico di Milano
-    date: 12/2010
+  - title: Computer Engineering
+    structure: Politecnico di Milano
+    location: Milan, Italy
+    from: 2004
+    to: 2010
 
 teachings:
   - name: Workshop & Academy

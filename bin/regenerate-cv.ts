@@ -6,21 +6,23 @@ import { parse } from 'yaml';
 
 import { Cv } from '../data/cv.interface';
 
-const liquid = new Liquid();
-
 const dry = process.argv.some((arg) => arg === '--dry');
 
 const rootFolder = join(__dirname, '..');
 const dataFolder = join(rootFolder, 'data');
+const i18nFolder = join(rootFolder, 'i18n');
 const themeFolder = join(rootFolder, 'themes');
 const buildFolder = join(rootFolder, 'build');
 
 async function renderCv(dataFilename: string): Promise<void> {
-  const dataString = readFileSync(join(dataFolder, dataFilename), 'utf8');
-  const data = parse(dataString) as Cv;
+  const cvString = readFileSync(join(dataFolder, dataFilename), 'utf8');
+  const cv = parse(cvString) as Cv;
+  const i18nString = readFileSync(join(i18nFolder, `${cv.language}.yaml`), 'utf8');
+  const i18n = parse(i18nString);
 
-  const themeString = readFileSync(join(themeFolder, data.theme, 'main.tex'), 'utf8');
-  const latexString = (await liquid.parseAndRender(themeString, data)) as string;
+  const themeString = readFileSync(join(themeFolder, cv.theme, 'main.tex'), 'utf8');
+  const liquid = new Liquid({ locale: cv.language });
+  const latexString = (await liquid.parseAndRender(themeString, { cv, i18n })) as string;
 
   if (dry) {
     console.log(latexString);
@@ -28,12 +30,12 @@ async function renderCv(dataFilename: string): Promise<void> {
     writeFileSync(join(buildFolder, dataFilename.replace('yaml', 'tex')), latexString);
   }
 
-  readdirSync(join(themeFolder, data.theme))
+  readdirSync(join(themeFolder, cv.theme))
     .filter((file) => file.endsWith('.cls') || file.endsWith('.sty'))
     .forEach((file) =>
       writeFileSync(
         join(buildFolder, file),
-        readFileSync(join(themeFolder, data.theme, file), 'utf8'),
+        readFileSync(join(themeFolder, cv.theme, file), 'utf8'),
       ),
     );
 }

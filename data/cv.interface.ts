@@ -16,6 +16,8 @@ export interface Structure {
 
 export interface Cv {
   theme: 'lux-sleek' | 'simple-hipster';
+  variant: string;
+  language: string;
   firstName: string;
   lastName: string;
   title: string;
