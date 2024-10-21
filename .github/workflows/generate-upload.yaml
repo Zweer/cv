@@ -26,6 +26,7 @@ jobs:
         with:
           root_file: |
             ./build/*.tex
+          work_in_root_file_dir: true
 
       - name: Create release for pdfs
         uses: softprops/action-gh-release@v2
