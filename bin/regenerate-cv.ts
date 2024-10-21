@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, writeFileSync } from 'fs';
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
 import { Liquid } from 'liquidjs';
@@ -43,6 +43,14 @@ async function renderCv(dataFilename: string): Promise<void> {
 async function main(): Promise<void> {
   if (dry) {
     console.log('!!! Dry run !!!');
+  } else {
+    // Create the buildFolder if not present
+    try {
+      readdirSync(buildFolder);
+    } catch (error) {
+      console.log('Creating build folder');
+      mkdirSync(buildFolder);
+    }
   }
 
   const dataFiles = readdirSync(dataFolder);
