@@ -40,7 +40,7 @@
   \section{ {{ i18n.contacts }} }
   \scriptsize
   \faAt\ \href{mailto:{{ cv.email }}}{\color{cvsidebartext}{ {{ cv.email }}} } \\
-  \faAt\ \href{mailto:{{ cv.pec }}}{\color{cvsidebartext}{ {{ cv.pec }} }} \\
+  % {% if cv.pec %}\faAt\ \href{mailto:{{ cv.pec }}}{\color{cvsidebartext}{ {{ cv.pec }} }} \\ {% endif %}
   \faPhone\ {{ cv.phone | replace: " ", "\\," }} \\
   \faEnvelopeO\ {{ cv.location }} \\
   \faLinkedin\ \href{ {{ cv.links.linkedin }} }{\color{cvsidebartext}{ {{ cv.links.linkedin | replace: "https://www.", "" }} }}
@@ -64,6 +64,7 @@
     {% endfor %}
   \end{itemize}
 
+  {% if cv.certifications %}
   \section{ {{ i18n.certifications }} }
   \footnotesize
   \begin{itemize}
@@ -71,7 +72,9 @@
       \item {{ certification }}
     {% endfor %}
   \end{itemize}
+  {% endif %}
 
+  {% if cv.hobbies %}
   \section{ {{ i18n.hobbies }} }
   \footnotesize
   \begin{itemize}
@@ -79,6 +82,23 @@
       \item {{ hobby }}
     {% endfor %}
   \end{itemize}
+  {% endif %}
+
+  {% if cv.projects %}
+  \section{ {{ i18n.projects }} }
+    {% for project in cv.projects %}
+    \textbf{ {{ project.name }} } ({{ project.date }})
+    \footnotesize
+    \begin{itemize}
+      {% for description in project.descriptions %}
+        \item {{ description }}
+      {% endfor %}
+    \end{itemize}
+    {%- if forloop.last == false -%}
+    \\
+    {% endif %}
+    {% endfor %}
+  {% endif %}
 \end{bgbox}
 \begin{bgbox}[height=\paperheight-\headerheight,width=\rightcolwidth,colback=white]
   \color{cvtext}
@@ -86,7 +106,7 @@
   \begin{tabular}{r | p{0.7\textwidth}}
     {% assign resume = cv.works | where: "resume", true %}
     {% for work in resume %}
-    \cvevent{ {{ work.from }} -- {{ work.to}} }{ {{ work.title }} }{ {{ work.structure }} }{ {{ work.location }} }{ {% for task in work.tasks %} {{ task }} {%- if forloop.last == false -%}\newline{%- endif -%}{% endfor %} } \\ \\
+    \cvevent{ {{ work.from }} -- {{ work.to}} }{ {{ work.title }} }{ {{ work.structure }} }{ {{ work.location }} }{ {% for task in work.tasks %} {{ task | replace: "&", "\\&" }} {%- if forloop.last == false -%}\newline{%- endif -%}{% endfor %} } \\ \\
     {% endfor %}
   \end{tabular}
 
@@ -106,7 +126,7 @@
   \begin{tabular}{r| p{0.7\textwidth} c}
     {% assign curriculum = cv.works | where: "resume", false %}
     {% for work in curriculum %}
-    \cvevent{ {{ work.from }} -- {{ work.to}} }{ {{ work.title }} }{ {{ work.structure }} }{ {{ work.location }} }{ {% for task in work.tasks %} {{ task }} {%- if forloop.last == false -%}\newline{%- endif -%}{% endfor %} } \\ \\
+    \cvevent{ {{ work.from }} -- {{ work.to}} }{ {{ work.title }} }{ {{ work.structure }} }{ {{ work.location }} }{ {% for task in work.tasks %} {{ task | replace: "&", "\\&" }} {%- if forloop.last == false -%}\newline{%- endif -%}{% endfor %} } \\ \\
     {% endfor %}
   \end{tabular}
 

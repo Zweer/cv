@@ -12,7 +12,7 @@ location: Campomorone (GE), Italy
 citizenship: italiana
 links:
   linkedin: https://www.linkedin.com/in/rossellaromeo84
-abstract: Assistente amministrativa di Direzione Medica Ospedaliera, proattiva, appassionata di tecnologia, comunicazione digitale e di digital transformation
+abstract: Assistente amministrativo di Direzione Medica Ospedaliera, proattiva, appassionata di tecnologia, comunicazione digitale e di digital transformation
 
 skills:
   - atteggiamento empatico
@@ -334,35 +334,35 @@ educations:
   #     - Advertising sui social network
   #     - Uso della lingua inglese nel mondo del business
 
-  # - structure: Ente di formazione Manager S.r.l.
-  #   location: Torino
-  #   from: 05/2020
-  #   to: 05/2020
-  #   title: Attestato di partecipazione al Corso online di Addetto alla Gestione delle Risorse Umane (80 ore)
-  #   tasks:
-  #     - Cenni di amministrazione del personale
-  #     - La comunicazione interpersonale
-  #     - Analisi delle competenze trasversali
-  #     - Elaborazione e definizione del profilo professionale
-  #     - "Gli annunci di ricerca: annuncio efficace"
-  #     - "Lo screening dei curricula: criteri di scelta del profilo"
-  #     - "Test di selezione: tipologie"
-  #     - "Il colloquio di selezione: scelta dello stile e delle aree d'indagine"
-  #     - Individuazione delle domande in base agli obiettivi di ricerca
-  #     - Scelta della tipologia di colloquio da utilizzare
-  #     - "Assessment center: prove di gruppo e prove individuali"
-  #     - Stesura della scheda candidato
-
-  - structure: Ente di formazione Abea S.r.l.
-    location: Milano
-    from: 04/2020
-    to: 04/2020
-    title: Attestato di partecipazione al Corso online di Gestione Logistica e Magazzino (72 ore)
+  - structure: Ente di formazione Manager S.r.l.
+    location: Torino
+    from: 05/2020
+    to: 05/2020
+    title: Attestato di partecipazione al Corso online di Addetto alla Gestione delle Risorse Umane (80 ore)
     tasks:
-      - "Gli indici delle prestazioni: i KPI"
-      - Livello di Riordino, Periodo Fisso, Scorta di Sicurezza e situazioni di "out-of-stock"
-      - Material Requirement Planning e "Just in Time"
-      - Metodi di valorizzazione delle scorte (LIFO, FIFO, Costo Medio)
-      - "I metodi di picking: Batch vs Order e Trasversal vs Return"
-      - Supply Chain e Outsourcing Logistico
-      - Procedure di preparazione delle spedizioni
+      - Cenni di amministrazione del personale
+      - La comunicazione interpersonale
+      - Analisi delle competenze trasversali
+      - Elaborazione e definizione del profilo professionale
+      - "Gli annunci di ricerca: annuncio efficace"
+      - "Lo screening dei curricula: criteri di scelta del profilo"
+      - "Test di selezione: tipologie"
+      - "Il colloquio di selezione: scelta dello stile e delle aree d'indagine"
+      - Individuazione delle domande in base agli obiettivi di ricerca
+      - Scelta della tipologia di colloquio da utilizzare
+      - "Assessment center: prove di gruppo e prove individuali"
+      - Stesura della scheda candidato
+
+  # - structure: Ente di formazione Abea S.r.l.
+  #   location: Milano
+  #   from: 04/2020
+  #   to: 04/2020
+  #   title: Attestato di partecipazione al Corso online di Gestione Logistica e Magazzino (72 ore)
+  #   tasks:
+  #     - "Gli indici delle prestazioni: i KPI"
+  #     - Livello di Riordino, Periodo Fisso, Scorta di Sicurezza e situazioni di "out-of-stock"
+  #     - Material Requirement Planning e "Just in Time"
+  #     - Metodi di valorizzazione delle scorte (LIFO, FIFO, Costo Medio)
+  #     - "I metodi di picking: Batch vs Order e Trasversal vs Return"
+  #     - Supply Chain e Outsourcing Logistico
+  #     - Procedure di preparazione delle spedizioni

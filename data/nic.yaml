@@ -4,10 +4,11 @@ language: en
 name: Niccolò
 surname: Olivieri Achille
 title: Head of IT Delivery
-image: ../images/nic.jpg
+image: ../images/nic-square.jpg
 email: niccolo@olivieriachille.com
 phone: +39 388 64 65 482
 location: Milan, Italy
+citizenship: italian
 abstract: Tech enthusiast, gamer, geek, nerd saving money to open a chiringuito in Formentera
 
 links:
@@ -17,9 +18,9 @@ links:
 skills:
   - AWS
   # - NodeJs
-  - Cloud
+  # - Cloud
   # - Log
-  - APM
+  # - APM
   - PerfOps
   - DevOps
   - Mgmt
@@ -106,7 +107,7 @@ works:
 
 projects:
   - name: Luxi
-    date: 05/2017
+    date: '2017.05'
     descriptions:
       - 👑 Hackaton @ H Farm
       - Augmented reality
@@ -114,26 +115,26 @@ projects:
       - Retail fashion
 
   - name: HotVenue
-    date: 05/2016 - 05/2017
+    date: '2016 - 2017'
     descriptions:
       - Startup
       - Video booth
 
   - name: Puro Gusto
-    date: 05/2016
+    date: '2016.05'
     descriptions:
       - 👑 Hackaton @ H Farm
       - Mobile app
       - Food & Beverage
 
   - name: Alfred
-    date: 11/2015
+    date: '2015.11'
     descriptions:
       - 💰 Hackaton @ Facile.it
       - Virtual assistant
 
 educations:
-  - title: Computer Engineering
+  - title: Master's degree in Computer Engineering
     structure: Politecnico di Milano
     location: Milan, Italy
     from: 2004
