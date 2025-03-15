@@ -109,7 +109,7 @@ projects:
   - name: Luxi
     date: '2017.05'
     descriptions:
-      - 👑 Hackaton @ H Farm
+      - Hackaton @ H Farm
       - Augmented reality
       - Face recognition
       - Retail fashion
@@ -123,14 +123,14 @@ projects:
   - name: Puro Gusto
     date: '2016.05'
     descriptions:
-      - 👑 Hackaton @ H Farm
+      - Hackaton @ H Farm
       - Mobile app
-      - Food & Beverage
+      - Food + Beverage
 
   - name: Alfred
     date: '2015.11'
     descriptions:
-      - 💰 Hackaton @ Facile.it
+      - Hackaton @ Facile.it
       - Virtual assistant
 
 educations:
