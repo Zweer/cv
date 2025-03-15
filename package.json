@@ -19,22 +19,15 @@
   "author": "Zweer <n.olivieriachille@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "liquidjs": "^10.16.3",
-    "yaml": "^2.5.0"
+    "liquidjs": "^10.21.0",
+    "yaml": "^2.7.0"
   },
   "devDependencies": {
     "@shopify/eslint-plugin": "^46.0.0",
     "@tsconfig/node20": "^20.1.4",
-    "@types/jest": "^29.5.12",
-    "@types/node": "^22.5.0",
-    "jest": "^29.7.0",
-    "prettier": "^3.3.3",
-    "ts-jest": "^29.2.4",
+    "@types/node": "^22.13.10",
+    "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.4"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node"
+    "typescript": "^5.8.2"
   }
 }
