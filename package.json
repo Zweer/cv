@@ -1,6 +1,6 @@
 {
   "name": "cv",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A simple engine to render latex/liquidjs templates",
   "main": "index.js",
   "scripts": {
