@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
 import { Liquid } from 'liquidjs';
@@ -13,6 +13,10 @@ const dataFolder = join(rootFolder, 'data');
 const i18nFolder = join(rootFolder, 'i18n');
 const themeFolder = join(rootFolder, 'themes');
 const buildFolder = join(rootFolder, 'build');
+
+if (!existsSync(buildFolder)) {
+  mkdirSync(buildFolder);
+}
 
 async function renderCv(dataFilename: string): Promise<void> {
   const cvString = readFileSync(join(dataFolder, dataFilename), 'utf8');
