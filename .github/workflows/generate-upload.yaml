@@ -1,6 +1,9 @@
 name: Generate and Upload CVs
 
-on: push
+on:
+  push:
+    tags:
+      - "v*.*.*"
 
 jobs:
   generate-upload:
@@ -33,7 +36,5 @@ jobs:
       - name: Create release for pdfs
         uses: softprops/action-gh-release@v2
         with:
-          draft: true
-          name: Actual
           files: |
             ./*.pdf
