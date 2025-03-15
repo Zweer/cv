@@ -46,7 +46,8 @@ languages:
     level: A1
 
 hobbies:
-  - pole dance
+  # - pole dance
+  - pilates
   - yoga
   - trekking
   - second hand
@@ -67,7 +68,8 @@ works:
 
   - structure: Studio di consulenza fiscale e del lavoro R. Gaglioti
     location: Palmi, Calabria, Italy
-    from: '2015'
+    # from: '2015'
+    from: '2017'
     to: '2018'
     title: Impiegata
     resume: true
@@ -210,43 +212,43 @@ works:
   #     - Invio pagamenti telematici
   #     - Attività di supporto ai colleghi
 
-  - structure: Casa vacanze Beverly Village
-    part-time: true
-    location: Palmi, Calabria, Italy
-    from: '2013.11'
-    to: '2014.09'
-    title: Addetta alla reception
-    resume: false
-    tasks:
-      - Accoglienza, assistenza e gestione interna del cliente
-      - Gestione prenotazioni e profilo aziendale su Booking
-      - Pagamenti e prima nota
-    tasks-extended:
-      - Accoglienza
-      - Assistenza e gestione interna del cliente
-      - Operazioni di check in e check out
-      - Gestione prenotazioni
-      - Gestione profilo aziendale sul portale Booking
-      - Pagamenti e prima nota
+  # - structure: Casa vacanze Beverly Village
+  #   part-time: true
+  #   location: Palmi, Calabria, Italy
+  #   from: '2013.11'
+  #   to: '2014.09'
+  #   title: Addetta alla reception
+  #   resume: false
+  #   tasks:
+  #     - Accoglienza, assistenza e gestione interna del cliente
+  #     - Gestione prenotazioni e profilo aziendale su Booking
+  #     - Pagamenti e prima nota
+  #   tasks-extended:
+  #     - Accoglienza
+  #     - Assistenza e gestione interna del cliente
+  #     - Operazioni di check in e check out
+  #     - Gestione prenotazioni
+  #     - Gestione profilo aziendale sul portale Booking
+  #     - Pagamenti e prima nota
 
-  - structure: AG.E.C. Resort****
-    part-time: true
-    location: Bagnara Calabra, Calabria, Italia
-    from: '2013.05'
-    to: '2013.09'
-    title: Addetta alla reception
-    resume: false
-    tasks:
-      - Accoglienza, assistenza e gestione interna del cliente
-      - Gestione prenotazioni e profilo aziendale su Booking
-      - Pagamenti e prima nota
-    tasks-extended:
-      - Accoglienza
-      - Assistenza e gestione interna del cliente
-      - Operazioni di check in e check out
-      - Gestione prenotazioni
-      - Gestione profilo aziendale sul portale Booking
-      - Pagamenti e prima nota
+  # - structure: AG.E.C. Resort****
+  #   part-time: true
+  #   location: Bagnara Calabra, Calabria, Italia
+  #   from: '2013.05'
+  #   to: '2013.09'
+  #   title: Addetta alla reception
+  #   resume: false
+  #   tasks:
+  #     - Accoglienza, assistenza e gestione interna del cliente
+  #     - Gestione prenotazioni e profilo aziendale su Booking
+  #     - Pagamenti e prima nota
+  #   tasks-extended:
+  #     - Accoglienza
+  #     - Assistenza e gestione interna del cliente
+  #     - Operazioni di check in e check out
+  #     - Gestione prenotazioni
+  #     - Gestione profilo aziendale sul portale Booking
+  #     - Pagamenti e prima nota
 
   # - structure: Fiera Natalidea / Fiera Primavera presso Fiera di Genova
   #   location: Genova, Liguria, Italia
