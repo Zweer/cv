@@ -3,7 +3,7 @@ language: en
 first-name: Rossella
 last-name: Romeo
 title: Administrative Assistant
-image: ./images/ro.jpg
+image: ../images/ro.jpg
 email: rossella.romeo07@gmail.com
 pec: rossella.romeo@arubapec.it
 phone: +39 3468881811
