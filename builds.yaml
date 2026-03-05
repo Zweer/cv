@@ -1,0 +1,11 @@
+# Which CVs to build: person × theme combinations
+# person must match a filename in data/ (without .yaml)
+# theme must match a folder in themes/
+
+builds:
+  - person: nic
+    theme: chiringuito
+  - person: nic
+    theme: new-hipster
+  - person: ro
+    theme: budapest
