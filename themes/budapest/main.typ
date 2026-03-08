@@ -55,7 +55,7 @@
 
 // Timeline entry: left (structure/location/dates) + right (title/tasks) with dot+border
 #let timeline-entry(structure, location, from, to, title, tasks, part-time: false, skills: none, description: none) = {
-  block(breakable: false, above: 0.6em, below: 0.2em,
+  block(breakable: false, above: 0.9em, below: 0.4em,
     grid(
       columns: (3.2cm, 1fr),
       column-gutter: 1em,
@@ -71,7 +71,7 @@
       // Right: content with timeline dot + left border
       {
         // Dot
-        place(left + top, dx: -0.65em, dy: 0.15em,
+        place(left + top, dx: -0.85em, dy: 0.15em,
           circle(radius: 0.35em, fill: green),
         )
         // Left border
@@ -214,7 +214,7 @@
 
     // Work experience
     #main-heading(i18n.curriculum)
-    #for work in cv.works {
+    #for work in cv.works.filter(w => w.at("hidden", default: false) == false) {
       timeline-entry(
         work.structure,
         work.location,

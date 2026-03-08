@@ -222,7 +222,7 @@ grid(
     // Resumé (selected works)
     #main-section(i18n.resume)
     #{
-      let resume = cv.works.filter(w => w.at("resume", default: false) == true)
+      let resume = cv.works.filter(w => w.at("hidden", default: false) == false and w.at("resume", default: false) == true)
       for work in resume {
         let has-desc = work.at("description", default: none) != none
         if has-desc {
@@ -244,7 +244,7 @@ grid(
     // Curriculum (other works)
     #main-section(i18n.curriculum)
     #{
-      let curriculum = cv.works.filter(w => w.at("resume", default: false) == false)
+      let curriculum = cv.works.filter(w => w.at("hidden", default: false) == false and w.at("resume", default: false) == false)
       for work in curriculum {
         cv-event(work.from, work.to, work.title, work.structure, work.location, work.tasks)
       }

@@ -162,7 +162,7 @@
   // === LEFT: Work Experience ===
   {
     section-heading("Work Experience")
-    for work in cv.works {
+    for work in cv.works.filter(w => w.at("hidden", default: false) == false) {
       let has-desc = work.at("description", default: none) != none
       if has-desc {
         work-entry(work.title, work.structure, work.from, work.to, work.description, is-description: true)

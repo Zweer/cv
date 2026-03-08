@@ -112,7 +112,7 @@
   theme: (space-above: 0pt),
   i18n.resume,
   {
-    for (i, work) in cv.works.enumerate() {
+    for (i, work) in cv.works.filter(w => w.at("hidden", default: false) == false).enumerate() {
       work-entry(
         theme: (space-above: if i == 0 { 0pt } else { 1fr }),
         timeframe: str(work.from) + " — " + str(work.to),
