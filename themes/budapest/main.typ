@@ -71,7 +71,7 @@
       // Right: content with timeline dot + left border
       {
         // Dot
-        place(left + top, dx: -0.85em, dy: 0.15em,
+        place(left + top, dx: -0.35em, dy: 0.15em,
           circle(radius: 0.35em, fill: green),
         )
         // Left border
