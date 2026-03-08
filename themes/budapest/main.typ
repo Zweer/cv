@@ -54,7 +54,7 @@
 }
 
 // Timeline entry: left (structure/location/dates) + right (title/tasks) with dot+border
-#let timeline-entry(structure, location, from, to, title, tasks, part-time: false, skills: none) = {
+#let timeline-entry(structure, location, from, to, title, tasks, part-time: false, skills: none, description: none) = {
   block(breakable: false, above: 0.6em, below: 0.2em,
     grid(
       columns: (3.2cm, 1fr),
@@ -78,7 +78,10 @@
         block(inset: (left: 0.8em), stroke: (left: 1pt + green),
           {
             text(font: title-font, size: 10pt, weight: "bold")[#title]
-            if tasks != none {
+            if description != none {
+              v(0.15em)
+              text(size: 8pt)[#description]
+            } else if tasks != none {
               v(0.15em)
               for task in tasks {
                 text(size: 8pt)[• #task]
@@ -221,6 +224,7 @@
         work.tasks,
         part-time: work.at("part-time", default: false),
         skills: work.at("skills", default: none),
+        description: work.at("description", default: none),
       )
     }
 

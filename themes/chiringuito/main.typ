@@ -50,7 +50,7 @@
 }
 
 // Work entry
-#let work-entry(position, company, from, to, tasks) = {
+#let work-entry(position, company, from, to, content, is-description: false) = {
   with-bar(height: 12pt, dy: 1pt)[
     #text(size: 9.5pt, weight: "bold")[#position]
   ]
@@ -58,11 +58,15 @@
   linebreak()
   text(size: 8pt, style: "italic", fill: grey-text)[#from - #to]
   v(0.05em)
-  pad(left: 4pt,
-    for task in tasks [
-      #text(size: 8pt, fill: luma(60))[• #task] \
-    ]
-  )
+  if is-description {
+    pad(left: 4pt, text(size: 8pt, fill: luma(60))[#content])
+  } else {
+    pad(left: 4pt,
+      for task in content [
+        #text(size: 8pt, fill: luma(60))[• #task] \
+      ]
+    )
+  }
   v(0.35em)
 }
 
@@ -159,7 +163,12 @@
   {
     section-heading("Work Experience")
     for work in cv.works {
-      work-entry(work.title, work.structure, work.from, work.to, work.tasks)
+      let has-desc = work.at("description", default: none) != none
+      if has-desc {
+        work-entry(work.title, work.structure, work.from, work.to, work.description, is-description: true)
+      } else {
+        work-entry(work.title, work.structure, work.from, work.to, work.tasks)
+      }
     }
   },
 

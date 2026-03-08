@@ -12,7 +12,7 @@
 #let img-path = "/images/" + cv.image.split("/").last()
 
 // --- Helper: format tasks as description ---
-#let format-tasks(work) = work.tasks.join(". ") + "."
+#let format-tasks(work) = work.at("description", default: work.tasks.join(". ") + ".")
 
 // --- Build aside content ---
 #let aside-content = {

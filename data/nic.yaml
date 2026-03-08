@@ -3,13 +3,13 @@ variant: pastel-red
 language: en
 name: Niccolò
 surname: Olivieri Achille
-title: Head of IT Delivery
+title: Head of ICT Delivery
 image: ../images/nic-square.jpg
 email: niccolo@olivieriachille.com
 phone: +39 388 64 65 482
 location: Milan, Italy
 citizenship: italian
-abstract: Tech enthusiast, gamer, geek, nerd saving money to open a chiringuito in Formentera
+abstract: ICT leader with 15+ years of experience across cloud architecture, team building and delivery management — tech enthusiast, gamer, geek, nerd saving money to open a chiringuito in Formentera
 
 links:
   linkedin: https://www.linkedin.com/in/niccoloolivieri/
@@ -17,13 +17,15 @@ links:
 
 skills:
   - AWS
-  # - NodeJs
-  # - Cloud
-  # - Log
-  # - APM
-  - PerfOps
   - DevOps
-  - Mgmt
+  - CI/CD
+  - APM
+  - Team Management
+  - ICT Strategy
+  - Vendor Management
+  - Budget Planning
+  - EV Charging
+  - PerfOps
 
 languages:
   - name: italian
@@ -32,8 +34,8 @@ languages:
     level: C1
 
 works:
-  - title: Head of IT Delivery
-    structure: BePower (Plenitude on the Road)
+  - title: Head of ICT Delivery
+    structure: Plenitude On The Road (formerly BePower)
     location: Milan, Italy
     from: '2020.03'
     to: now
@@ -42,6 +44,16 @@ works:
       - Team of 20+ people, analysts, PMs, devs, testers
       - Projects coordinator + interface with business
       - Cloud Architect (AWS)
+    description: |
+      Joined as the third member of the ICT department — after the CIO and an IT support specialist — when the company was still a startup (then called BePower), building the technology platform powering Italy's second-largest and one of Europe's largest EV charging networks.
+
+      Started as a technical Project Manager, coordinating 10+ external consultants to design and implement all core business systems, with a primary focus on the consumer-facing mobile app — which has since undergone two complete rewrites, with a third currently in progress.
+
+      As the company scaled, progressively consolidated all delivery functions under my leadership: first developers, testers and analysts, then project managers. Today I lead a team of 20+ people covering the full delivery lifecycle — from ideation and requirements through development to testing and release. An additional 30–40 external consultants operate under my coordination, accounting for over 80% of total code output.
+
+      Currently the largest team manager in the company, with a dual focus: people management across all delivery streams, and long-term technical strategy — evaluating solutions and providing architectural guidance to shape business roadmaps before they are formalized.
+
+      Key figures: ~€10M annual budget · 100% cloud-native architecture (AWS) · 99.99% uptime.
 
   - title: Senior Software Engineer (Salesforce Certified)
     structure: ThinkOpen @ Reply
@@ -53,6 +65,12 @@ works:
       - Tech & Team Leader in CRM (Salesforce) and Backend Projects
       - Realtime Chatbot
       - Cloud Architect using IaaS (AWS), PaaS (Heroku) and CRM
+    description: |
+      Joined a Salesforce-focused consultancy but initially operated entirely outside the CRM space, leading a team of 5 developers on custom Node.js applications: a backend and realtime chatbot powering a mobile app for an automotive client, and a private customer portal for an energy utility — including integrations with all legacy systems.
+
+      As custom projects wound down, transitioned to Salesforce delivery for banking and pharmaceutical clients, bringing an independent, platform-agnostic perspective to CRM architecture. This cross-domain experience led to a broader Architect role, bridging the Salesforce ecosystem with custom backends and cloud infrastructure (AWS, Heroku).
+
+      Across all projects, served as technical leader: defining application architecture and infrastructure, advising the PM on technical feasibility, and mentoring developers across teams.
 
   - title: APM Specialist (Splunk Certified)
     structure: Moviri
@@ -64,6 +82,12 @@ works:
       - Synthetic & Real User Monitoring (web & mobile applications)
       - Operational Analytics
       - Cloud Automation & PaaS
+    description: |
+      Consultant at a performance-focused firm, specializing in application monitoring, operational intelligence, and performance diagnostics across enterprise clients in banking, telco, and insurance.
+
+      One of the most technically hands-on consultants in the company, routinely called in as first responder during critical outages — including resolving a full system-wide outage for a major Italian bank by identifying the performance bottleneck.
+
+      Broader responsibilities included designing monitoring infrastructures (New Relic, DynaTrace, Splunk), building CI/CD pipelines (Jenkins), automating cloud environments (CloudFoundry), and conducting capacity and load testing for production systems.
 
   - title: Software Developer
     structure: Travelnuts
@@ -109,23 +133,20 @@ projects:
   - name: Luxi
     date: '2017.05'
     descriptions:
-      - Hackaton @ H Farm
-      - Augmented reality
-      - Face recognition
-      - Retail fashion
+      - Hackathon @ H-Farm
+      - Augmented reality + face recognition for retail fashion
 
   - name: HotVenue
     date: '2016 - 2017'
     descriptions:
-      - Startup
-      - Video booth
+      - Co-founded startup — built MVP as CTO (serverless, AWS)
+      - Video booth product for events and venues
 
   - name: Puro Gusto
     date: '2016.05'
     descriptions:
-      - Hackaton @ H Farm
-      - Mobile app
-      - Food + Beverage
+      - 1st place — Hackathon @ H-Farm
+      - Mobile app for food & beverage
 
   - name: Alfred
     date: '2015.11'
@@ -134,7 +155,13 @@ projects:
       - Virtual assistant
 
 educations:
-  - title: Master's degree in Computer Engineering
+  - title: Eni Program for Management Development
+    structure: SDA Bocconi School of Management
+    location: Milan, Italy
+    from: 2025
+    to: 2025
+
+  - title: Master's Degree in Computer Science and Engineering
     structure: Politecnico di Milano
     location: Milan, Italy
     from: 2004
@@ -144,96 +171,13 @@ teachings:
   - name: Workshop & Academy
     courses:
       - Electric Mobility
-      - CI/CD, an opinionated guide
-      - Alexa vs Google Home
-      - AWS Overview
-      - Serverless
-      - NodeJs from zero to hero
-      - Responsive vs. Mobile First
+      - "CI/CD, an opinionated guide"
 
 interests:
   - Home Automation
-  - Bot
-  - Cloud
+  - AI
+  - EV
   - OWL
   - WoW
   - Startup
-  - Serverless
 
-worksDetailed:
-  - company: BePower (Plenitude BeCharge)
-    position: Head of IT Delivery
-    tasks:
-      - Team Management
-      - Cloud Architect (AWS)
-    description: |
-      I entered BePower when it was a little more than a startup as a technical Project Manager. In a little more than a year we builded our first iteration of cloud environment, managing multiple contractors and internal counterparts.
-
-      After that period the team doubled and we started bulding our internal dev team, with also the testing and PM part. There I started managing the Dev+Testing team, helping the Infrastructure team improving the cloud environment (we started a collaboration with AWS consultants).
-
-      Another year passed by, the team acquired 15 more people and we re-structured the IT team once more: I'm now the Head of the entire Delivery Team, which includes the Backend Dev team, the App Dev team, the CRM/CDP team, the ERP/EPM/CMDB team, Testing team and Business Analyst team, for a total of 20 people (plus 30 contractors).
-      A lot of effort is put in establishing communication with other company teams to better cooperate.
-
-  - company: Reply
-    position: Senior Software Engineer
-    tasks:
-      - Tech & Team Leader
-      - Cloud Architect (AWS + Heroku + Salesforce)
-    description: |
-      In a company where the core business is Salesforce, I was, at first, in charge of everything that wasn't CRM related: from realtime chatbots, backends for customer portals and other cloud related projects. In all these projects I was the technical leader, meaning that:
-      - I decided the architecture and the infrastracture of the application, along with the other technical leaders and the customer. The interaction with the other applications and systems was also my duty.
-      - Supporting the Project Manager in the relationship with the customer to better understand the technicalities and giving advice on the best way (for everyone) to implement something.
-      - Being the focal point to support and manage other developers both for "my" project and for the ones related to it.
-
-      After some time I also start handling Salesforce projects, trying to give the perspective of someone who's not used to that product, in a sort of "independent" way, far from someone who only used Salesforce and tries to sponsor it everywhere. This took me to the role of Architect in a more general sense, putting together the Salesforce world with what's outside.
-
-  - company: HotVenue
-    position: CTO
-    tasks:
-      - Release Automation
-      - Serverless (AWS)
-      - Cloud Automation (AWS)
-    description: |
-      Because all the investments for this startup went in the hardware and in the development of the mobile application, the back-end part was built with no money for the cloud environment. To do so I used the free-tier of the AWS infrastructure, trying to adopt as many AWS products as possible, not to have many dedicated instances that would cost a lot.
-
-      Right now the application is structured as follows:
-      - All the code is stored in two GitHub **public repositories** (one for the application server and one for the asynchronous workers) while the configuration parameters (database connection strings, private info, etc) are handled in environment variables of the build tool.
-      - Whenever the code is pushed, the compilation starts on an external **Continuous Integration** tool: CircleCI.
-      - The **building phase** consists in the download of all dependencies, unit testing, compilation of the **Docker image**, test of the Docker image via cURL, push of the image in the **AWS ECR**, deploy of the new image. If the push happened in the workers repository, the code is packaged and uploaded to **AWS S3** and deploy on the **AWS Lambda** functions.
-
-      At the end of this experience I was making a transition from a containerized architecture to a **serverless** one. This allowed me to save money on the server instances and use the AWS build tool, **CodePipeline** and **CodeBuild** (the only reason I'm using CircleCI right now is its ability to compile Docker images out of the box). This is even better for my architecture since I can handle complex dependencies in the pipeline, make parallel tasks, and handle AWS Automation in a native way (mostly with **CloudFormation**).
-
-  - company: Moviri
-    position: APM Specialist
-    tasks:
-      - Release Automation
-      - Cloud Automation & PaaS
-      - Operational Intelligence
-      - Application Testing & Monitoring
-    description: |
-      As a Consultant in a society which cares about performance, I've seen plenty of projects involving Automation (Release, Cloud, Testing, etc).
-
-      I can sum up the most important:
-      - Cloud Automation with **CloudFoundry**: I worked for a big Italian telco player to ease developers' job. The biggest challenge they were facing was to give every developer the same environment to develop/test applications. We modelized their environment to have, for each application, the minimum set of machine to be used. In this way developers don't have to setup databases/services on their laptops, but a **dedicated environment** is setup in seconds for their own.
-      - Release Automation with **Jenkins**: we had a couple of customers that had a very long deployment chain and needed to automatize the whole process. We set up a **multi environment build and deploy process** which, starting from a git repository, did the compilation, unit and integration testing, functional testing, performance testing and, in the end, deployment on the specified environment. The deployment itself wasn't entirely automatized, but happened only after the acceptance of the manager in charge (for 0-day fixes), or during certain nights (in scheduled maintenance periods).
-
-      Other fields I was involved into were:
-      - **Big Data & Operational Intelligence**: my task was to collect log/machine data/metrics from thousands of servers/appliance all around the customer infrastracture and organize + correlate them into dashboards for various targets, from business to operative ones. The most important tool used to accomplish this was **Splunk**.
-      - **Application Monitoring**: with products like **New Relic** and **DynaTrace** I set up monitoring infrastractures to understand why applications behave incorrectly. These products can correlate applicative calls to follow all the user flow from the Front End to the Database layers.
-      - **Performance Testing**: one of the most important aspect of a piece of software is "how much traffic can it handle?". Creating Virtual Users with products like **HPE LoadRunner** or **Apache JMeter** we can answer that question.
-
-  - company: Grattifi 2000
-    position: Web Developer
-    tasks:
-      - Lead Developer
-      - Evangelist
-    description: |
-      Shortly after taking my job, it became apparent that the website creation process (mostly for not-so-complex websites) was too long, so that we missed a lot of customers because we were "good" only on big and complex projects.
-
-      I used my experience in the Open Source / PHP world to convince the CTO to start using Wordpress and begin trusting also on third parts plugins and themes. After few months I wasn't alone any more and we also managed to start a new business line that provides low-cost websites in 2-3 days. It was also possible thanks to the introduction of .git for the versioning, NodeJS build tools to ease the assets retrieve and compilation and an automated deployment system (really basic) that allows us to deploy changes on the testing environment on our own.
-
-      At the end of my experience there the situation was:
-      - The custom CMS/Framework was confined to **legacy** projects
-      - **Wordpress** was the standard "defacto" to build new websites
-      - Without the maintenance of the custom CMS, backend developers could focus on more exiting projects
-      - **NodeJS** was introduced as the language for "new complex projects" where Wordpress couldn't fit

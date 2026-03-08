@@ -93,7 +93,7 @@
 }
 
 // --- CV Event (work experience) ---
-#let cv-event(from, to, title, company, location, tasks) = {
+#let cv-event(from, to, title, company, location, content, is-description: false) = {
   grid(
     columns: (2.8cm, 1fr),
     column-gutter: 0.6em,
@@ -103,7 +103,11 @@
       #text(size: 8pt, smallcaps(company))
       #h(0.3em)
       #text(size: 8pt, fill: theme.location)[📍 #location] \
-      #text(size: 8pt, fill: luma(80))[#tasks.join([ · ])]
+      #if is-description {
+        text(size: 8pt, fill: luma(80))[#content]
+      } else {
+        text(size: 8pt, fill: luma(80))[#content.join([ · ])]
+      }
     ],
   )
   v(0.6em)
@@ -220,7 +224,12 @@ grid(
     #{
       let resume = cv.works.filter(w => w.at("resume", default: false) == true)
       for work in resume {
-        cv-event(work.from, work.to, work.title, work.structure, work.location, work.tasks)
+        let has-desc = work.at("description", default: none) != none
+        if has-desc {
+          cv-event(work.from, work.to, work.title, work.structure, work.location, work.description, is-description: true)
+        } else {
+          cv-event(work.from, work.to, work.title, work.structure, work.location, work.tasks)
+        }
       }
     }
 
