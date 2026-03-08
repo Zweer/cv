@@ -291,9 +291,11 @@ educations:
   - structure: Università degli Studi di Genova
     location: Genova
     from: 2022
-    to: in corso
+    to: 2026
     title: Laurea Magistrale in Amministrazione e Politiche Pubbliche
     tasks:
+      - "Voto finale: 110/110 e lode"
+      - "Tesi: Intelligenza Artificiale nella Pubblica Amministrazione tra distruzione creatrice e resistenze culturali: analisi comparativa tra Italia e Paesi Bassi"
 
   - structure: Università degli Studi Niccolò Cusano
     location: Roma
