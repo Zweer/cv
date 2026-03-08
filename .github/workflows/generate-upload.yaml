@@ -15,26 +15,13 @@ jobs:
       - name: Checkout ${{ github.repository }} @ ${{ github.ref }}
         uses: actions/checkout@v4
 
-      - name: Install NodeJS
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
+      - name: Install Typst
+        uses: typst-community/setup-typst@v4
 
-      - name: Install NPM Packages
-        run: npm ci
-
-      - name: Generate LaTeX files
-        run: npm start
-
-      - name: Compile LaTeX files into pdf
-        uses: xu-cheng/latex-action@v3
-        with:
-          work_in_root_file_dir: true
-          root_file: |
-            ./build/*.tex
+      - name: Generate PDFs
+        run: make all
 
       - name: Create release for pdfs
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            ./build/*.pdf
+          files: ./build/*.pdf
