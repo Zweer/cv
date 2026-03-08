@@ -22,7 +22,11 @@
 #let body-font = "Roboto"
 
 // --- Page ---
-#set page(paper: "a4", margin: (top: 1.4cm, bottom: 1cm, left: 1.6cm, right: 1.6cm))
+#set page(
+  paper: "a4",
+  margin: (top: 1.4cm, bottom: 1.2cm, left: 1.6cm, right: 1.6cm),
+  footer: align(center, text(size: 5pt, fill: luma(140), style: "italic")[#i18n.gdpr]),
+)
 #set text(font: body-font, size: 10pt, fill: luma(40))
 #set par(leading: 0.5em, spacing: 0.55em)
 #show link: it => text(fill: luma(40), it)
@@ -45,10 +49,16 @@
   v(0.3em)
 }
 
-// Resumé entry: narrative description with timeline dot
-#let resume-entry(title, company, location, from, to, description) = {
-  block(above: 0.5em, below: 0.3em, inset: (left: 0.8em), stroke: (left: 1pt + accent), {
-    place(left + top, dx: -0.95em, dy: 0.15em, circle(radius: 0.3em, fill: accent))
+// Badge style (shared by skills and interests)
+#let badge(body) = {
+  box(inset: (x: 5pt, y: 2pt), radius: 2pt, fill: light-accent,
+    text(size: 7.5pt, fill: accent.darken(20%))[#body])
+}
+
+// Work entry: timeline dot + green bar, description or bullet tasks
+#let work-entry(title, company, location, from, to, content, is-description: false) = {
+  block(above: 0.9em, below: 0.5em, inset: (left: 0.8em), stroke: (left: 1pt + accent), {
+    place(left + top, dx: -1.1em, dy: 0.15em, circle(radius: 0.3em, fill: accent))
     text(font: heading-font, size: 10pt, weight: "bold")[#title]
     h(0.4em)
     text(size: 8pt, fill: grey)[#from – #to]
@@ -57,29 +67,31 @@
     h(0.3em)
     text(size: 8pt, fill: grey)[#fa-icon("location-dot", size: 7pt) #location]
     v(0.2em)
-    text(size: 8.5pt, fill: luma(60))[#description]
-  })
-}
-
-// Curriculum entry: compact with bullet tasks
-#let curriculum-entry(title, company, from, to, tasks) = {
-  block(above: 0.3em, below: 0.1em, inset: (left: 0.8em), stroke: (left: 0.5pt + light-line), {
-    text(font: heading-font, size: 9pt, weight: "bold")[#title]
-    h(0.3em)
-    text(size: 8pt, fill: grey)[#from – #to]
-    linebreak()
-    text(size: 8.5pt)[#company]
-    v(0.1em)
-    for task in tasks {
-      text(size: 8pt, fill: luma(60))[• #task]
-      linebreak()
+    if is-description {
+      text(size: 8.5pt, fill: luma(60))[#content]
+    } else {
+      for task in content {
+        text(size: 8pt, fill: luma(60))[• #task]
+        linebreak()
+      }
     }
   })
 }
 
-// Helper: find worksDetailed description for a work entry
+// Helper: get description or fallback to tasks
 #let find-detail(work) = {
   work.at("description", default: work.tasks.join(". ") + ".")
+}
+
+// Contact row helper
+#let contact-row(icon-name, body) = {
+  grid(
+    columns: (1fr, auto),
+    column-gutter: 4pt,
+    align: (right + horizon, right + horizon),
+    body,
+    fa-icon(icon-name, fill: accent, size: 7pt),
+  )
 }
 
 // =============================================================================
@@ -114,15 +126,13 @@
   // Right: contacts
   {
     set text(size: 8pt)
-    let icon(name) = fa-icon(name, fill: accent, size: 7pt)
-    if "email" in cv [#link("mailto:" + cv.email)[#cv.email] #h(2pt) #icon("envelope") \ ]
-    if "phone" in cv [#cv.phone #h(2pt) #icon("phone") \ ]
-    v(0.15em)
-    if "location" in cv [#cv.location #h(2pt) #icon("location-dot") \ ]
-    v(0.15em)
-    if "linkedin" in cv.links [#link(cv.links.linkedin)[#cv.links.linkedin.replace("https://www.linkedin.com/in/", "").trim("/")] #h(2pt) #icon("linkedin") \ ]
-    v(0.15em)
-    if "github" in cv.at("links", default: (:)) [#link(cv.links.github)[#cv.links.github.replace("https://github.com/", "")] #h(2pt) #icon("github")]
+    let items = ()
+    if "email" in cv { items.push(contact-row("envelope", link("mailto:" + cv.email)[#cv.email])) }
+    if "phone" in cv { items.push(contact-row("phone", cv.phone)) }
+    if "location" in cv { items.push(contact-row("location-dot", cv.location)) }
+    if "linkedin" in cv.links { items.push(contact-row("linkedin", link(cv.links.linkedin)[#cv.links.linkedin.replace("https://www.linkedin.com/in/", "").trim("/")])) }
+    if "github" in cv.at("links", default: (:)) { items.push(contact-row("github", link(cv.links.github)[#cv.links.github.replace("https://github.com/", "")])) }
+    stack(spacing: 0.6em, ..items)
   },
 )
 
@@ -144,8 +154,7 @@
     // Skills
     sidebar-section(i18n.skills)
     for skill in cv.skills {
-      box(inset: (x: 5pt, y: 2pt), radius: 2pt, fill: light-accent,
-        text(size: 7.5pt, fill: accent.darken(20%))[#skill])
+      badge(skill)
       h(2pt)
     }
 
@@ -163,7 +172,7 @@
       linebreak()
       text(size: 7.5pt)[#edu.structure]
       linebreak()
-      text(size: 7pt, fill: grey)[#str(edu.from) – #str(edu.to)]
+      text(size: 7pt, fill: grey)[#{ let f = str(edu.from); let t = str(edu.to); if f == t { f } else { f + " – " + t } }]
       v(0.3em)
     }
 
@@ -196,10 +205,7 @@
       let items = cv.at("interests", default: cv.at("hobbies", default: none))
       if items != none {
         sidebar-section(i18n.hobbies)
-        items.map(i =>
-          box(inset: (x: 4pt, y: 2pt), radius: 2pt, stroke: 0.4pt + light-line,
-            text(size: 7pt)[#i])
-        ).join(h(2pt))
+        items.map(i => badge(i)).join(h(2pt))
       }
     }
   },
@@ -209,22 +215,20 @@
     // Resumé: detailed entries
     section-title(i18n.resume)
     {
-      let resume-works = cv.works.filter(w => w.at("resume", default: false) == true)
+      let visible = cv.works.filter(w => w.at("hidden", default: false) == false)
+      let resume-works = visible.filter(w => w.at("resume", default: false) == true)
       for work in resume-works {
-        resume-entry(work.title, work.structure, work.location, work.from, work.to, find-detail(work))
+        work-entry(work.title, work.structure, work.location, work.from, work.to, find-detail(work), is-description: true)
       }
     }
 
     // Curriculum: compact entries
     {
-      let other-works = cv.works.filter(w => w.at("resume", default: false) == false)
+      let visible = cv.works.filter(w => w.at("hidden", default: false) == false)
+      let other-works = visible.filter(w => w.at("resume", default: false) == false)
       for work in other-works {
-        curriculum-entry(work.title, work.structure, work.from, work.to, work.tasks)
+        work-entry(work.title, work.structure, work.location, work.from, work.to, work.tasks)
       }
     }
   },
 )
-
-// --- GDPR ---
-#v(1fr)
-#align(center, text(size: 5pt, fill: luma(140), style: "italic")[#i18n.gdpr])

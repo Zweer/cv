@@ -16,7 +16,7 @@ all: $(PDFS)
 
 # Build rule: decode person@theme from the mapping
 define build_rule
-$(BUILD_DIR)/$(subst @,-,$(1)).pdf: $(THEMES_DIR)/$(word 2,$(subst @, ,$(1)))/main.typ builds.yaml
+$(BUILD_DIR)/$(subst @,-,$(1)).pdf: $(THEMES_DIR)/$(word 2,$(subst @, ,$(1)))/main.typ builds.yaml $(wildcard data/*.yaml) $(wildcard i18n/*.yaml)
 	@mkdir -p $(BUILD_DIR)
 	typst compile $(THEMES_DIR)/$(word 2,$(subst @, ,$(1)))/main.typ $$@ \
 		--input person=$(word 1,$(subst @, ,$(1))) \

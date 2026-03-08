@@ -4,8 +4,6 @@
 
 builds:
   - person: nic
-    theme: chiringuito
-  - person: nic
-    theme: new-hipster
+    theme: formentera
   - person: ro
     theme: budapest

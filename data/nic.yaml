@@ -36,8 +36,8 @@ languages:
 works:
   - title: Head of ICT Delivery
     structure: Plenitude On The Road (formerly BePower)
-    location: Milan, Italy
-    from: '2020.03'
+    location: Milan, Lombardy, Italy
+    from: '2020.04'
     to: now
     resume: true
     tasks:
@@ -55,11 +55,11 @@ works:
 
       Key figures: ~€10M annual budget · 100% cloud-native architecture (AWS) · 99.99% uptime.
 
-  - title: Senior Software Engineer (Salesforce Certified)
+  - title: Senior Software Engineer
     structure: ThinkOpen @ Reply
-    location: Milan, Italy
+    location: Milan, Lombardy, Italy
     from: '2017.07'
-    to: '2020.04'
+    to: '2020.03'
     resume: true
     tasks:
       - Tech & Team Leader in CRM (Salesforce) and Backend Projects
@@ -72,12 +72,12 @@ works:
 
       Across all projects, served as technical leader: defining application architecture and infrastructure, advising the PM on technical feasibility, and mentoring developers across teams.
 
-  - title: APM Specialist (Splunk Certified)
+  - title: APM Specialist
     structure: Moviri
-    location: Milan, Italy
+    location: Milan, Lombardy, Italy
     from: '2015.07'
     to: '2017.07'
-    resume: true
+    resume: false
     tasks:
       - Synthetic & Real User Monitoring (web & mobile applications)
       - Operational Analytics
@@ -96,8 +96,8 @@ works:
     to: '2015.09'
     resume: false
     tasks:
-      - "\"Hydra\", web application with many goals and frontends"
-      - Coordinate the development of the application and its interactions with a mobile app
+      - Full-stack development of a multi-tenant platform for hotel booking and vacation packages
+      - Single codebase serving as backend, standalone frontend, embeddable widget, and mobile app
 
   - title: FrontEnd Web Developer
     structure: Graffiti 2000
@@ -106,12 +106,12 @@ works:
     to: '2015.06'
     resume: false
     tasks:
-      - Lead developer for Wordpress/PHP and Node.js
-      - Expert in UX and Browser Visual Effects
+      - Lead developer for WordPress (showcase sites for hospitality and national brands) and Node.js (custom portals and CMS)
+      - Introduced WordPress as agency standard, replacing a legacy custom framework
 
   - title: Performance Specialist
     structure: Moviri
-    location: Milan, Italy
+    location: Milan, Lombardy, Italy
     from: '2010.12'
     to: '2012.09'
     resume: false
@@ -122,10 +122,11 @@ works:
 
   - title: Webmaster
     structure: Many small works
-    location: Milan, Italy
-    from: '2004.09'
-    to: '2016.09'
+    location: Milan, Lombardy, Italy
+    from: '2004'
+    to: '2016'
     resume: false
+    hidden: true
     tasks:
       - Realization of small websites for individuals or companies
 
@@ -157,13 +158,13 @@ projects:
 educations:
   - title: Eni Program for Management Development
     structure: SDA Bocconi School of Management
-    location: Milan, Italy
+    location: Milan, Lombardy, Italy
     from: 2025
     to: 2025
 
   - title: Master's Degree in Computer Science and Engineering
     structure: Politecnico di Milano
-    location: Milan, Italy
+    location: Milan, Lombardy, Italy
     from: 2004
     to: 2010
 
@@ -179,5 +180,6 @@ interests:
   - EV
   - OWL
   - WoW
+  - Grilling
   - Startup
 
