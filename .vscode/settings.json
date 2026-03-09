@@ -1,0 +1,4 @@
+{
+  "tinymist.fontPaths": ["${workspaceFolder}/fonts"],
+  "tinymist.rootPath": "${workspaceFolder}"
+}
