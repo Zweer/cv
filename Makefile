@@ -10,9 +10,15 @@ BUILDS := $(shell paste -d'@' \
 
 PDFS := $(foreach b,$(BUILDS),$(BUILD_DIR)/$(subst @,-,$(b)).pdf)
 
-.PHONY: all clean list one watch
+.PHONY: all clean list one watch install
 
 all: $(PDFS)
+
+install:
+	@command -v typst >/dev/null 2>&1 && echo "typst already installed" || \
+		(echo "Installing typst..." && \
+		curl -fsSL https://typst.community/typst-install/install.sh | sh && \
+		echo "Done. Make sure ~/.local/bin is in your PATH")
 
 # Build rule: decode person@theme from the mapping
 define build_rule
