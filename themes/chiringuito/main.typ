@@ -161,32 +161,41 @@
 
   // === LEFT: Work Experience ===
   {
-    section-heading("Work Experience")
+    section-heading(i18n.work_experience)
     for work in cv.works.filter(w => w.at("hidden", default: false) == false) {
-      let has-desc = work.at("description", default: none) != none
-      if has-desc {
-        work-entry(work.title, work.structure, work.from, work.to, work.description, is-description: true)
+      if work.at("resume", default: false) {
+        // Resume entries: bullet tasks (highlights)
+        work-entry(work.title, work.structure, work.from, work.to, work.tasks)
       } else {
+        // Other entries: compact tasks
         work-entry(work.title, work.structure, work.from, work.to, work.tasks)
       }
     }
   },
 
-  // === RIGHT: Skills, Projects, Education, Teaching, Interests ===
+  // === RIGHT: Skills, Languages, Projects, Education, Teaching, Interests ===
   {
     // Skills
-    section-heading("Skills")
+    section-heading(i18n.skills)
     cv.skills.map(s => skill-badge(s)).join(h(3pt))
+
+    // Languages
+    if "languages" in cv {
+      section-heading(i18n.spoken_languages)
+      for lang in cv.languages {
+        text(size: 8.5pt)[*#upper(lang.name.first())#lang.name.slice(1)* — #lang.level]
+        linebreak()
+      }
+    }
 
     // Projects
     if "projects" in cv {
-      section-heading("Projects")
+      section-heading(i18n.projects)
       for project in cv.projects {
         text(size: 8.5pt, weight: "bold")[#project.name ]
         text(size: 8.5pt, fill: grey-text)[(#project.date)]
         linebreak()
         pad(left: 4pt, {
-          // First description with 🎉
           text(size: 7.5pt, fill: luma(60))[🎉 #project.descriptions.first()]
           linebreak()
           for desc in project.descriptions.slice(1) [
@@ -198,7 +207,7 @@
     }
 
     // Education
-    section-heading("Education")
+    section-heading(i18n.education)
     for edu in cv.educations {
       text(size: 9pt, weight: "bold")[#edu.title]
       linebreak()
@@ -210,7 +219,7 @@
 
     // Teaching
     if "teachings" in cv {
-      section-heading("Teaching Experience")
+      section-heading(i18n.teaching)
       for teaching in cv.teachings {
         text(size: 8.5pt, weight: "bold")[#teaching.name]
         linebreak()
@@ -225,7 +234,7 @@
 
     // Interests
     if "interests" in cv {
-      section-heading("Interests")
+      section-heading(i18n.interests)
       cv.interests.map(i => interest-badge(i)).join(h(3pt))
     }
   },

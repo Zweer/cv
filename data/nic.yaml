@@ -9,7 +9,7 @@ email: niccolo@olivieriachille.com
 phone: +39 388 64 65 482
 location: Milan, Italy
 citizenship: italian
-abstract: ICT leader with 15+ years of experience across cloud architecture, team building and delivery management — tech enthusiast, gamer, geek, nerd saving money to open a chiringuito in Formentera
+abstract: ICT leader with 15+ years of experience across cloud architecture, team building and delivery management — tech enthusiast, gamer, geek, nerd whose retirement plan is a chiringuito in Formentera
 
 links:
   linkedin: https://www.linkedin.com/in/niccoloolivieri/
@@ -17,15 +17,15 @@ links:
 
 skills:
   - AWS
-  - DevOps
-  - CI/CD
-  - APM
-  - Team Management
-  - ICT Strategy
+  - Cloud Architecture
+  - Team Leadership
+  - Agile Delivery
   - Vendor Management
   - Budget Planning
+  - Stakeholder Management
+  - CI/CD
   - EV Charging
-  - PerfOps
+  - Digital Transformation
 
 languages:
   - name: italian
@@ -45,15 +45,13 @@ works:
       - Projects coordinator + interface with business
       - Cloud Architect (AWS)
     description: |
-      Joined as the third member of the ICT department — after the CIO and an IT support specialist — when the company was still a startup (then called BePower), building the technology platform powering Italy's second-largest and one of Europe's largest EV charging networks.
+      Key figures: ~€10M annual budget · 20+ direct reports · 30–40 external consultants · 100% cloud-native (AWS) · 99.99% uptime.
 
-      Started as a technical Project Manager, coordinating 10+ external consultants to design and implement all core business systems, with a primary focus on the consumer-facing mobile app — which has since undergone two complete rewrites, with a third currently in progress.
+      Joined as the third member of the ICT department when the company was still a startup (then BePower), building the technology platform powering Italy's second-largest and one of Europe's largest EV charging networks.
 
-      As the company scaled, progressively consolidated all delivery functions under my leadership: first developers, testers and analysts, then project managers. Today I lead a team of 20+ people covering the full delivery lifecycle — from ideation and requirements through development to testing and release. An additional 30–40 external consultants operate under my coordination, accounting for over 80% of total code output.
+      Grew from technical Project Manager — coordinating 10+ consultants to deliver all core systems including the consumer mobile app (now on its third rewrite) — to the company's largest team manager, progressively consolidating developers, testers, analysts and PMs under a single delivery organization.
 
-      Currently the largest team manager in the company, with a dual focus: people management across all delivery streams, and long-term technical strategy — evaluating solutions and providing architectural guidance to shape business roadmaps before they are formalized.
-
-      Key figures: ~€10M annual budget · 100% cloud-native architecture (AWS) · 99.99% uptime.
+      Dual focus: people management across all delivery streams, and long-term technical strategy — evaluating solutions and providing architectural guidance to shape business roadmaps before they are formalized.
 
   - title: Senior Software Engineer
     structure: ThinkOpen @ Reply
@@ -66,11 +64,9 @@ works:
       - Realtime Chatbot
       - Cloud Architect using IaaS (AWS), PaaS (Heroku) and CRM
     description: |
-      Joined a Salesforce-focused consultancy but initially operated entirely outside the CRM space, leading a team of 5 developers on custom Node.js applications: a backend and realtime chatbot powering a mobile app for an automotive client, and a private customer portal for an energy utility — including integrations with all legacy systems.
+      Led a team of 5 developers on custom Node.js applications — a realtime chatbot for an automotive client and a customer portal for an energy utility — before transitioning to Salesforce delivery for banking and pharma clients.
 
-      As custom projects wound down, transitioned to Salesforce delivery for banking and pharmaceutical clients, bringing an independent, platform-agnostic perspective to CRM architecture. This cross-domain experience led to a broader Architect role, bridging the Salesforce ecosystem with custom backends and cloud infrastructure (AWS, Heroku).
-
-      Across all projects, served as technical leader: defining application architecture and infrastructure, advising the PM on technical feasibility, and mentoring developers across teams.
+      Cross-domain experience (custom backends, CRM, cloud) led to a broader Architect role bridging Salesforce with AWS and Heroku infrastructure. Across all projects: defined architecture, advised PMs on technical feasibility, and mentored developers.
 
   - title: APM Specialist
     structure: Moviri
@@ -83,11 +79,9 @@ works:
       - Operational Analytics
       - Cloud Automation & PaaS
     description: |
-      Consultant at a performance-focused firm, specializing in application monitoring, operational intelligence, and performance diagnostics across enterprise clients in banking, telco, and insurance.
+      Consultant specializing in application monitoring, operational intelligence and performance diagnostics for enterprise clients in banking, telco and insurance. Go-to first responder during critical outages — including resolving a full system-wide outage for a major Italian bank.
 
-      One of the most technically hands-on consultants in the company, routinely called in as first responder during critical outages — including resolving a full system-wide outage for a major Italian bank by identifying the performance bottleneck.
-
-      Broader responsibilities included designing monitoring infrastructures (New Relic, DynaTrace, Splunk), building CI/CD pipelines (Jenkins), automating cloud environments (CloudFoundry), and conducting capacity and load testing for production systems.
+      Designed monitoring infrastructures (New Relic, DynaTrace, Splunk), built CI/CD pipelines (Jenkins), automated cloud environments (CloudFoundry), and ran capacity and load testing for production systems.
 
   - title: Software Developer
     structure: Travelnuts
@@ -131,29 +125,23 @@ works:
       - Realization of small websites for individuals or companies
 
 projects:
-  - name: Luxi
-    date: '2017.05'
+  - name: FlowRAG
+    date: '2025'
     descriptions:
-      - Hackathon @ H-Farm
-      - Augmented reality + face recognition for retail fashion
+      - Open-source TypeScript RAG library with knowledge graph support
+      - Serverless-ready, multi-provider (AWS Bedrock, Gemini, local ONNX)
 
-  - name: HotVenue
-    date: '2016 - 2017'
+  - name: Bonvoy
+    date: '2025'
     descriptions:
-      - Co-founded startup — built MVP as CTO (serverless, AWS)
-      - Video booth product for events and venues
+      - Open-source plugin-based release automation for npm monorepos
+      - 100% test coverage, supports GitHub/GitLab/Slack/Discord
 
   - name: Puro Gusto
     date: '2016.05'
     descriptions:
       - 1st place — Hackathon @ H-Farm
       - Mobile app for food & beverage
-
-  - name: Alfred
-    date: '2015.11'
-    descriptions:
-      - Hackaton @ Facile.it
-      - Virtual assistant
 
 educations:
   - title: Eni Program for Management Development
@@ -178,8 +166,7 @@ interests:
   - Home Automation
   - AI
   - EV
-  - OWL
-  - WoW
+  - Kingdom Hearts
   - Grilling
   - Startup
 
