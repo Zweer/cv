@@ -55,7 +55,7 @@ hobbies:
 works:
   - structure: ASL3 Liguria
     location: Genova, Liguria, Italy
-    from: '2021.09'
+    from: "2021.09"
     to: presente
     title: Coadiutore -> Assistente amministrativa
     resume: true
@@ -69,8 +69,8 @@ works:
   - structure: Studio di consulenza fiscale e del lavoro R. Gaglioti
     location: Palmi, Calabria, Italy
     # from: '2015'
-    from: '2017'
-    to: '2018'
+    from: "2017"
+    to: "2018"
     title: Impiegata
     resume: true
     tasks:
@@ -151,8 +151,8 @@ works:
 
   - structure: RFI Rete Ferroviaria italiana
     location: Genova, Liguria, Italy
-    from: '2021.07'
-    to: '2021.08'
+    from: "2021.07"
+    to: "2021.08"
     title: Impiegata a contatto diretto con il pubblico
     resume: false
     tasks:
@@ -174,8 +174,8 @@ works:
   - structure: Coop Liguria
     part-time: true
     location: Genova, Liguria, Italy
-    from: '2020.11'
-    to: '2021.04'
+    from: "2020.11"
+    to: "2021.04"
     title: Allieva addetta alle operazioni ausiliare di vendita
     resume: false
     tasks:
@@ -296,6 +296,14 @@ educations:
     tasks:
       - "Voto finale: 110/110 e lode"
       - "Tesi: Intelligenza Artificiale nella Pubblica Amministrazione tra distruzione creatrice e resistenze culturali: analisi comparativa tra Italia e Paesi Bassi"
+
+  - structure: Università degli Studi di Genova
+    location: Genova
+    from: 05/2026
+    to: 05/2026
+    title: Corso di perfezionamento in Artificial Intelligence for Public Policy Design (40 ore)
+    tasks:
+      - "Prova finale: Hackathon"
 
   - structure: Università degli Studi Niccolò Cusano
     location: Roma
