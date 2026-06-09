@@ -3,7 +3,7 @@ variant: pastel-red
 language: it
 name: Rossella
 surname: Romeo
-title: Assistente amministrativo di direzione
+title: Assistente amministrativa di direzione
 image: ../images/ro.jpg
 email: rossella.romeo07@gmail.com
 pec: rossella.romeo@arubapec.it
@@ -12,7 +12,7 @@ location: Campomorone (GE), Italy
 citizenship: italiana
 links:
   linkedin: https://www.linkedin.com/in/rossellaromeo84
-abstract: Assistente amministrativo di Direzione Medica Ospedaliera, proattiva, appassionata di tecnologia, comunicazione digitale e di digital transformation
+abstract: Assistente amministrativa di Direzione Medica Ospedaliera, proattiva, appassionata di tecnologia, comunicazione digitale e di digital transformation
 
 skills:
   - atteggiamento empatico
@@ -57,7 +57,7 @@ works:
     location: Genova, Liguria, Italy
     from: '2021.09'
     to: presente
-    title: Coadiutore -> Assistente amministrativo
+    title: Coadiutore -> Assistente amministrativa
     resume: true
     tasks:
       - Redazione, classificazione, archiviazione e protocollazione degli atti, mantenimento di un'organizzato sistema di archiviazione dei documenti cartacei e digitali, invio ordini d'acquisto, gestione pratiche burocratiche ospedaliere (rifiuti, decessi, ricerca scomparsi, ecc)
