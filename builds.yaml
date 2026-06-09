@@ -7,3 +7,5 @@ builds:
     theme: formentera
   - person: ro
     theme: budapest
+  - person: ro
+    theme: europass
