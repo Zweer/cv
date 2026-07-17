@@ -14,11 +14,17 @@ PDFS := $(foreach b,$(BUILDS),$(BUILD_DIR)/$(subst @,-,$(b)).pdf)
 
 all: $(PDFS)
 
+TYPST_VERSION := 0.13.1
+TYPST_ARCH := x86_64-unknown-linux-musl
+TYPST_URL := https://github.com/typst/typst/releases/download/v$(TYPST_VERSION)/typst-$(TYPST_ARCH).tar.xz
+TYPST_DEST := $(HOME)/.local/bin
+
 install:
-	@command -v typst >/dev/null 2>&1 && echo "typst already installed" || \
-		(echo "Installing typst..." && \
-		cargo install typst-cli && \
-		echo "Done.")
+	@command -v typst >/dev/null 2>&1 && echo "typst already installed ($$(typst --version))" || \
+		(echo "Installing typst v$(TYPST_VERSION)..." && \
+		mkdir -p $(TYPST_DEST) && \
+		curl -fsSL $(TYPST_URL) | tar -xJ --strip-components=1 -C $(TYPST_DEST) typst-$(TYPST_ARCH)/typst && \
+		echo "Done. Make sure $(TYPST_DEST) is in your PATH")
 
 # Build rule: decode person@theme from the mapping
 define build_rule
