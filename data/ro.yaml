@@ -55,7 +55,7 @@ hobbies:
 works:
   - structure: ASL3 Liguria
     location: Genova, Liguria, Italy
-    from: "2021.09"
+    from: "09/2021"
     to: presente
     title: Coadiutore -> Assistente amministrativa
     resume: true
@@ -151,8 +151,8 @@ works:
 
   - structure: RFI Rete Ferroviaria italiana
     location: Genova, Liguria, Italy
-    from: "2021.07"
-    to: "2021.08"
+    from: "07/2021"
+    to: "08/2021"
     title: Impiegata a contatto diretto con il pubblico
     resume: false
     tasks:
@@ -174,8 +174,8 @@ works:
   - structure: Coop Liguria
     part-time: true
     location: Genova, Liguria, Italy
-    from: "2020.11"
-    to: "2021.04"
+    from: "11/2020"
+    to: "04/2021"
     title: Allieva addetta alle operazioni ausiliare di vendita
     resume: false
     tasks:
@@ -215,8 +215,8 @@ works:
   # - structure: Casa vacanze Beverly Village
   #   part-time: true
   #   location: Palmi, Calabria, Italy
-  #   from: '2013.11'
-  #   to: '2014.09'
+  #   from: '11/2013'
+  #   to: '09/2014'
   #   title: Addetta alla reception
   #   resume: false
   #   tasks:
@@ -234,8 +234,8 @@ works:
   # - structure: AG.E.C. Resort****
   #   part-time: true
   #   location: Bagnara Calabra, Calabria, Italia
-  #   from: '2013.05'
-  #   to: '2013.09'
+  #   from: '05/2013'
+  #   to: '09/2013'
   #   title: Addetta alla reception
   #   resume: false
   #   tasks:
@@ -305,6 +305,14 @@ educations:
     tasks:
       - "Prova finale: Hackathon"
 
+  - structure: Università degli Studi di Genova
+    location: Genova
+    from: 09/2022
+    to: 12/2022
+    title: Corso di perfezionamento in Economia del Farmaco, della Salute e delle Tecnologie Sanitarie
+    tasks:
+      - "Project Work: Farmacia e Metaverso: tecnologie emergenti e scenari futuri"
+
   - structure: Università degli Studi Niccolò Cusano
     location: Roma
     from: 2018
@@ -345,6 +353,17 @@ educations:
   #     - Gestione di una newsletter
   #     - Advertising sui social network
   #     - Uso della lingua inglese nel mondo del business
+
+  - structure: AxL Formazione S.r.l.
+    location: Bonate Sotto (BG)
+    from: 06/2021
+    to: 06/2021
+    title: Attestato di frequenza al Corso online di Addetto al Digital Marketing con Business English
+    tasks:
+      - Conoscenze di base di digital marketing
+      - Comunicazione online
+      - Social media marketing
+      - Sviluppo del Business English, con particolare riferimento alla redazione di e-mail e alla terminologia professionale
 
   - structure: Ente di formazione Manager S.r.l.
     location: Torino
