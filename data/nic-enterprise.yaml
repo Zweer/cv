@@ -1,0 +1,173 @@
+theme: new-hipster
+variant: pastel-red
+language: en
+name: Niccolò
+surname: Olivieri Achille
+title: Head of ICT Delivery
+image: ../images/nic-square.jpg
+email: niccolo@olivieriachille.com
+phone: +39 388 64 65 482
+location: Milan, Italy
+citizenship: italian
+abstract: Technology leader who owns the strategy and architecture behind one of Europe's largest EV charging networks. I set the technical roadmap, govern cloud-first architectures and standardize the stack across teams, running a ~€10M budget and a 20-person delivery org. A decade as a hands-on engineer before management keeps my calls grounded in how systems actually get built. Tech enthusiast and incurable builder at heart.
+
+links:
+  linkedin: https://www.linkedin.com/in/niccoloolivieri/
+  github: https://github.com/Zweer
+
+skills:
+  - Technology Strategy
+  - IT Governance
+  - Cloud Architecture
+  - Digital Transformation
+  - Stakeholder Management
+  - Vendor Management
+  - Budget Planning
+  - Team Leadership
+  - AWS
+  - EV Charging
+
+languages:
+  - name: italian
+    level: mother tongue
+  - name: english
+    level: C1
+
+works:
+  - title: Head of ICT Delivery
+    structure: Plenitude On The Road (formerly BePower)
+    location: Milan, Lombardy, Italy
+    from: '2020.04'
+    to: now
+    resume: true
+    tasks:
+      - Team of 20+ people, analysts, PMs, devs, testers
+      - Projects coordinator + interface with business
+      - Cloud Architect (AWS)
+    description: |
+      Key figures: ~€10M annual budget, 20+ direct reports, 30-40 external consultants, 100% cloud-native (AWS), 99.99% uptime.
+
+      Joined as the 3rd member of the ICT department when the company was still a startup (then BePower), building the technology platform behind Italy's second-largest and one of Europe's largest EV charging networks.
+
+      I own the technical roadmap and architecture governance for the whole delivery organization. I set cloud-first standards, drive stack standardization across streams, and shape long-term technology strategy before business roadmaps get formalized, some decisions on my own and some alongside my manager.
+
+      Grew from technical Project Manager to the company's largest team manager, consolidating developers, testers, analysts and PMs under a single delivery org. I built and now run the team's annual goal-setting, performance reviews and career development, and I manage a 30-40 person external consultant base through structured vendor relationships.
+
+      Delivery is organized into 6 functional streams plus a technical factory (analysis, development, testing). I led the backend rebuild that fixed the platform's performance ceiling and restructured the mobile app's agile teams when the existing setup stopped delivering.
+
+  - title: Senior Software Engineer
+    structure: ThinkOpen @ Reply
+    location: Milan, Lombardy, Italy
+    from: '2017.07'
+    to: '2020.03'
+    resume: true
+    tasks:
+      - Tech & Team Leader in CRM (Salesforce) and Backend Projects
+      - Realtime Chatbot
+      - Cloud Architect using IaaS (AWS), PaaS (Heroku) and CRM
+    description: |
+      Led a team of 5 developers on custom Node.js applications (a realtime chatbot for an automotive client and a customer portal for an energy utility) before transitioning to Salesforce delivery for banking and pharma clients.
+
+      Cross-domain experience across custom backends, CRM and cloud led to a broader Architect role bridging Salesforce with AWS and Heroku infrastructure. Across all projects I defined architecture, advised PMs on technical feasibility, and mentored developers.
+
+  - title: APM Specialist
+    structure: Moviri
+    location: Milan, Lombardy, Italy
+    from: '2015.07'
+    to: '2017.07'
+    resume: false
+    tasks:
+      - Synthetic & Real User Monitoring (web & mobile applications)
+      - Operational Analytics
+      - Cloud Automation & PaaS
+    description: |
+      Consultant specializing in application monitoring, operational intelligence and performance diagnostics for enterprise clients in banking, telco and insurance. Go-to first responder during critical outages, including resolving a full system-wide outage for a major Italian bank.
+
+      Designed monitoring infrastructures (New Relic, DynaTrace, Splunk), built CI/CD pipelines (Jenkins), automated cloud environments (CloudFoundry), and ran capacity and load testing for production systems.
+
+  - title: Software Developer
+    structure: Travelnuts
+    location: San Francisco, California, USA
+    from: '2013.07'
+    to: '2015.09'
+    resume: false
+    tasks:
+      - Full-stack development of a multi-tenant platform for hotel booking and vacation packages
+      - Single codebase serving as backend, standalone frontend, embeddable widget, and mobile app
+
+  - title: FrontEnd Web Developer
+    structure: Graffiti 2000
+    location: Arco, Trentino, Italy
+    from: '2012.10'
+    to: '2015.06'
+    resume: false
+    tasks:
+      - Lead developer for WordPress (marketing sites for hospitality and national brands) and Node.js (custom portals and CMS)
+      - Introduced WordPress as agency standard, replacing a legacy custom framework
+
+  - title: Performance Specialist
+    structure: Moviri
+    location: Milan, Lombardy, Italy
+    from: '2010.12'
+    to: '2012.09'
+    resume: false
+    tasks:
+      - Consultant, Performance and Diagnostics Specialist
+      - Real-time reporting
+      - Capacity & Load Testing
+
+  - title: Webmaster
+    structure: Many small works
+    location: Milan, Lombardy, Italy
+    from: '2004'
+    to: '2016'
+    resume: false
+    hidden: true
+    tasks:
+      - Realization of small websites for individuals or companies
+
+projects:
+  - name: FlowRAG
+    date: '2025'
+    descriptions:
+      - Open-source TypeScript RAG library with knowledge graph support, built end-to-end as sole author
+      - Serverless-ready, multi-provider (AWS Bedrock, Gemini, local ONNX)
+
+  - name: Bonvoy
+    date: '2025'
+    descriptions:
+      - Open-source release automation for npm monorepos, plugin architecture designed from scratch
+      - 100% test coverage, supports GitHub/GitLab/Slack/Discord
+
+  - name: Puro Gusto
+    date: '2016.05'
+    descriptions:
+      - 1st place at Hackathon @ H-Farm
+      - Mobile app for food & beverage
+
+educations:
+  - title: Eni Program for Management Development
+    structure: SDA Bocconi School of Management
+    location: Milan, Lombardy, Italy
+    from: 2025
+    to: 2025
+
+  - title: Master's Degree in Computer Science and Engineering
+    structure: Politecnico di Milano
+    location: Milan, Lombardy, Italy
+    from: 2004
+    to: 2010
+
+teachings:
+  - name: Workshop & Academy
+    courses:
+      - Electric Mobility
+      - "CI/CD, an opinionated guide"
+
+interests:
+  - Home Automation
+  - AI
+  - EV
+  - Kingdom Hearts
+  - Grilling
+  - Startup
