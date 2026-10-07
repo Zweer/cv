@@ -3,29 +3,29 @@ variant: pastel-red
 language: en
 name: Niccolò
 surname: Olivieri Achille
-title: Head of ICT Delivery
+title: Head of Delivery
 image: ../images/nic-square.jpg
 email: niccolo@olivieriachille.com
 phone: +39 388 64 65 482
 location: Milan, Italy
 citizenship: italian
-abstract: ICT leader with 15+ years of experience across cloud architecture, team building and delivery management — tech enthusiast, gamer, geek, nerd whose retirement plan is a chiringuito in Formentera
+abstract: Employee #3 of the ICT team, now running a 20-person delivery org that powers one of Europe's largest EV charging networks. Ten years hands-on before management, and I never stopped building. I hire, grow and challenge people, and I'd rather make an unpopular right call than a comfortable wrong one. Tech enthusiast and incurable builder whose retirement plan is a chiringuito in Mallorca.
 
 links:
   linkedin: https://www.linkedin.com/in/niccoloolivieri/
   github: https://github.com/Zweer
 
 skills:
-  - AWS
-  - Cloud Architecture
   - Team Leadership
+  - Hiring & Performance Management
   - Agile Delivery
+  - Stakeholder Management
+  - Cloud Architecture
+  - AWS
+  - CI/CD
   - Vendor Management
   - Budget Planning
-  - Stakeholder Management
-  - CI/CD
   - EV Charging
-  - Digital Transformation
 
 languages:
   - name: italian
@@ -34,7 +34,7 @@ languages:
     level: C1
 
 works:
-  - title: Head of ICT Delivery
+  - title: Head of Delivery
     structure: Plenitude On The Road (formerly BePower)
     location: Milan, Lombardy, Italy
     from: '2020.04'
@@ -45,13 +45,15 @@ works:
       - Projects coordinator + interface with business
       - Cloud Architect (AWS)
     description: |
-      Key figures: ~€10M annual budget · 20+ direct reports · 30–40 external consultants · 100% cloud-native (AWS) · 99.99% uptime.
+      Key figures: ~€10M annual budget, 20+ direct reports, 30-40 external consultants, 100% cloud-native (AWS), 99.99% uptime.
 
-      Joined as the third member of the ICT department when the company was still a startup (then BePower), building the technology platform powering Italy's second-largest and one of Europe's largest EV charging networks.
+      Joined as the 3rd member of the ICT department when the company was still a startup (then BePower), building the technology platform behind Italy's second-largest and one of Europe's largest EV charging networks.
 
-      Grew from technical Project Manager — coordinating 10+ consultants to deliver all core systems including the consumer mobile app (now on its third rewrite) — to the company's largest team manager, progressively consolidating developers, testers, analysts and PMs under a single delivery organization.
+      Grew from technical Project Manager to the company's largest team manager. I personally hired the entire ~20-person team (analysts, PMs, developers, QA) and now run their annual goal-setting, performance reviews and career assessments, pushing promotions from junior roles up to management grades. I handled underperformance directly, including guiding two people out of the team toward roles that fit them better.
 
-      Dual focus: people management across all delivery streams, and long-term technical strategy — evaluating solutions and providing architectural guidance to shape business roadmaps before they are formalized.
+      I own every technical and organizational decision for the team, some on my own and some alongside my manager. I led the backend rebuild that fixed the platform's performance ceiling, and I restructured the mobile app's agile teams when the existing setup stopped delivering.
+
+      Delivery is organized into 6 functional streams plus a technical factory (analysis, development, testing), with several fusion and tiny teams running in parallel. Two things stay constant: growing people across every stream, and shaping technical strategy before roadmaps get formalized.
 
   - title: Senior Software Engineer
     structure: ThinkOpen @ Reply
@@ -64,9 +66,9 @@ works:
       - Realtime Chatbot
       - Cloud Architect using IaaS (AWS), PaaS (Heroku) and CRM
     description: |
-      Led a team of 5 developers on custom Node.js applications — a realtime chatbot for an automotive client and a customer portal for an energy utility — before transitioning to Salesforce delivery for banking and pharma clients.
+      Led a team of 5 developers on custom Node.js applications (a realtime chatbot for an automotive client and a customer portal for an energy utility) before transitioning to Salesforce delivery for banking and pharma clients.
 
-      Cross-domain experience (custom backends, CRM, cloud) led to a broader Architect role bridging Salesforce with AWS and Heroku infrastructure. Across all projects: defined architecture, advised PMs on technical feasibility, and mentored developers.
+      Cross-domain experience across custom backends, CRM and cloud led to a broader Architect role bridging Salesforce with AWS and Heroku infrastructure. Across all projects I defined architecture, advised PMs on technical feasibility, and mentored developers.
 
   - title: APM Specialist
     structure: Moviri
@@ -79,7 +81,7 @@ works:
       - Operational Analytics
       - Cloud Automation & PaaS
     description: |
-      Consultant specializing in application monitoring, operational intelligence and performance diagnostics for enterprise clients in banking, telco and insurance. Go-to first responder during critical outages — including resolving a full system-wide outage for a major Italian bank.
+      Consultant specializing in application monitoring, operational intelligence and performance diagnostics for enterprise clients in banking, telco and insurance. Go-to first responder during critical outages, including resolving a full system-wide outage for a major Italian bank.
 
       Designed monitoring infrastructures (New Relic, DynaTrace, Splunk), built CI/CD pipelines (Jenkins), automated cloud environments (CloudFoundry), and ran capacity and load testing for production systems.
 
@@ -128,19 +130,19 @@ projects:
   - name: FlowRAG
     date: '2025'
     descriptions:
-      - Open-source TypeScript RAG library with knowledge graph support
+      - Open-source TypeScript RAG library with knowledge graph support, built end-to-end as sole author
       - Serverless-ready, multi-provider (AWS Bedrock, Gemini, local ONNX)
 
   - name: Bonvoy
     date: '2025'
     descriptions:
-      - Open-source plugin-based release automation for npm monorepos
+      - Open-source release automation for npm monorepos, plugin architecture designed from scratch
       - 100% test coverage, supports GitHub/GitLab/Slack/Discord
 
   - name: Puro Gusto
     date: '2016.05'
     descriptions:
-      - 1st place — Hackathon @ H-Farm
+      - 1st place at Hackathon @ H-Farm
       - Mobile app for food & beverage
 
 educations:

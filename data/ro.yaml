@@ -31,9 +31,9 @@ skills:
 certifications:
   - ECDL
   - ECDL Advanced
-  - Digital Marketing e Business English
-  - Gestione Risorse Umane
-  - Gestione Logistica e Magazzino
+  # - Digital Marketing e Business English
+  # - Gestione Risorse Umane
+  # - Gestione Logistica e Magazzino
 
 languages:
   - name: italiano
@@ -42,27 +42,52 @@ languages:
     level: B2
   - name: francese
     level: B1
-  - name: tedesco
-    level: A1
+  # - name: tedesco
+  #   level: A1
 
 hobbies:
   # - pole dance
   - pilates
-  - yoga
+  # - yoga
   - trekking
-  - second hand
+  # - second hand
 
 works:
   - structure: ASL3 Liguria
     location: Genova, Liguria, Italy
-    from: "09/2021"
+    from: "15/01/2024"
     to: presente
-    title: Coadiutore -> Assistente amministrativa
+    title: Assistente Amministrativo
     resume: true
     tasks:
-      - Redazione, classificazione, archiviazione e protocollazione degli atti, mantenimento di un'organizzato sistema di archiviazione dei documenti cartacei e digitali, invio ordini d'acquisto, gestione pratiche burocratiche ospedaliere (rifiuti, decessi, ricerca scomparsi, ecc)
-      - Supporto amministrativo e organizzativo al personale interno, interlocuzione con i servizi interni per lo scambio di informazioni e documenti, compilazione di documenti e modulistica nel rispetto delle policy
-      - Gestione comunicazioni interne ed esterne attraverso mail e pec; elaborazione e inoltro di note interne, monitoraggio del flusso di lavoro relativo alle segnalazioni di disservizi presentati dall'utenza
+      - Gestione delle comunicazioni interne ed esterne tramite posta elettronica e posta elettronica certificata (PEC).
+      - Interlocuzione con i servizi interni per lo scambio di informazioni e documenti.
+      - Interfaccia con interlocutori interni ed esterni.
+      - Redazione di bozze di note mediante strumenti di videoscrittura.
+      - Monitoraggio delle scadenze e supporto nel follow-up delle attività in corso.
+      - Organizzazione di call e riunioni, verbalizzazione degli incontri e archiviazione della relativa documentazione.
+      - Aggiornamento di database e archivi documentali.
+      - Utilizzo di fogli di calcolo Excel.
+      - Invio di ordini di acquisto di servizi tramite sistema gestionale NSO.
+      - Gestione di documentazione riservata e sensibile con garanzia di riservatezza.
+      - Supporto operativo in situazioni di urgenza, con capacità di gestire le priorità.
+    tasks-extended:
+    skills:
+
+  - structure: ASL3 Liguria
+    location: Genova, Liguria, Italy
+    from: "13/09/2021"
+    to: "14/01/2024"
+    title: Coadiutore Amministrativo
+    resume: true
+    tasks:
+      - Gestione delle comunicazioni interne ed esterne tramite posta elettronica e posta elettronica certificata (PEC).
+      - Ricerca e consultazione di documentazione e modulistica attraverso il sistema Intranet aziendale.
+      - Interlocuzione con i servizi interni per lo scambio di informazioni e documenti.
+      - Gestione di documentazione riservata e sensibile con piena garanzia di riservatezza e discrezione.
+      - Interfaccia con interlocutori interni ed esterni.
+      - Utilizzo di fogli di calcolo Excel.
+      - Ricezione, scarico e smistamento della corrispondenza in entrata tramite il sistema di protocollo aziendale
     tasks-extended:
     skills:
 
