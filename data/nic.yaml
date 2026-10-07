@@ -9,7 +9,7 @@ email: niccolo@olivieriachille.com
 phone: +39 388 64 65 482
 location: Milan, Italy
 citizenship: italian
-abstract: Employee #3 of the ICT team, now running a 20-person delivery org that powers one of Europe's largest EV charging networks. Ten years hands-on before management, and I never stopped building. I hire, grow and challenge people, and I'd rather make an unpopular right call than a comfortable wrong one. Tech enthusiast and incurable builder whose retirement plan is a chiringuito in Mallorca.
+abstract: "Employee #3 of the ICT team, now running a 20-person delivery org that powers one of Europe's largest EV charging networks. Ten years hands-on before management, and I never stopped building. I hire, grow and challenge people, and I'd rather make an unpopular right call than a comfortable wrong one. Tech enthusiast and incurable builder whose retirement plan is a chiringuito in Mallorca."
 
 links:
   linkedin: https://www.linkedin.com/in/niccoloolivieri/
@@ -102,7 +102,7 @@ works:
     to: '2015.06'
     resume: false
     tasks:
-      - Lead developer for WordPress (showcase sites for hospitality and national brands) and Node.js (custom portals and CMS)
+      - Lead developer for WordPress (marketing sites for hospitality and national brands) and Node.js (custom portals and CMS)
       - Introduced WordPress as agency standard, replacing a legacy custom framework
 
   - title: Performance Specialist
