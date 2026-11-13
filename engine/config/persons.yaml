@@ -1,0 +1,40 @@
+# Per-person policy for the tailoring engine.
+#
+# This is POLICY, not render data: it never reaches a theme or a resolved CV
+# file. The engine reads it to decide how to behave for each person (how
+# proactive to be, which language to default to, what the person is steering
+# toward). Render content stays in data/<person>.yaml; this file stays here.
+#
+# Fields per person:
+#   mode          passive | active
+#                 - passive: the engine acts only on an explicit request (a
+#                   pasted posting or "tailor for X"). It never searches or
+#                   suggests on its own.
+#                 - active: the engine may proactively surface postings (via a
+#                   portal CLI) and propose applications, still never applying
+#                   or sending anything without the person's go-ahead.
+#   cv_language   The default output language for CV + cover letter. Overridable
+#                 per application, but this is the floor the fit/language gate
+#                 starts from (see engine/prompts/01-fit-and-language-gate.md).
+#   career_goals  What the person is steering their career toward. EMPTY until
+#                 filled at first setup (engine asks). Used to bias fit scoring
+#                 and the cover-letter framing, never to fabricate experience.
+#   energizers    Kinds of work/role/culture that energise the person. EMPTY
+#                 until first setup. A soft signal for ranking, not a hard gate.
+#   drains        Kinds of work/role/culture that drain the person (to steer
+#                 away from). EMPTY until first setup.
+
+persons:
+  nic:
+    mode: passive
+    cv_language: en   # nic's CV is always in English
+    career_goals: []  # TODO: fill at first setup
+    energizers: []    # TODO: fill at first setup
+    drains: []        # TODO: fill at first setup
+
+  ro:
+    mode: active
+    cv_language: it   # ro's CV is Italian unless a posting explicitly needs another language
+    career_goals: []  # TODO: fill at first setup
+    energizers: []    # TODO: fill at first setup
+    drains: []        # TODO: fill at first setup
