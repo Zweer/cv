@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout ${{ github.repository }} @ ${{ github.ref }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install Typst
-        uses: typst-community/setup-typst@v4
+        uses: typst-community/setup-typst@v5
 
       - name: Generate PDFs
         run: make all
@@ -32,7 +32,7 @@ jobs:
           fi
 
       - name: Create release for pdfs
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ steps.tag.outputs.name }}
           name: ${{ steps.tag.outputs.name }}

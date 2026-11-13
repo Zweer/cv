@@ -61,7 +61,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 import { argv, exit, stderr } from "node:process";
-import yaml from "js-yaml";
+import { dump, load, YAMLException } from "js-yaml";
 
 type Mapping = Record<string, unknown>;
 
@@ -219,11 +219,11 @@ export function main(argvSlice: string[]): number {
   let base: unknown;
   let delta: unknown;
   try {
-    base = yaml.load(readFileSync(args.base, "utf-8"));
-    delta = yaml.load(readFileSync(args.delta, "utf-8"));
+    base = load(readFileSync(args.base, "utf-8"));
+    delta = load(readFileSync(args.delta, "utf-8"));
   } catch (exc) {
     const msg = exc instanceof Error ? exc.message : String(exc);
-    if (exc instanceof yaml.YAMLException) {
+    if (exc instanceof YAMLException) {
       stderr.write(`merge_delta: invalid YAML: ${msg}\n`);
     } else {
       stderr.write(`merge_delta: cannot read input: ${msg}\n`);
@@ -248,7 +248,7 @@ export function main(argvSlice: string[]): number {
   //   - a very wide line width so long scalars are not folded (matches
   //     PyYAML width=1000), keeping the resolved file diffable and the block
   //     scalars intact for the Typst themes that parse it.
-  const dumped = yaml.dump(resolved, {
+  const dumped = dump(resolved, {
     flowLevel: -1,
     sortKeys: false,
     lineWidth: 1000,
