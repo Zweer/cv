@@ -4,6 +4,7 @@
 // =============================================================================
 
 #import "@preview/fontawesome:0.5.0": *
+#import "/themes/common/cover-letter.typ": cover-letter-page
 
 // --- Data Loading ---
 #let person = sys.inputs.at("person", default: "nic")
@@ -243,3 +244,8 @@
 // --- GDPR ---
 #v(1fr)
 #align(center, text(size: 5pt, fill: grey-text, style: "italic")[#i18n.gdpr])
+
+// =============================================================================
+// COVER LETTER (optional, rendered only when cv.cover_letter is present)
+// =============================================================================
+#cover-letter-page(cv, i18n, accent: accent)

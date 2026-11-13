@@ -4,6 +4,7 @@
 // =============================================================================
 
 #import "@preview/fontawesome:0.5.0": *
+#import "/themes/common/cover-letter.typ": cover-letter-page
 
 // --- Data Loading ---
 #let person = sys.inputs.at("person", default: "nic")
@@ -232,3 +233,8 @@
     }
   },
 )
+
+// =============================================================================
+// COVER LETTER (optional, rendered only when cv.cover_letter is present)
+// =============================================================================
+#cover-letter-page(cv, i18n, accent: accent)
