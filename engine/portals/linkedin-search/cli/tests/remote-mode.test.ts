@@ -1,5 +1,6 @@
-import { describe, expect, test } from "bun:test";
-import { runSearchFixture } from "./helpers";
+import assert from "node:assert/strict";
+import { describe, test } from "node:test";
+import { runSearchFixture } from "./helpers.ts";
 
 const LOCATION = "Copenhagen, Denmark";
 
@@ -16,29 +17,42 @@ describe("--remote mode", () => {
     ["--remote"],
   ]) {
     test(`${args.join(" ")} exits 1 with BAD_ARG before any request`, async () => {
-      const { result, requests } = await runSearchFixture(["search", "-l", LOCATION, "-q", "engineer", ...args]);
-      expect(result.exitCode).toBe(1);
-      expect(result.stdout).toBe("");
+      const { result, requests } = await runSearchFixture([
+        "search",
+        "-l",
+        LOCATION,
+        "-q",
+        "engineer",
+        ...args,
+      ]);
+      assert.equal(result.exitCode, 1);
+      assert.equal(result.stdout, "");
       const error = JSON.parse(result.stderr);
-      expect(error.code).toBe("BAD_ARG");
-      expect(error.error).toContain("--remote");
-      expect(requests).toHaveLength(0);
+      assert.equal(error.code, "BAD_ARG");
+      assert.ok(error.error.includes("--remote"));
+      assert.equal(requests.length, 0);
     });
   }
 
-  for (const [mode, wt] of [["remote", "2"], ["hybrid", "3"], ["onsite", "1"], ["on-site", "1"], ["Remote", "2"]]) {
+  for (const [mode, wt] of [
+    ["remote", "2"],
+    ["hybrid", "3"],
+    ["onsite", "1"],
+    ["on-site", "1"],
+    ["Remote", "2"],
+  ]) {
     test(`--remote ${mode} sends f_WT=${wt}`, async () => {
       const { result, requests } = await runSearchFixture(["search", "-l", LOCATION, "--remote", mode]);
-      expect(result.exitCode).toBe(0);
-      expect(requests).toHaveLength(1);
-      expect(requests[0].searchParams.get("f_WT")).toBe(wt);
+      assert.equal(result.exitCode, 0);
+      assert.equal(requests.length, 1);
+      assert.equal(requests[0].searchParams.get("f_WT"), wt);
     });
   }
 
   test("omitting --remote still searches every workplace type", async () => {
     const { result, requests } = await runSearchFixture(["search", "-l", LOCATION]);
-    expect(result.exitCode).toBe(0);
-    expect(requests).toHaveLength(1);
-    expect(requests[0].searchParams.has("f_WT")).toBe(false);
+    assert.equal(result.exitCode, 0);
+    assert.equal(requests.length, 1);
+    assert.equal(requests[0].searchParams.has("f_WT"), false);
   });
 });

@@ -1,13 +1,13 @@
 # Example application delta (committed as documentation of the format).
 #
 # A delta is applied on top of a base profile (data/<person>.yaml) by
-# engine/tools/merge_delta.py, which writes a fully-resolved data file that
+# engine/tools/merge_delta.ts, which writes a fully-resolved data file that
 # `make one` compiles. The delta carries ONLY what changes for one job posting:
 # keep it small and DRY. See engine/prompts/04-typst-output-contract.md and the
-# merge semantics in engine/tools/merge_delta.py for the full rules.
+# merge semantics in engine/tools/merge_delta.ts for the full rules.
 #
 # Build this example:
-#   python3 engine/tools/merge_delta.py \
+#   node engine/tools/merge_delta.ts \
 #     --base data/nic.yaml \
 #     --delta data/applications/nic-example.yaml \
 #     --out data/nic-example.resolved.yaml

@@ -4,3 +4,15 @@ updates:
     directory: /
     schedule:
       interval: weekly
+
+  # Node dependencies for the CV tailoring engine (tools + tests).
+  - package-ecosystem: npm
+    directory: /engine
+    schedule:
+      interval: weekly
+
+  # Node dev dependencies for the ported LinkedIn search portal CLI.
+  - package-ecosystem: npm
+    directory: /engine/portals/linkedin-search/cli
+    schedule:
+      interval: weekly

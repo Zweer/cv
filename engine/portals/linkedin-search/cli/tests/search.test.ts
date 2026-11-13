@@ -1,8 +1,6 @@
-import { afterEach, describe, expect, test } from "bun:test";
-import { runSearch } from "../src/commands/search";
-
-const originalFetch = globalThis.fetch;
-const originalStdoutWrite = process.stdout.write;
+import assert from "node:assert/strict";
+import { describe, test } from "node:test";
+import { runSearchServing, runSearchUnit } from "./helpers.ts";
 
 function searchCard(id: string, title: string): string {
   return `<li>
@@ -13,49 +11,33 @@ function searchCard(id: string, title: string): string {
   </li>`;
 }
 
-afterEach(() => {
-  globalThis.fetch = originalFetch;
-  process.stdout.write = originalStdoutWrite;
-});
-
 describe("runSearch", () => {
+  // --limit 0 is rejected by the CLI's own flag validation, so this exercises
+  // the runSearch function directly in a child process: limit 0 -> slice(0, 0)
+  // -> zero results.
   test("--limit 0 emits zero results", async () => {
-    globalThis.fetch = (async () => new Response(searchCard("123456", "Engineer"))) as typeof fetch;
-
-    let stdout = "";
-    process.stdout.write = ((chunk: string | Uint8Array) => {
-      stdout += chunk.toString();
-      return true;
-    }) as typeof process.stdout.write;
-
-    const code = await runSearch({
+    const result = await runSearchUnit(searchCard("123456", "Engineer"), {
       location: "Copenhagen, Denmark",
       jobage: 9999,
       page: 1,
       limit: 0,
       format: "json",
     });
-
-    expect(code).toBe(0);
-    expect(JSON.parse(stdout).results).toHaveLength(0);
+    assert.equal(result.exitCode, 0, result.stderr);
+    assert.equal(JSON.parse(result.stdout).results.length, 0);
   });
 
   test("--jobage-minutes 30 constructs f_TPR=r1800 in the request URL", async () => {
-    let capturedUrl = "";
-    globalThis.fetch = (async (input: RequestInfo | URL) => {
-      capturedUrl = typeof input === "string" ? input : input.toString();
-      return new Response("");
-    }) as typeof fetch;
-
-    const code = await runSearch({
-      location: "Remote",
-      jobage: 9999,
-      jobageMinutes: 30,
-      page: 1,
-      format: "json",
-    });
-
-    expect(code).toBe(0);
-    expect(capturedUrl).toContain("f_TPR=r1800");
+    const { result, requests } = await runSearchServing("", [
+      "-l",
+      "Remote",
+      "--jobage-minutes",
+      "30",
+      "--format",
+      "json",
+    ]);
+    assert.equal(result.exitCode, 0, result.stderr);
+    assert.equal(requests.length, 1);
+    assert.equal(requests[0].searchParams.get("f_TPR"), "r1800");
   });
 });

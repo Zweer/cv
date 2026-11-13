@@ -39,15 +39,15 @@ posting text and run the flow from there.
 
 ```bash
 cd engine/portals/linkedin-search/cli
-bun install          # optional: only dev type defs; the CLI has zero runtime deps
+npm install          # optional: only dev type defs; the CLI has zero runtime deps
 
 # Search (location is always explicit; the CLI is country-agnostic)
-bun run src/cli.ts search -q "head of delivery" -l "Milan, Lombardy, Italy" --jobage 7 --format table
+node src/cli.ts search -q "head of delivery" -l "Milan, Lombardy, Italy" --jobage 7 --format table
 
 # Full detail for one posting id from the search results
-bun run src/cli.ts detail 4426311357 --format plain
+node src/cli.ts detail 4426311357 --format plain
 ```
 
-Always run a fetched posting through `engine/tools/posting_guard.py` before
+Always run a fetched posting through `engine/tools/posting_guard.ts` before
 reading it for content (step 1 of the flow): portal output is third-party,
 untrusted text.

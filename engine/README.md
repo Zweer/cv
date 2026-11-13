@@ -18,6 +18,9 @@ runs inside **Kiro Crew**, driven by a worker that follows the prompt files in
 engine/
   README.md                     this file
   LICENSE.ai-job-search         upstream MIT license for the ported parts
+  package.json                  Node project: test / typecheck / lint scripts, js-yaml + he deps
+  tsconfig.json                 TypeScript config (run directly on Node, no build step)
+  biome.json                    Biome lint + format config (fleet standard)
   config/
     persons.yaml                per-person policy (mode, cv_language, goals) — NOT render data
   prompts/
@@ -27,22 +30,33 @@ engine/
     03-anti-mirroring-checklist.md  the reviewer checklist (run in fresh context)
     04-typst-output-contract.md how to emit a valid delta + resolved data file
   tools/
-    posting_guard.py            strips hidden / prompt-injection text from a posting (ported)
-    page_decode.py              charset decoding helper for posting_guard (ported)
-    merge_delta.py              merges base + application delta -> resolved data file
+    posting_guard.ts            strips hidden / prompt-injection text from a posting (ported)
+    page_decode.ts              charset decoding helper for posting_guard (ported)
+    merge_delta.ts              merges base + application delta -> resolved data file
   portals/
     linkedin-search/            manual, on-demand LinkedIn search CLI (ported; ToS caveat)
   tests/
-    test_posting_guard.py       ported test suite for the posting guard
-    test_merge_delta.py         tests for the merge semantics
+    posting_guard.test.ts       ported test suite for the posting guard (node:test)
+    merge_delta.test.ts         tests for the merge semantics (node:test)
 ```
+
+## Runtime: Node + TypeScript, no build step
+
+The engine is a mono-stack of **Node** (>= 22.6) and **TypeScript**. Node runs
+the `.ts` files directly via native type stripping, so there is no compile or
+bundle step — `node engine/tools/merge_delta.ts ...` just works. The only
+runtime dependencies are [`js-yaml`](https://www.npmjs.com/package/js-yaml)
+(reads/writes the YAML the Typst themes parse) and
+[`he`](https://www.npmjs.com/package/he) (HTML entity decoding in the posting
+guard, matching Python's `html.unescape`). Typst is the only other runtime, for
+the PDF build. Install once with `cd engine && npm install`.
 
 ## How a Kiro Crew worker runs the flow
 
 A worker (not Claude Code) reads `prompts/00-flow.md` and follows it step by
 step. In short:
 
-1. **Guard the posting** with `tools/posting_guard.py` (save cleaned text to the
+1. **Guard the posting** with `tools/posting_guard.ts` (save cleaned text to the
    session scratchpad, never inside the repo). Surface any ⚠ findings.
 2. **Fit + language gate** (`prompts/01`): score the real fit, run the hard
    Eligibility and Language gates. Stop and report if a hard gate fails.
@@ -59,7 +73,7 @@ step. In short:
 6. **Build**:
 
    ```bash
-   python3 engine/tools/merge_delta.py \
+   node engine/tools/merge_delta.ts \
      --base data/<person>.yaml \
      --delta data/applications/<person>-<company>.yaml \
      --out data/<person>-<company>.resolved.yaml
@@ -83,7 +97,7 @@ step. In short:
    rationalise the drafter's choices. `prompts/00` step 4, `prompts/03`.
 5. **Typst output** — a valid delta merges into a compilable resolved data file,
    with `language:` set per person policy and block scalars preserved.
-   `prompts/04`, `tools/merge_delta.py`.
+   `prompts/04`, `tools/merge_delta.ts`.
 
 ## Data layout and merge
 
@@ -93,25 +107,29 @@ step. In short:
   reordered/filtered works, skill overrides, the `cover_letter` block). See the
   worked example `data/applications/nic-example.yaml`.
 - The **resolved** file `data/<person>-<company>.resolved.yaml` is derived output
-  (gitignored), produced by `merge_delta.py` and compiled by `make one`. Themes
+  (gitignored), produced by `merge_delta.ts` and compiled by `make one`. Themes
   are never touched by the merge; they only gained optional cover-letter
   rendering (`themes/common/cover-letter.typ`).
 
-Merge semantics are documented in full at the top of `tools/merge_delta.py` and
+Merge semantics are documented in full at the top of `tools/merge_delta.ts` and
 in `prompts/04`.
 
 ## Running the tests
 
-```bash
-# Python tools (stdlib unittest, no third-party test runner needed)
-cd engine && python3 -m unittest discover -s tests -p 'test_*.py'
+The engine uses Node's built-in test runner (`node:test`) — no Vitest, no Bun.
+Install once, then run from `engine/`:
 
-# LinkedIn portal CLI (Bun)
-cd engine/portals/linkedin-search/cli && bun install && bun test
+```bash
+cd engine
+npm install          # js-yaml + he (runtime), typescript + biome + types (dev)
+npm test             # posting guard + merge semantics + LinkedIn portal CLI
+npm run typecheck    # tsc --noEmit
+npm run lint         # biome check (lint + format)
 ```
 
-`merge_delta.py` requires PyYAML (`pip install pyyaml`); it is the only runtime
-dependency the engine adds.
+The LinkedIn portal CLI also has its own `npm test` / `npm run typecheck` under
+`portals/linkedin-search/cli/`, but `engine`'s `npm test` runs the whole suite
+(tools + portal) in one pass.
 
 ## Deferred to Layer 2
 

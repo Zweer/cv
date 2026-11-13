@@ -1,47 +1,48 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
+
 // Self-contained CLI for searching jobs on LinkedIn's public jobs-guest endpoints,
 // for any country/region (plus remote). No external CLI framework, so it runs
-// anywhere `bun` is available with zero install beyond the repo clone.
+// anywhere `node` is available with zero install beyond the repo clone.
 //
 // Personal use only. This reads LinkedIn's public job pages; automated access is
 // against LinkedIn's Terms of Service, so keep volume low and do not use it
 // commercially or for bulk data collection. Run it on your own responsibility.
 
-import { runSearch, type SearchOpts } from "./commands/search.js"
-import { runDetail, type DetailOpts } from "./commands/detail.js"
-import { workTypeFlag } from "./helpers.js"
+import { type DetailOpts, runDetail } from "./commands/detail.ts";
+import { runSearch, type SearchOpts } from "./commands/search.ts";
+import { workTypeFlag } from "./helpers.ts";
 
 interface Flags {
-  _: string[]
-  [k: string]: string | boolean | string[]
+  _: string[];
+  [k: string]: string | boolean | string[];
 }
 
 function parseFlags(argv: string[]): Flags {
-  const flags: Flags = { _: [] }
-  const alias: Record<string, string> = { q: "query", l: "location", n: "limit" }
+  const flags: Flags = { _: [] };
+  const alias: Record<string, string> = { q: "query", l: "location", n: "limit" };
   for (let i = 0; i < argv.length; i++) {
-    const a = argv[i]
+    const a = argv[i];
     if (a.startsWith("--") || a.startsWith("-")) {
-      const key = alias[a.replace(/^-+/, "")] ?? a.replace(/^-+/, "")
-      const next = argv[i + 1]
+      const key = alias[a.replace(/^-+/, "")] ?? a.replace(/^-+/, "");
+      const next = argv[i + 1];
       if (next === undefined || next.startsWith("-")) {
-        flags[key] = true
+        flags[key] = true;
       } else {
-        flags[key] = next
-        i++
+        flags[key] = next;
+        i++;
       }
     } else {
-      ;(flags._ as string[]).push(a)
+      (flags._ as string[]).push(a);
     }
   }
-  return flags
+  return flags;
 }
 
 const HELP = `linkedin-cli — search jobs on LinkedIn (any country/region, plus remote)
 
 USAGE
-  bun run src/cli.ts search --location "<place>" [flags]
-  bun run src/cli.ts detail <id|url> [--format json|plain]
+  node src/cli.ts search --location "<place>" [flags]
+  node src/cli.ts detail <id|url> [--format json|plain]
 
 SEARCH FLAGS
   --location, -l <text>   Location to search. REQUIRED. e.g. "Mumbai, Maharashtra, India",
@@ -55,33 +56,42 @@ SEARCH FLAGS
   --format <fmt>          json (default) | table | plain.
 
 EXAMPLES
-  bun run src/cli.ts search -q "data engineer" -l "Bengaluru, Karnataka, India" --jobage 30 --format table
-  bun run src/cli.ts search -q "product manager" -l "Berlin, Germany" --remote remote --format table
-  bun run src/cli.ts search -q "paralegal" -l "Remote" --format table
-  bun run src/cli.ts search -q "engineer" -l "Remote" --jobage-minutes 30 --format table
-  bun run src/cli.ts detail 4300011451 --format plain
+  node src/cli.ts search -q "data engineer" -l "Bengaluru, Karnataka, India" --jobage 30 --format table
+  node src/cli.ts search -q "product manager" -l "Berlin, Germany" --remote remote --format table
+  node src/cli.ts search -q "paralegal" -l "Remote" --format table
+  node src/cli.ts search -q "engineer" -l "Remote" --jobage-minutes 30 --format table
+  node src/cli.ts detail 4300011451 --format plain
 
 Personal use only — uses LinkedIn's public pages; keep volume low (LinkedIn ToS).
-`
+`;
 
 // Long-form flag names each command accepts (parseFlags resolves the short
 // aliases q/l/n to these before validation). "help"/"h" pass so `search --help`
 // still prints usage.
 const KNOWN_FLAGS: Record<string, Set<string>> = {
   search: new Set([
-    "location", "query", "jobage", "jobage-minutes", "remote", "page", "limit", "format", "help", "h",
+    "location",
+    "query",
+    "jobage",
+    "jobage-minutes",
+    "remote",
+    "page",
+    "limit",
+    "format",
+    "help",
+    "h",
   ]),
   detail: new Set(["format", "help", "h"]),
-}
+};
 
 async function main(): Promise<number> {
-  const argv = process.argv.slice(2)
-  const flags = parseFlags(argv)
-  const cmd = (flags._ as string[])[0]
+  const argv = process.argv.slice(2);
+  const flags = parseFlags(argv);
+  const cmd = (flags._ as string[])[0];
 
   if (!cmd || flags.help || flags.h) {
-    process.stdout.write(HELP)
-    return cmd ? 0 : 1
+    process.stdout.write(HELP);
+    return cmd ? 0 : 1;
   }
 
   // Reject unknown flags instead of silently discarding them: a discarded
@@ -89,102 +99,113 @@ async function main(): Promise<number> {
   // once returned an entire portal's database as if it matched the query).
   // add-portal.md's contract requires a bogus flag to exit 1 with a JSON
   // error on stderr.
-  const knownFlags = KNOWN_FLAGS[cmd]
+  const knownFlags = KNOWN_FLAGS[cmd];
   if (knownFlags) {
     for (const key of Object.keys(flags)) {
-      if (key === "_" || knownFlags.has(key)) continue
+      if (key === "_" || knownFlags.has(key)) continue;
       process.stderr.write(
-        JSON.stringify({
+        `${JSON.stringify({
           error: `unknown flag --${key} for '${cmd}' - flags are never silently ignored, because a discarded filter changes what the search returns; see --help for the supported flags`,
           code: "UNKNOWN_FLAG",
-        }) + "\n",
-      )
-      return 1
+        })}\n`,
+      );
+      return 1;
     }
   }
 
   if (cmd === "search") {
-    const location = typeof flags.location === "string" ? flags.location : undefined
+    const location = typeof flags.location === "string" ? flags.location : undefined;
     if (!location) {
       process.stderr.write(
-        JSON.stringify({
-          error: 'the --location/-l flag is required (e.g. -l "Mumbai, Maharashtra, India", -l "Berlin, Germany", or -l "Remote")',
+        `${JSON.stringify({
+          error:
+            'the --location/-l flag is required (e.g. -l "Mumbai, Maharashtra, India", -l "Berlin, Germany", or -l "Remote")',
           code: "NO_LOCATION",
-        }) + "\n",
-      )
-      return 1
+        })}\n`,
+      );
+      return 1;
     }
     // --query is optional, but a present one needs keywords: parseFlags stores
     // a bare -q as true and -q "" as "", and both used to be treated as unset,
     // returning every posting in the location as if it matched.
     if (flags.query !== undefined && (typeof flags.query !== "string" || !flags.query.trim())) {
       process.stderr.write(
-        JSON.stringify({ error: "--query requires a non-empty value", code: "BAD_ARG" }) + "\n",
-      )
-      return 1
+        `${JSON.stringify({ error: "--query requires a non-empty value", code: "BAD_ARG" })}\n`,
+      );
+      return 1;
     }
-    const fmt = flags.format !== undefined ? String(flags.format) : "json"
+    const fmt = flags.format !== undefined ? String(flags.format) : "json";
     if (!["json", "table", "plain"].includes(fmt)) {
       process.stderr.write(
-        JSON.stringify({ error: `--format must be one of json|table|plain, got "${fmt}"`, code: "BAD_ARG" }) + "\n",
-      )
-      return 1
+        JSON.stringify({ error: `--format must be one of json|table|plain, got "${fmt}"`, code: "BAD_ARG" }) +
+          "\n",
+      );
+      return 1;
     }
 
     // workTypeFlag() maps a mode it does not know to null and the request then
     // carries no f_WT, so "remote,hybrid", a misspelling or a bare --remote
     // searched every workplace type, onsite included, with exit 0.
-    if (flags.remote !== undefined && (typeof flags.remote !== "string" || workTypeFlag(flags.remote) === null)) {
-      const got = typeof flags.remote === "string" ? `"${flags.remote}"` : "no value"
+    if (
+      flags.remote !== undefined &&
+      (typeof flags.remote !== "string" || workTypeFlag(flags.remote) === null)
+    ) {
+      const got = typeof flags.remote === "string" ? `"${flags.remote}"` : "no value";
       process.stderr.write(
-        JSON.stringify({ error: `--remote must be one of remote|hybrid|onsite, got ${got}`, code: "BAD_ARG" }) + "\n",
-      )
-      return 1
+        `${JSON.stringify({
+          error: `--remote must be one of remote|hybrid|onsite, got ${got}`,
+          code: "BAD_ARG",
+        })}\n`,
+      );
+      return 1;
     }
 
     if (flags.jobage !== undefined && flags["jobage-minutes"] !== undefined) {
       process.stderr.write(
-        JSON.stringify({
+        `${JSON.stringify({
           error: "--jobage and --jobage-minutes both set a freshness window; pass only one",
           code: "CONFLICTING_AGE_FLAGS",
-        }) + "\n",
-      )
-      return 1
+        })}\n`,
+      );
+      return 1;
     }
 
     const parseIntFlag = (name: string, raw: string | boolean | string[]): number | null => {
       // Number(), not parseInt(): parseInt truncates, so "--jobage 0.5"
       // became 0 and silently dropped f_TPR from the request (#371).
       // Whole numbers >= 1 only, matching the other portal CLIs.
-      const val = typeof raw === "string" ? Number(raw.trim()) : NaN
+      const val = typeof raw === "string" ? Number(raw.trim()) : NaN;
       if (!Number.isInteger(val) || val < 1) {
         process.stderr.write(
-          JSON.stringify({ error: `--${name} must be a whole number of at least 1, got "${raw}"`, code: "BAD_ARG" }) + "\n",
-        )
-        return null
+          `${JSON.stringify({
+            error: `--${name} must be a whole number of at least 1, got "${raw}"`,
+            code: "BAD_ARG",
+          })}\n`,
+        );
+        return null;
       }
-      return val
-    }
+      return val;
+    };
 
     if (flags.jobage !== undefined) {
-      const v = parseIntFlag("jobage", flags.jobage)
-      if (v === null) return 1
-      flags.jobage = String(v)
+      const v = parseIntFlag("jobage", flags.jobage);
+      if (v === null) return 1;
+      flags.jobage = String(v);
     }
     if (flags["jobage-minutes"] !== undefined) {
-      const v = parseIntFlag("jobage-minutes", flags["jobage-minutes"])
-      if (v === null) return 1
-      flags["jobage-minutes"] = String(v)
+      const v = parseIntFlag("jobage-minutes", flags["jobage-minutes"]);
+      if (v === null) return 1;
+      flags["jobage-minutes"] = String(v);
     }
     if (flags.page !== undefined) {
-      const v = parseIntFlag("page", flags.page)
-      if (v === null) return 1
-      flags.page = String(v)
+      const v = parseIntFlag("page", flags.page);
+      if (v === null) return 1;
+      flags.page = String(v);
     }
     if (flags.limit !== undefined) {
-      const v = parseIntFlag("limit", flags.limit)
-      if (v === null) return 1
-      flags.limit = String(v)
+      const v = parseIntFlag("limit", flags.limit);
+      if (v === null) return 1;
+      flags.limit = String(v);
     }
 
     const opts: SearchOpts = {
@@ -196,42 +217,42 @@ async function main(): Promise<number> {
       page: flags.page ? Math.max(1, parseInt(flags.page as string, 10)) : 1,
       limit: flags.limit ? parseInt(flags.limit as string, 10) : undefined,
       format: fmt as SearchOpts["format"],
-    }
-    return runSearch(opts)
+    };
+    return runSearch(opts);
   }
 
   if (cmd === "detail") {
-    const id = (flags._ as string[])[1]
+    const id = (flags._ as string[])[1];
     if (!id) {
-      process.stderr.write(JSON.stringify({ error: "detail requires an <id|url>", code: "NO_ID" }) + "\n")
-      return 1
+      process.stderr.write(`${JSON.stringify({ error: "detail requires an <id|url>", code: "NO_ID" })}\n`);
+      return 1;
     }
-    const fmt = flags.format !== undefined ? String(flags.format) : "json"
+    const fmt = flags.format !== undefined ? String(flags.format) : "json";
     if (!["json", "plain"].includes(fmt)) {
       process.stderr.write(
-        JSON.stringify({ error: `--format must be one of json|plain, got "${fmt}"`, code: "BAD_ARG" }) + "\n",
-      )
-      return 1
+        `${JSON.stringify({ error: `--format must be one of json|plain, got "${fmt}"`, code: "BAD_ARG" })}\n`,
+      );
+      return 1;
     }
     const opts: DetailOpts = {
       id,
       format: fmt as DetailOpts["format"],
-    }
-    return runDetail(opts)
+    };
+    return runDetail(opts);
   }
 
-  process.stderr.write(JSON.stringify({ error: `Unknown command "${cmd}"`, code: "BAD_CMD" }) + "\n")
-  return 1
+  process.stderr.write(`${JSON.stringify({ error: `Unknown command "${cmd}"`, code: "BAD_CMD" })}\n`);
+  return 1;
 }
 
 main()
   .then((code) => process.exit(code))
   .catch((e) => {
     process.stderr.write(
-      JSON.stringify({
+      `${JSON.stringify({
         error: e instanceof Error ? e.message : String(e),
         code: "INTERNAL_ERROR",
-      }) + "\n",
-    )
-    process.exit(1)
-  })
+      })}\n`,
+    );
+    process.exit(1);
+  });

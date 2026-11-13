@@ -1,5 +1,6 @@
-import { afterEach, describe, expect, test } from "bun:test";
-import { htmlFetch } from "../src/helpers";
+import assert from "node:assert/strict";
+import { afterEach, describe, test } from "node:test";
+import { htmlFetch } from "../src/helpers.ts";
 
 // The portal contract requires backoff on 429/5xx. These tests pin the retry
 // loop offline: a stubbed fetch counts attempts, and a stubbed setTimeout
@@ -15,8 +16,7 @@ afterEach(() => {
 });
 
 function instantTimers() {
-  globalThis.setTimeout = ((fn: () => void) =>
-    originalSetTimeout(fn, 0)) as unknown as typeof setTimeout;
+  globalThis.setTimeout = ((fn: () => void) => originalSetTimeout(fn, 0)) as unknown as typeof setTimeout;
 }
 
 function stubFetch(responses: Array<() => Response>): { calls: number } {
@@ -38,23 +38,23 @@ describe("htmlFetch retry/backoff", () => {
     ]);
 
     const html = await htmlFetch("https://www.linkedin.com/x");
-    expect(html).toContain("ok");
-    expect(state.calls).toBe(2);
+    assert.ok(html.includes("ok"));
+    assert.equal(state.calls, 2);
   });
 
   test("returns the documented empty string on 404 without retrying", async () => {
     const state = stubFetch([() => new Response("", { status: 404 })]);
 
     const html = await htmlFetch("https://www.linkedin.com/x");
-    expect(html).toBe("");
-    expect(state.calls).toBe(1);
+    assert.equal(html, "");
+    assert.equal(state.calls, 1);
   });
 
   test("gives up after the initial attempt plus six retries on persistent 5xx", async () => {
     instantTimers();
     const state = stubFetch([() => new Response("", { status: 500 })]);
 
-    await expect(htmlFetch("https://www.linkedin.com/x")).rejects.toThrow(/500/);
-    expect(state.calls).toBe(7);
+    await assert.rejects(() => htmlFetch("https://www.linkedin.com/x"), /500/);
+    assert.equal(state.calls, 7);
   });
 });

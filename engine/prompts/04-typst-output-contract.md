@@ -14,7 +14,7 @@ posting. It is NOT a full copy of the base profile.
 ## Delta format
 
 The delta is a YAML mapping. The merge semantics are defined in full in
-`engine/tools/merge_delta.py` (and documented at the top of that file). Summary:
+`engine/tools/merge_delta.ts` (and documented at the top of that file). Summary:
 
 - Any plain top-level key **replaces** the base value: `abstract:`, `title:`,
   `language:`, `cover_letter:`.
@@ -32,7 +32,7 @@ See `data/applications/nic-example.yaml` for a worked, committed example.
 
 ## YAML correctness rules
 
-1. **Valid, parseable YAML.** The merge helper uses `yaml.safe_load`; a syntax
+1. **Valid, parseable YAML.** The merge helper uses js-yaml's `load`; a syntax
    error aborts with a message. Validate by running the merge (below).
 2. **Block scalars for multi-line prose.** Use the `|` block scalar for any
    multi-paragraph `description:` or long cover-letter paragraph, exactly as the
@@ -50,7 +50,7 @@ See `data/applications/nic-example.yaml` for a worked, committed example.
 ## Build and verify
 
 ```bash
-python3 engine/tools/merge_delta.py \
+node engine/tools/merge_delta.ts \
   --base data/<person>.yaml \
   --delta data/applications/<person>-<company>.yaml \
   --out data/<person>-<company>.resolved.yaml

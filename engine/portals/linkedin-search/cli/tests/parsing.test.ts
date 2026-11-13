@@ -1,6 +1,7 @@
-import { describe, test, expect } from "bun:test";
-import { parseJobCards, parseJobDetail, extractDivContent, minutesToTPR } from "../src/helpers";
-import { normalizeId } from "../src/commands/detail";
+import assert from "node:assert/strict";
+import { describe, test } from "node:test";
+import { normalizeId } from "../src/commands/detail.ts";
+import { extractDivContent, minutesToTPR, parseJobCards, parseJobDetail } from "../src/helpers.ts";
 
 // Minimal search-card markup: parseJobCards splits on the job-posting URN and
 // needs an id, a base-search-card__title, and a full-link. Everything else is
@@ -18,7 +19,11 @@ function searchCard(id: string, title: string, company = "Acme"): string {
 // The /scrape contract fields beyond title/company. The original fixture had
 // no <time> or location element at all, so deleting the date extraction from
 // parseJobCards left every test green (review finding F35, 2026-08-19).
-function searchCardWithMeta(id: string, datetimeAttr: string, listdateClass = "job-search-card__listdate"): string {
+function searchCardWithMeta(
+  id: string,
+  datetimeAttr: string,
+  listdateClass = "job-search-card__listdate",
+): string {
   return `<li>
     <div data-entity-urn="urn:li:jobPosting:${id}">
       <a class="base-card__full-link" href="https://www.linkedin.com/jobs/view/${id}"></a>
@@ -33,64 +38,59 @@ function searchCardWithMeta(id: string, datetimeAttr: string, listdateClass = "j
 describe("parseJobCards contract fields", () => {
   test("extracts date from the listdate <time> element", () => {
     const [card] = parseJobCards(searchCardWithMeta("200", "2026-08-10"));
-    expect(card.date).toBe("2026-08-10");
+    assert.equal(card.date, "2026-08-10");
   });
 
   test("extracts date from the listdate--new variant class", () => {
-    const [card] = parseJobCards(
-      searchCardWithMeta("201", "2026-08-15", "job-search-card__listdate--new"),
-    );
-    expect(card.date).toBe("2026-08-15");
+    const [card] = parseJobCards(searchCardWithMeta("201", "2026-08-15", "job-search-card__listdate--new"));
+    assert.equal(card.date, "2026-08-15");
   });
 
   test("extracts location from the location span", () => {
     const [card] = parseJobCards(searchCardWithMeta("202", "2026-08-10"));
-    expect(card.location).toBe("Copenhagen, Denmark");
+    assert.equal(card.location, "Copenhagen, Denmark");
   });
 
   test("date and location are null when the elements are absent", () => {
     const [card] = parseJobCards(searchCard("203", "Bare Card"));
-    expect(card.date).toBeNull();
-    expect(card.location).toBeNull();
+    assert.equal(card.date, null);
+    assert.equal(card.location, null);
   });
 });
 
 describe("decodeHtmlEntities (via parseJobCards)", () => {
   test("decodes hexadecimal numeric entities (&#xE9;)", () => {
     const [card] = parseJobCards(searchCard("123", "Caf&#xE9; Manager"));
-    expect(card.title).toBe("Café Manager");
+    assert.equal(card.title, "Café Manager");
   });
 
   test("decodes uppercase-X hexadecimal entities (&#X...;)", () => {
     const [card] = parseJobCards(searchCard("124", "Deb&#XFC;t Role")); // &#XFC; = ü
-    expect(card.title).toBe("Debüt Role");
+    assert.equal(card.title, "Debüt Role");
   });
 
   test("still decodes decimal numeric entities (&#233;) — regression", () => {
     const [card] = parseJobCards(searchCard("125", "Caf&#233; Lead"));
-    expect(card.title).toBe("Café Lead");
+    assert.equal(card.title, "Café Lead");
   });
 
   test("decodes supplementary-plane code points with fromCodePoint (&#128512;)", () => {
     const [card] = parseJobCards(searchCard("126", "Growth &#128512;"));
-    expect(card.title).toBe("Growth 😀");
+    assert.equal(card.title, "Growth 😀");
   });
 
   test("decodes hex supplementary-plane code points (&#x1F600;)", () => {
     const [card] = parseJobCards(searchCard("127", "Growth &#x1F600;"));
-    expect(card.title).toBe("Growth 😀");
+    assert.equal(card.title, "Growth 😀");
   });
 
   test("decodes hex entities in the company subtitle too", () => {
     const [card] = parseJobCards(searchCard("128", "Engineer", "N&#xF8;rrebro ApS"));
-    expect(card.company).toBe("Nørrebro ApS");
+    assert.equal(card.company, "Nørrebro ApS");
   });
 });
 
 describe("parseJobDetail active-status detection", () => {
-  // Captured from a real closed guest posting (2026-08-09): the banner LinkedIn
-  // actually renders inside the top card. Its class and its visible text are the
-  // only closed markers that occur in the wild.
   const closedBanner = `
     <figure class="closed-job closed-job__flavor topcard__flavor-row">
       <span class="closed-job__icon closed-job__icon--error-pebble lazy-load"></span>
@@ -105,43 +105,32 @@ describe("parseJobDetail active-status detection", () => {
 
   test("a closed posting's top-card banner yields isActive: false", () => {
     const job = parseJobDetail(page(closedBanner, "We build things."), "1");
-    expect(job.isActive).toBe(false);
+    assert.equal(job.isActive, false);
   });
 
   test("an open posting yields isActive: true", () => {
     const job = parseJobDetail(page("", "We are hiring!"), "2");
-    expect(job.isActive).toBe(true);
+    assert.equal(job.isActive, true);
   });
 
   test("recruiter boilerplate in the description does not flag a live posting", () => {
-    // The review's false-positive case: the closed phrase appears in the
-    // *description text* of a job that is very much open.
     const job = parseJobDetail(
       page("", "Apply soon - once filled, this posting is no longer accepting applications."),
       "3",
     );
-    expect(job.isActive).toBe(true);
+    assert.equal(job.isActive, true);
   });
 
   test("a closed-job class named in the description does not flag a live posting", () => {
-    const job = parseJobDetail(
-      page("", "Our design system documents a closed-job__flavor CSS class."),
-      "4",
-    );
-    expect(job.isActive).toBe(true);
+    const job = parseJobDetail(page("", "Our design system documents a closed-job__flavor CSS class."), "4");
+    assert.equal(job.isActive, true);
   });
 });
 
 describe("parseJobDetail dropped fields", () => {
   test("emits no applyUrl field", () => {
-    // The extraction regex assumed class-before-href and never matched
-    // LinkedIn's real markup (null on every live posting), and a fixed
-    // version would only capture the job-view URL - a duplicate of `url`.
-    // The field is dropped rather than fixed (review finding F19,
-    // 2026-08-19). This test pins the removal so it does not quietly
-    // return as a broken or redundant field.
     const job = parseJobDetail("<html></html>", "1");
-    expect("applyUrl" in job).toBe(false);
+    assert.equal("applyUrl" in job, false);
   });
 });
 
@@ -149,14 +138,14 @@ describe("decodeHtmlEntities (via parseJobDetail)", () => {
   test("decodes hex entities inside the job title", () => {
     const html = `<h1 class="topcard__title">Se&#xF1;or Engineer</h1>`;
     const job = parseJobDetail(html, "999");
-    expect(job.title).toBe("Señor Engineer");
+    assert.equal(job.title, "Señor Engineer");
   });
 });
 
 describe("extractDivContent", () => {
   test("extracts content from simple div", () => {
     const html = '<div class="description__text">Simple text</div>';
-    expect(extractDivContent(html, "description__text")).toBe("Simple text");
+    assert.equal(extractDivContent(html, "description__text"), "Simple text");
   });
 
   test("extracts content with nested divs — the regression case", () => {
@@ -166,18 +155,19 @@ describe("extractDivContent", () => {
       <div>About Us:</div>
       <p>We are...</p>
     </div>`;
-    expect(extractDivContent(html, "description__text")).toBe(
-      '\n      <div>Requirements:</div>\n      <ul><li>Skill A</li></ul>\n      <div>About Us:</div>\n      <p>We are...</p>\n    ',
+    assert.equal(
+      extractDivContent(html, "description__text"),
+      "\n      <div>Requirements:</div>\n      <ul><li>Skill A</li></ul>\n      <div>About Us:</div>\n      <p>We are...</p>\n    ",
     );
   });
 
   test("returns null when class not found", () => {
-    expect(extractDivContent("<div>no class</div>", "nonexistent")).toBeNull();
+    assert.equal(extractDivContent("<div>no class</div>", "nonexistent"), null);
   });
 
   test("works with show-more-less-html__markup class", () => {
     const html = '<div class="show-more-less-html__markup">LinkedIn content</div>';
-    expect(extractDivContent(html, "show-more-less-html__markup")).toBe("LinkedIn content");
+    assert.equal(extractDivContent(html, "show-more-less-html__markup"), "LinkedIn content");
   });
 
   test("handles deeply nested divs (3 levels)", () => {
@@ -186,14 +176,15 @@ describe("extractDivContent", () => {
         <div>Deep content</div>
       </div>
     </div>`;
-    expect(extractDivContent(html, "description__text")).toBe(
-      '\n      <div>\n        <div>Deep content</div>\n      </div>\n    ',
+    assert.equal(
+      extractDivContent(html, "description__text"),
+      "\n      <div>\n        <div>Deep content</div>\n      </div>\n    ",
     );
   });
 
   test("handles empty content", () => {
     const html = '<div class="description__text"></div>';
-    expect(extractDivContent(html, "description__text")).toBe("");
+    assert.equal(extractDivContent(html, "description__text"), "");
   });
 
   test("parseJobDetail uses extractDivContent and preserves full description", () => {
@@ -204,98 +195,104 @@ describe("extractDivContent", () => {
       <p>We are hiring!</p>
     </div>`;
     const job = parseJobDetail(html, "999");
-    expect(job.description).toContain("Requirements:");
-    expect(job.description).toContain("5 years Python");
-    expect(job.description).toContain("About Us:");
-    expect(job.description).toContain("We are hiring!");
+    assert.ok(job.description?.includes("Requirements:"));
+    assert.ok(job.description?.includes("5 years Python"));
+    assert.ok(job.description?.includes("About Us:"));
+    assert.ok(job.description?.includes("We are hiring!"));
   });
 });
 
 describe("minutesToTPR", () => {
   test("converts minutes to an f_TPR seconds window", () => {
-    expect(minutesToTPR(30)).toBe("r1800");
-    expect(minutesToTPR(1)).toBe("r60");
-    expect(minutesToTPR(1440)).toBe("r86400"); // matches jobageToTPR(1)
+    assert.equal(minutesToTPR(30), "r1800");
+    assert.equal(minutesToTPR(1), "r60");
+    assert.equal(minutesToTPR(1440), "r86400"); // matches jobageToTPR(1)
   });
 
   test("returns null for non-positive input", () => {
-    expect(minutesToTPR(0)).toBeNull();
-    expect(minutesToTPR(-5)).toBeNull();
+    assert.equal(minutesToTPR(0), null);
+    assert.equal(minutesToTPR(-5), null);
   });
 });
 
 describe("normalizeId", () => {
   test("extracts ID from raw numeric string", () => {
-    expect(normalizeId("1234567890")).toBe("1234567890");
+    assert.equal(normalizeId("1234567890"), "1234567890");
   });
 
   test("extracts ID from URN", () => {
-    expect(normalizeId("urn:li:jobPosting:1234567890")).toBe("1234567890");
+    assert.equal(normalizeId("urn:li:jobPosting:1234567890"), "1234567890");
   });
 
   test("extracts ID from simple job view URL without trailing slash", () => {
-    expect(normalizeId("https://www.linkedin.com/jobs/view/1234567890")).toBe("1234567890");
+    assert.equal(normalizeId("https://www.linkedin.com/jobs/view/1234567890"), "1234567890");
   });
 
   test("extracts ID from simple job view URL with trailing slash", () => {
-    expect(normalizeId("https://www.linkedin.com/jobs/view/1234567890/")).toBe("1234567890");
+    assert.equal(normalizeId("https://www.linkedin.com/jobs/view/1234567890/"), "1234567890");
   });
 
   test("extracts ID from simple job view URL with query parameter", () => {
-    expect(normalizeId("https://www.linkedin.com/jobs/view/1234567890?refId=abc")).toBe("1234567890");
+    assert.equal(normalizeId("https://www.linkedin.com/jobs/view/1234567890?refId=abc"), "1234567890");
   });
 
   test("extracts ID from simple job view URL with trailing slash and query parameter", () => {
-    expect(normalizeId("https://www.linkedin.com/jobs/view/1234567890/?refId=abc")).toBe("1234567890");
+    assert.equal(normalizeId("https://www.linkedin.com/jobs/view/1234567890/?refId=abc"), "1234567890");
   });
 
   test("extracts ID from slug URL without trailing slash", () => {
-    expect(normalizeId("https://www.linkedin.com/jobs/view/software-engineer-1234567890")).toBe("1234567890");
+    assert.equal(
+      normalizeId("https://www.linkedin.com/jobs/view/software-engineer-1234567890"),
+      "1234567890",
+    );
   });
 
   test("extracts ID from slug URL with trailing slash", () => {
-    expect(normalizeId("https://www.linkedin.com/jobs/view/software-engineer-1234567890/")).toBe("1234567890");
+    assert.equal(
+      normalizeId("https://www.linkedin.com/jobs/view/software-engineer-1234567890/"),
+      "1234567890",
+    );
   });
 
   test("extracts ID from slug URL with trailing slash and tracking query params", () => {
-    expect(
-      normalizeId("https://www.linkedin.com/jobs/view/software-engineer-at-company-1234567890/?trackingId=xyz&refId=123"),
-    ).toBe("1234567890");
+    assert.equal(
+      normalizeId(
+        "https://www.linkedin.com/jobs/view/software-engineer-at-company-1234567890/?trackingId=xyz&refId=123",
+      ),
+      "1234567890",
+    );
   });
 
   test("extracts ID from regional subdomain LinkedIn URL with trailing slash", () => {
-    expect(normalizeId("https://dk.linkedin.com/jobs/view/data-scientist-9876543210/")).toBe("9876543210");
+    assert.equal(normalizeId("https://dk.linkedin.com/jobs/view/data-scientist-9876543210/"), "9876543210");
   });
 
   test("accepts a scheme-less linkedin.com job URL and a bare title slug", () => {
-    expect(normalizeId("www.linkedin.com/jobs/view/1234567890")).toBe("1234567890");
-    expect(normalizeId("software-engineer-1234567890")).toBe("1234567890");
+    assert.equal(normalizeId("www.linkedin.com/jobs/view/1234567890"), "1234567890");
+    assert.equal(normalizeId("software-engineer-1234567890"), "1234567890");
   });
 
   test("rejects a job URL on any other host instead of extracting its digits", () => {
-    // The old pattern took the first 6+-digit path segment from any URL, so an
-    // ATS apply link fetched an unrelated LinkedIn posting with that number.
-    expect(normalizeId("https://boards.greenhouse.io/acme/jobs/4567890")).toBeNull();
-    expect(normalizeId("https://jobs.lever.co/acme/1234567")).toBeNull();
-    expect(normalizeId("https://example.com/jobs/view/1234567890")).toBeNull();
+    assert.equal(normalizeId("https://boards.greenhouse.io/acme/jobs/4567890"), null);
+    assert.equal(normalizeId("https://jobs.lever.co/acme/1234567"), null);
+    assert.equal(normalizeId("https://example.com/jobs/view/1234567890"), null);
   });
 
   test("rejects look-alike and userinfo hosts", () => {
-    expect(normalizeId("https://linkedin.com.evil.io/jobs/view/1234567890")).toBeNull();
-    expect(normalizeId("https://notlinkedin.com/jobs/view/1234567890")).toBeNull();
-    expect(normalizeId("https://www.linkedin.com@evil.io/jobs/view/1234567890")).toBeNull();
+    assert.equal(normalizeId("https://linkedin.com.evil.io/jobs/view/1234567890"), null);
+    assert.equal(normalizeId("https://notlinkedin.com/jobs/view/1234567890"), null);
+    assert.equal(normalizeId("https://www.linkedin.com@evil.io/jobs/view/1234567890"), null);
   });
 
   test("rejects a linkedin.com URL that is not a job view", () => {
-    expect(normalizeId("https://www.linkedin.com/in/someone-1234567890/")).toBeNull();
-    expect(normalizeId("https://www.linkedin.com/jobs/search/?currentJobId=1234567890")).toBeNull();
+    assert.equal(normalizeId("https://www.linkedin.com/in/someone-1234567890/"), null);
+    assert.equal(normalizeId("https://www.linkedin.com/jobs/search/?currentJobId=1234567890"), null);
   });
 
   test("returns null for non-job URLs and invalid strings", () => {
-    expect(normalizeId("https://www.linkedin.com/feed/")).toBeNull();
-    expect(normalizeId("not-a-url")).toBeNull();
-    expect(normalizeId("12345")).toBeNull(); // fewer than 6 digits
-    expect(normalizeId("")).toBeNull();
+    assert.equal(normalizeId("https://www.linkedin.com/feed/"), null);
+    assert.equal(normalizeId("not-a-url"), null);
+    assert.equal(normalizeId("12345"), null); // fewer than 6 digits
+    assert.equal(normalizeId(""), null);
   });
 });
-

@@ -1,0 +1,73 @@
+name: CI
+
+# PRs get no checks from the release workflow (it runs only on v* tags), so
+# this workflow is the gate for pull requests: it lints, typechecks and tests
+# the Node/TypeScript engine, and compiles every CV with Typst so a change that
+# breaks a build fails the PR.
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  engine:
+    name: Engine lint, typecheck & tests (Node + TypeScript)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: |
+            engine/package-lock.json
+            engine/portals/linkedin-search/cli/package-lock.json
+
+      - name: Install engine dependencies
+        working-directory: engine
+        run: npm ci
+
+      - name: Install portal CLI dev dependencies
+        working-directory: engine/portals/linkedin-search/cli
+        run: npm ci
+
+      - name: Lint (Biome)
+        working-directory: engine
+        run: npm run lint
+
+      - name: Typecheck (tsc)
+        working-directory: engine
+        run: npm run typecheck
+
+      - name: Test (node:test)
+        working-directory: engine
+        run: npm test
+
+  typst-build:
+    name: Typst build (make all)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Install Typst
+        uses: typst-community/setup-typst@v4
+
+      - name: Build all CVs
+        run: make all
+
+      - name: Upload built PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdfs
+          path: build/*.pdf
+          if-no-files-found: error

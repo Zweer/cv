@@ -1,5 +1,6 @@
-import { describe, expect, test } from "bun:test";
-import { runSearchFixture } from "./helpers";
+import assert from "node:assert/strict";
+import { describe, test } from "node:test";
+import { runSearchFixture } from "./helpers.ts";
 
 const LOCATION = "Copenhagen, Denmark";
 
@@ -9,34 +10,29 @@ const LOCATION = "Copenhagen, Denmark";
 // keywords and returned every posting in the location with exit 0. These run
 // the real CLI against the saved search fixture and count outbound requests.
 describe("--query requires a value", () => {
-  for (const args of [
-    ["-q"],
-    ["-q", "--jobage", "7"],
-    ["--query", ""],
-    ["-q", "   "],
-  ]) {
+  for (const args of [["-q"], ["-q", "--jobage", "7"], ["--query", ""], ["-q", "   "]]) {
     test(`${JSON.stringify(args)} exits 1 with BAD_ARG before any request`, async () => {
       const { result, requests } = await runSearchFixture(["search", "-l", LOCATION, ...args]);
-      expect(result.exitCode).toBe(1);
-      expect(result.stdout).toBe("");
+      assert.equal(result.exitCode, 1);
+      assert.equal(result.stdout, "");
       const error = JSON.parse(result.stderr);
-      expect(error.code).toBe("BAD_ARG");
-      expect(error.error).toContain("--query");
-      expect(requests).toHaveLength(0);
+      assert.equal(error.code, "BAD_ARG");
+      assert.ok(error.error.includes("--query"));
+      assert.equal(requests.length, 0);
     });
   }
 
   test("a query is sent as keywords", async () => {
     const { result, requests } = await runSearchFixture(["search", "-l", LOCATION, "-q", "data engineer"]);
-    expect(result.exitCode).toBe(0);
-    expect(requests).toHaveLength(1);
-    expect(requests[0].searchParams.get("keywords")).toBe("data engineer");
+    assert.equal(result.exitCode, 0);
+    assert.equal(requests.length, 1);
+    assert.equal(requests[0].searchParams.get("keywords"), "data engineer");
   });
 
   test("omitting --query is still an intentional location-only search", async () => {
     const { result, requests } = await runSearchFixture(["search", "-l", LOCATION]);
-    expect(result.exitCode).toBe(0);
-    expect(requests).toHaveLength(1);
-    expect(requests[0].searchParams.has("keywords")).toBe(false);
+    assert.equal(result.exitCode, 0);
+    assert.equal(requests.length, 1);
+    assert.equal(requests[0].searchParams.has("keywords"), false);
   });
 });

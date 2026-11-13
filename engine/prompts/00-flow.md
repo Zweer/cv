@@ -21,7 +21,7 @@ surfaces one and the person says go).
 
 ## The steps
 
-1. **Guard the posting.** Run it through `engine/tools/posting_guard.py` before
+1. **Guard the posting.** Run it through `engine/tools/posting_guard.ts` before
    reading it for content. Save the cleaned text to the session scratchpad
    (never inside the repo — the guard refuses that). If the guard's verdict
    carries a ⚠ (instruction-shaped lines, invisible-character payloads,
@@ -55,7 +55,7 @@ surfaces one and the person says go).
 6. **Build** — run the merge helper and compile:
 
    ```bash
-   python3 engine/tools/merge_delta.py \
+   node engine/tools/merge_delta.ts \
      --base data/<person>.yaml \
      --delta data/applications/<person>-<company>.yaml \
      --out data/<person>-<company>.resolved.yaml

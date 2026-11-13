@@ -1,5 +1,6 @@
-import { afterEach, describe, expect, test } from "bun:test";
-import { htmlFetch } from "../src/helpers";
+import assert from "node:assert/strict";
+import { afterEach, describe, test } from "node:test";
+import { htmlFetch } from "../src/helpers.ts";
 
 // A stalled upstream connection (accepted socket, no response) would otherwise
 // hang the CLI forever - fetch has no default timeout. Assert the request
@@ -18,6 +19,6 @@ describe("htmlFetch request timeout", () => {
     }) as unknown as typeof fetch;
 
     await htmlFetch("https://www.linkedin.com/jobs-guest/jobs/api/x");
-    expect(init?.signal).toBeInstanceOf(AbortSignal);
+    assert.ok(init?.signal instanceof AbortSignal);
   });
 });

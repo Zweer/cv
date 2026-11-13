@@ -1,7 +1,9 @@
-import { afterEach, describe, expect, test } from "bun:test";
-import { runDetail } from "../src/commands/detail";
-import { DETAIL_URL } from "../src/helpers";
-import { runCLI } from "./helpers";
+import assert from "node:assert/strict";
+import process from "node:process";
+import { afterEach, describe, test } from "node:test";
+import { runDetail } from "../src/commands/detail.ts";
+import { DETAIL_URL } from "../src/helpers.ts";
+import { runCLI } from "./helpers.ts";
 
 // The real command path, not the parser in isolation: `detail` must never
 // send a request for a URL that is not a LinkedIn job view. Before the host
@@ -43,9 +45,9 @@ describe("detail input on the real handler path", () => {
 
     const rc = await runDetail({ id: "https://boards.greenhouse.io/acme/jobs/4567890", format: "json" });
 
-    expect(rc).toBe(1);
-    expect(requested).toEqual([]);
-    expect(JSON.parse(stderr.join("").trim())).toMatchObject({ code: "BAD_ID" });
+    assert.equal(rc, 1);
+    assert.deepEqual(requested, []);
+    assert.deepEqual(JSON.parse(stderr.join("").trim()).code, "BAD_ID");
   });
 
   test("a LinkedIn job URL builds the fetch URL from the extracted id", async () => {
@@ -57,8 +59,8 @@ describe("detail input on the real handler path", () => {
       format: "json",
     });
 
-    expect(rc).toBe(1); // the stub answers 404 -> NOT_FOUND, after the request was made
-    expect(requested).toEqual([`${DETAIL_URL}/9876543210`]);
+    assert.equal(rc, 1); // the stub answers 404 -> NOT_FOUND, after the request was made
+    assert.deepEqual(requested, [`${DETAIL_URL}/9876543210`]);
   });
 });
 
@@ -66,7 +68,7 @@ describe("detail input through the CLI", () => {
   test("exits 1 with the stderr-JSON BAD_ID contract for a foreign URL", async () => {
     const result = await runCLI(["detail", "https://jobs.lever.co/acme/1234567"]);
 
-    expect(result.exitCode).toBe(1);
-    expect(JSON.parse(result.stderr)).toMatchObject({ code: "BAD_ID" });
+    assert.equal(result.exitCode, 1);
+    assert.equal(JSON.parse(result.stderr).code, "BAD_ID");
   });
 });
