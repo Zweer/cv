@@ -9,6 +9,8 @@
 #let i18n = yaml("/i18n/" + cv.language + ".yaml")
 #let img-path = "/images/" + cv.image.split("/").last()
 
+#import "/themes/common/cover-letter.typ": cover-letter-page
+
 // --- Color Variants ---
 #let variants = (
   pastel-red: (
@@ -257,3 +259,8 @@ grid(
   ],
 ),
 )
+
+// =============================================================================
+// COVER LETTER (optional, rendered only when cv.cover_letter is present)
+// =============================================================================
+#cover-letter-page(cv, i18n, accent: theme.header)

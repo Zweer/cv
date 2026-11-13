@@ -1,1 +1,8 @@
 build/
+
+# Resolved per-application CV data files are derived output (base + delta),
+# regenerated on demand by engine/tools/merge_delta.ts. Never committed.
+data/*.resolved.yaml
+
+# Node dependencies for the engine tools and the ported portal CLIs.
+node_modules/

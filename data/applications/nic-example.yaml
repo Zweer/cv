@@ -1,0 +1,66 @@
+# Example application delta (committed as documentation of the format).
+#
+# A delta is applied on top of a base profile (data/<person>.yaml) by
+# engine/tools/merge_delta.ts, which writes a fully-resolved data file that
+# `make one` compiles. The delta carries ONLY what changes for one job posting:
+# keep it small and DRY. See engine/prompts/04-typst-output-contract.md and the
+# merge semantics in engine/tools/merge_delta.ts for the full rules.
+#
+# Build this example:
+#   node engine/tools/merge_delta.ts \
+#     --base data/nic.yaml \
+#     --delta data/applications/nic-example.yaml \
+#     --out data/nic-example.resolved.yaml
+#   make one PERSON=nic-example.resolved THEME=formentera
+#
+# The resolved file (data/nic-example.resolved.yaml) is gitignored: it is
+# derived output, regenerated from base + this delta on demand.
+
+# --- Plain override: a tailored abstract for this posting. Replaces the base
+# abstract wholesale. Keep the candidate's own voice (1st person, hard numbers,
+# understatement); see engine/prompts/02-voice-and-style.md. ---
+abstract: "Head of Delivery who grew a 20-person org around one of Europe's largest EV charging networks. I spent ten years building before I managed, and I still read the pull requests. I'd rather make an unpopular right call than a comfortable wrong one."
+
+# --- works_select: reorder and filter the work history for this posting.
+# The resolved `works` list becomes exactly these entries, in this order.
+# Each identifier matches a base work by "structure | title", or by a unique
+# title / structure alone. A hidden base work selected here is un-hidden. ---
+works_select:
+  - Plenitude On The Road (formerly BePower) | Head of Delivery
+  - ThinkOpen @ Reply | Senior Software Engineer
+  - Moviri | APM Specialist
+
+# --- works_override: tweak a selected work for this posting only (shallow
+# merge). Here: promote the Moviri role into the detailed "resume" section and
+# give it a posting-relevant description. ---
+works_override:
+  Moviri | APM Specialist:
+    resume: true
+    description: |
+      Performance and reliability specialist for enterprise banking and telco
+      clients: first responder on critical outages, owner of monitoring and
+      CI/CD pipelines. The ground-level reliability work the platform roles
+      above are built on.
+
+# --- Skills: additive edits. `skills_append` adds (deduplicated), and
+# `skills_remove` drops base skills (case-insensitive). To replace the whole
+# list instead, set `skills:` directly. ---
+skills_append:
+  - Platform Reliability
+  - Incident Response
+skills_remove:
+  - Budget Planning
+
+# --- Cover letter: attached verbatim as the resolved file's cover_letter
+# block, rendered as an extra page after the CV by every theme. ---
+cover_letter:
+  recipient:
+    company: Acme Mobility
+    name: Jane Doe
+    role: VP of Engineering
+  location: Milan, Italy
+  date: '2026-11-13'
+  body:
+    - I lead the 20-person delivery org behind one of Europe's largest EV charging networks, and the platform problem in your posting is the one I have lived inside for five years.
+    - I grew from the third ICT hire to the company's largest team manager. I ran the backend rebuild that lifted the platform's performance ceiling and restructured the mobile teams when the old setup stopped delivering. I hire, grow and occasionally challenge people.
+    - I would welcome the chance to talk about what your team is building and where I could carry weight.

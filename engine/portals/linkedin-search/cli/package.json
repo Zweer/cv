@@ -1,0 +1,23 @@
+{
+  "name": "linkedin-cli",
+  "version": "1.0.0",
+  "description": "CLI for searching jobs on LinkedIn's public job listings, for any country/region (and remote) — no authentication, zero runtime dependencies. Personal use only (LinkedIn ToS). Runs on Node with native TypeScript type stripping.",
+  "type": "module",
+  "main": "src/cli.ts",
+  "bin": {
+    "linkedin-search": "src/cli.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "start": "node src/cli.ts",
+    "test": "node --test \"tests/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "typescript": "7.0.2"
+  }
+}
