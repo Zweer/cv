@@ -9,3 +9,7 @@ builds:
     theme: budapest
   - person: ro
     theme: europass
+  - person: ro-eng
+    theme: budapest
+  - person: nic-enterprise
+    theme: new-hipster

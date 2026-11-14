@@ -32,13 +32,24 @@ The template should render (when data is available):
 
 Never hardcode section titles. Use: `i18n.who_am_i`, `i18n.contacts`, `i18n.skills`, `i18n.spoken_languages`, `i18n.certifications`, `i18n.hobbies`, `i18n.projects`, `i18n.resume`, `i18n.titles`, `i18n.curriculum`, `i18n.gdpr`.
 
-## 5. Test compilation
+## 5. Include the cover-letter page
+
+At the end of `main.typ`, so the optional `cover_letter` data block renders after the CV:
+
+```typst
+#import "/themes/common/cover-letter.typ": cover-letter-page
+#cover-letter-page(cv, i18n, accent: <theme-accent-color>)
+```
+
+Without a `cover_letter` block it renders nothing. See the header of `themes/common/cover-letter.typ`.
+
+## 6. Test compilation
 
 ```bash
 typst compile themes/<theme-name>/main.typ --input person=nic --root . --font-path fonts/
 typst compile themes/<theme-name>/main.typ --input person=ro --root . --font-path fonts/
 ```
 
-## 6. Optional: color variants
+## 7. Optional: color variants
 
 Support variants via `cv.variant` field, with a dictionary of color schemes (see `new-hipster/main.typ` for reference).

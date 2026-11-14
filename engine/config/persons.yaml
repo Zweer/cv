@@ -16,8 +16,19 @@
 #   cv_language   The default output language for CV + cover letter. Overridable
 #                 per application, but this is the floor the fit/language gate
 #                 starts from (see engine/prompts/01-fit-and-language-gate.md).
+#   default_theme The theme used when the person does not ask for one. Must be
+#                 a folder in themes/; it mirrors the person's first entry in
+#                 builds.yaml (keep the two in sync).
+#   bases         The base profiles in data/ the engine may start from, in
+#                 order. Each has `file` (data/<file>.yaml), `use_for` (when to
+#                 pick it) and optionally `default: true`. The engine picks the
+#                 base explicitly and reports which and why (engine/prompts/
+#                 00-flow.md step 2). All bases are hand-maintained, except that
+#                 ro-eng.yaml is the English edition of ro.yaml: ro.yaml is the
+#                 source of truth and ro-eng.yaml must be updated with it.
 #   career_goals  What the person is steering their career toward. EMPTY until
-#                 filled at first setup (engine asks). Used to bias fit scoring
+#                 filled at first setup (the engine interviews the person,
+#                 see engine/prompts/00-flow.md step 0). Used to bias fit scoring
 #                 and the cover-letter framing, never to fabricate experience.
 #   energizers    Kinds of work/role/culture that energise the person. EMPTY
 #                 until first setup. A soft signal for ranking, not a hard gate.
@@ -28,13 +39,27 @@ persons:
   nic:
     mode: passive
     cv_language: en   # nic's CV is always in English
-    career_goals: []  # TODO: fill at first setup
-    energizers: []    # TODO: fill at first setup
-    drains: []        # TODO: fill at first setup
+    default_theme: formentera
+    bases:
+      - file: nic
+        default: true
+        use_for: startup, scale-up, consulting and hands-on engineering-management roles
+      - file: nic-enterprise
+        use_for: corporate, large-organisation and Head of Technology style roles
+    career_goals: []  # empty until first setup (00-flow.md step 0)
+    energizers: []    # empty until first setup (00-flow.md step 0)
+    drains: []        # empty until first setup (00-flow.md step 0)
 
   ro:
     mode: active
     cv_language: it   # ro's CV is Italian unless a posting explicitly needs another language
-    career_goals: []  # TODO: fill at first setup
-    energizers: []    # TODO: fill at first setup
-    drains: []        # TODO: fill at first setup
+    default_theme: budapest
+    bases:
+      - file: ro
+        default: true
+        use_for: Italian CV (the default for every posting)
+      - file: ro-eng
+        use_for: only when the posting explicitly requires an English CV (still subject to the language gate)
+    career_goals: []  # empty until first setup (00-flow.md step 0)
+    energizers: []    # empty until first setup (00-flow.md step 0)
+    drains: []        # empty until first setup (00-flow.md step 0)

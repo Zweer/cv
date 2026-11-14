@@ -66,9 +66,10 @@
   set page(
     paper: "a4",
     margin: (top: 2.2cm, bottom: 2cm, left: 2.2cm, right: 2.2cm),
-    // No themed footer here: a letter carries its own signature block instead.
+    // No themed footer or background here: a letter carries its own signature block instead.
     footer: none,
     header: none,
+    background: none,
   )
   set text(size: 10.5pt, fill: luma(40))
   set par(leading: 0.65em, spacing: 1em, justify: true)

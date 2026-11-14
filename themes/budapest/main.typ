@@ -23,15 +23,28 @@
 #let body-font = "Roboto"
 
 // --- Page Setup ---
-#set page(paper: "a4", margin: 0pt)
+// The sidebar tint is painted on every page (background); the sidebar content
+// is placed on page 1 only; the main column flows across pages.
+#let sidebar-width = 6.2cm
+#let main-inset-x = 1.2em
+#let main-inset-top = 1.5em
+#set page(
+  paper: "a4",
+  margin: (left: sidebar-width + main-inset-x, right: main-inset-x, top: main-inset-top, bottom: 1.2cm),
+  footer: context {
+    // GDPR notice on the last page only
+    if counter(page).get().first() == counter(page).final().first() {
+      align(center, text(size: 5.5pt, fill: luma(140))[_#i18n.gdpr._])
+    }
+  },
+  footer-descent: 0pt,
+  background: place(top + left, rect(width: sidebar-width, height: 100%, fill: light-green)),
+)
 #set text(font: body-font, size: 9pt, fill: dark-text)
 #set par(leading: 0.45em, spacing: 0.5em)
 #show link: it => text(fill: dark-text, it)
 
 // --- Dimensions ---
-#let sidebar-width = 6.2cm
-#let page-height = 297mm
-
 // --- Components ---
 
 #let sidebar-heading(title) = {
@@ -46,6 +59,7 @@
     width: 100%,
     above: 0.6em,
     below: 0.4em,
+    sticky: true,
     {
       text(font: title-font, size: 13pt, weight: "bold", upper(title))
       v(-0.2em)
@@ -111,11 +125,9 @@
 // DOCUMENT
 // =============================================================================
 
-#grid(
-  columns: (sidebar-width, 1fr),
-
-  // === LEFT SIDEBAR ===
-  block(width: 100%, height: page-height, fill: light-green, inset: (x: 0.8em, top: 1.5em, bottom: 1em))[
+// === LEFT SIDEBAR (page 1 only; placed over the tinted background) ===
+#place(top + left, dx: -(sidebar-width + main-inset-x), dy: -main-inset-top,
+  block(width: sidebar-width, inset: (x: 0.8em, top: 1.5em, bottom: 1em))[
     // Photo
     #align(center)[
       #box(
@@ -185,9 +197,10 @@
       ]
     ]
   ],
+)
 
-  // === RIGHT MAIN AREA ===
-  block(width: 100%, height: page-height, inset: (x: 1.2em, top: 1.5em, bottom: 0.8em))[
+// === MAIN COLUMN (flows onto further pages when needed) ===
+#block(width: 100%)[
     // Header: Name + Contacts
     #grid(
       columns: (1fr, auto),
@@ -214,7 +227,7 @@
     #line(length: 100%, stroke: 0.5pt + light-grey)
 
     // Work experience
-    #main-heading(i18n.curriculum)
+    #main-heading(i18n.work_experience)
     #for work in cv.works.filter(w => w.at("hidden", default: false) == false) {
       timeline-entry(
         work.structure,
@@ -252,11 +265,7 @@
       ]
     ]
 
-    // GDPR footer
-    #v(1fr)
-    #align(center, text(size: 5.5pt, fill: luma(140))[_#i18n.gdpr._])
-  ],
-)
+  ]
 
 // =============================================================================
 // COVER LETTER (optional, rendered only when cv.cover_letter is present)

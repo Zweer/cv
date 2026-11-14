@@ -5,7 +5,7 @@
   "description": "On-demand CV tailoring engine: posting guard, base+delta merge, and the LinkedIn search portal. Node + TypeScript, run directly with Node's native type stripping (no build step).",
   "type": "module",
   "engines": {
-    "node": ">=22.6.0"
+    "node": ">=22.18.0"
   },
   "scripts": {
     "test": "node --test \"tests/**/*.test.ts\" \"portals/linkedin-search/cli/tests/**/*.test.ts\"",

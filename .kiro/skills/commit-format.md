@@ -1,6 +1,6 @@
 # Commit Message Format
 
-**IMPORTANT**: The agent NEVER commits, pushes, or creates tags. The developer handles all git operations manually.
+**Policy**: agents work on a feature branch, commit and open a PR. They never push to `main` and never merge: the owner decides when a PR is merged. Tags and releases are the owner's.
 
 ## Format
 

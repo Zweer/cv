@@ -68,15 +68,28 @@
 #let sidebar-text = if cv.variant == "dark-metal" { white } else { theme.text }
 
 // --- Page Setup ---
-#set page(paper: "a4", margin: 0pt)
+// The sidebar tint is painted on every page (background); the header band and
+// the sidebar content sit on page 1 only; the main column flows across pages.
+#let header-height = 3cm
+#let sidebar-width = 7.8cm
+#let main-inset-x = 1.2em
+#let page-margin-top = 1cm
+#set page(
+  paper: "a4",
+  margin: (left: sidebar-width + main-inset-x, right: main-inset-x, top: page-margin-top, bottom: 1.2cm),
+  footer: context {
+    // GDPR notice on the last page only
+    if counter(page).get().first() == counter(page).final().first() {
+      align(center, text(size: 6pt)[#i18n.gdpr.])
+    }
+  },
+  footer-descent: 0pt,
+  background: place(top + left, rect(width: sidebar-width, height: 100%, fill: theme.sidebar, stroke: none)),
+)
 #set text(font: "Raleway", size: 10pt, fill: theme.text)
 #set par(leading: 0.5em)
 
 // --- Dimensions ---
-#let header-height = 3cm
-#let sidebar-width = 7.8cm
-#let body-height = 297mm - header-height
-
 // --- Section Heading ---
 #let side-section(title) = {
   v(0.8em)
@@ -86,16 +99,14 @@
   v(0.3em)
 }
 
-#let main-section(title) = {
-  v(0.6em)
+#let main-section(title) = block(sticky: true, above: 1.3em, below: 0.6em, {
   text(size: 13pt, fill: theme.text, tracking: 0.05em, upper(title))
   v(-0.3em)
   line(length: 100%, stroke: 0.5pt + theme.text)
-  v(0.3em)
-}
+})
 
 // --- CV Event (work experience) ---
-#let cv-event(from, to, title, company, location, content, is-description: false) = {
+#let cv-event(from, to, title, company, location, content, is-description: false) = block(breakable: false, {
   grid(
     columns: (2.8cm, 1fr),
     column-gutter: 0.6em,
@@ -113,7 +124,7 @@
     ],
   )
   v(0.6em)
-}
+})
 
 // --- CV Degree (education) ---
 #let cv-degree(year, title, location, structure) = {
@@ -135,8 +146,8 @@
 // =============================================================================
 
 // --- Header ---
-#stack(dir: ttb, spacing: 0pt,
-block(width: 100%, height: header-height, fill: theme.header, inset: (x: 1.5em))[
+#place(top + left, dx: -(sidebar-width + main-inset-x), dy: -page-margin-top,
+block(width: 21cm, height: header-height, fill: theme.header, inset: (x: 1.5em))[
   #align(center + horizon)[
     #text(fill: theme.header-text, size: 24pt, tracking: 0.05em)[
       #cv.name #strong(cv.surname)
@@ -144,13 +155,12 @@ block(width: 100%, height: header-height, fill: theme.header, inset: (x: 1.5em))
     #linebreak()
     #text(fill: theme.header-text, size: 11pt)[#cv.title]
   ]
-],
+]
+)
 
-// --- Body: Sidebar + Main ---
-grid(
-  columns: (sidebar-width, 1fr),
-  // === LEFT SIDEBAR ===
-  block(width: 100%, height: body-height, fill: theme.sidebar, inset: (x: 1em, top: 0.3em, bottom: 1em))[
+// --- Sidebar (page 1 only, over the tinted background) ---
+#place(top + left, dx: -(sidebar-width + main-inset-x), dy: header-height - page-margin-top,
+  block(width: sidebar-width, inset: (x: 1em, top: 0.3em, bottom: 1em))[
     #set text(fill: sidebar-text)
 
     // Photo
@@ -217,10 +227,12 @@ grid(
         ]
       ]
     ]
-  ],
+  ]
+)
 
-  // === RIGHT MAIN COLUMN ===
-  block(width: 100%, height: body-height, inset: (x: 1.2em, top: 1em, bottom: 0.8em))[
+// --- Main column (flows onto further pages when needed) ---
+#v(header-height - page-margin-top + 0.6em)
+#block(width: 100%)[
     // Resumé (selected works)
     #main-section(i18n.resume)
     #{
@@ -252,13 +264,7 @@ grid(
       }
     }
 
-    #v(1fr)
-    #align(center)[
-      #text(size: 6pt)[#i18n.gdpr.]
-    ]
-  ],
-),
-)
+  ]
 
 // =============================================================================
 // COVER LETTER (optional, rendered only when cv.cover_letter is present)

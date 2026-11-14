@@ -63,7 +63,50 @@ builds:
     theme: formentera
 ```
 
+## Tailoring engine
+
+`engine/` is an on-demand engine that turns a job posting into a tailored CV
+(and optional cover letter) for one person. It is a set of prompt files
+(`engine/prompts/`, entry point `00-flow.md`) followed by an agent worker, plus
+small Node + TypeScript tools (posting guard, base+delta merge). Start with
+[`engine/README.md`](engine/README.md); it also has the status and roadmap.
+Requires Node >= 22.18 (runs `.ts` directly, no build step); set up with
+`cd engine && npm ci`.
+
+How it touches the CV data:
+
+- **`cover_letter` block (optional)** in a person's data: `recipient`
+  (`company` required; `name`, `role` optional), `location`, `date` (printed
+  as-is), `body` (list of paragraph strings), plus optional `greeting` /
+  `closing` overrides. It is rendered as an extra page after the CV by
+  `themes/common/cover-letter.typ`, which all six themes include. Without the
+  block nothing changes.
+- **`data/applications/<person>-<company>.yaml`** are per-application *deltas*
+  (tailored abstract, selected/reordered works, skill edits, cover letter)
+  applied on top of `data/<person>.yaml`. They are committed; see
+  `data/applications/nic-example.yaml`.
+- **`data/*.resolved.yaml`** is the merged result, derived and gitignored.
+  Build it with:
+
+  ```bash
+  node engine/tools/merge_delta.ts --base data/nic.yaml \
+    --delta data/applications/nic-example.yaml --out data/nic-example.resolved.yaml
+  make one PERSON=nic-example.resolved THEME=formentera
+  ```
+
+The engine's per-person policy (language, default theme, which base profiles
+exist and when to use each, career goals) is in `engine/config/persons.yaml`.
+Besides `data/nic.yaml` (default, startup / consulting) and `data/ro.yaml`
+(default, Italian), `data/nic-enterprise.yaml` is nic's corporate / Head of
+Technology variant and `data/ro-eng.yaml` is the English edition of `ro.yaml`
+(`ro.yaml` is the source of truth: update `ro-eng.yaml` whenever it changes).
+
 ## CI
 
-`.github/workflows/generate-upload.yaml` builds all PDFs with Typst and attaches
-them to a GitHub Release. It runs on `v*.*.*` tags and on manual dispatch.
+- `.github/workflows/ci.yaml` runs on every pull request (and manual dispatch):
+  Biome lint, `tsc` typecheck and `node:test` for the engine, plus `make all`
+  to compile every CV with Typst.
+- `.github/workflows/generate-upload.yaml` builds all PDFs with Typst and attaches
+  them to a GitHub Release. It runs on `v*.*.*` tags and on manual dispatch.
+- Dependabot (`.github/dependabot.yml`) opens weekly update PRs for GitHub
+  Actions and for the npm dependencies of `engine/` and the LinkedIn portal CLI.
