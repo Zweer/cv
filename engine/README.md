@@ -12,6 +12,22 @@ It inherits the *workflow* of the open-source
 runs inside **Kiro Crew**, driven by a worker that follows the prompt files in
 `prompts/`. It is **not** a cron and does **not** run unattended.
 
+## Status / roadmap
+
+- **Layer 1 (this engine): done.** On-demand tailoring inside Kiro Crew, no
+  Claude Code, no cron: posting in, tailored CV (+ optional cover letter) out.
+- **First real run: not done yet.** Only the worked example
+  (`data/applications/nic-example.yaml`) exists; no real application has been
+  produced end to end.
+- **Career goals: empty.** `config/persons.yaml` has empty `career_goals` /
+  `energizers` / `drains` for both people. The first run starts with the
+  first-setup interview (`prompts/00-flow.md`, step 0).
+- **Layer 2: not built.** Scheduled posting search, application tracking and a
+  dashboard, aimed at ro, who searches actively (`mode: active`). nic is
+  passive (`mode: passive`): the engine acts only when handed a posting.
+- **Languages:** nic's CV is English, ro's is Italian by default.
+- **Principle:** non-genericity, not concealment (see the top of this file).
+
 ## Layout
 
 ```
@@ -22,7 +38,7 @@ engine/
   tsconfig.json                 TypeScript config (run directly on Node, no build step)
   biome.json                    Biome lint + format config (fleet standard)
   config/
-    persons.yaml                per-person policy (mode, cv_language, goals) — NOT render data
+    persons.yaml                per-person policy (mode, cv_language, default_theme, goals) — NOT render data
   prompts/
     00-flow.md                  orchestration: posting -> fit -> draft -> review -> write -> build
     01-fit-and-language-gate.md fit scoring + Eligibility gate + Language gate
@@ -42,14 +58,17 @@ engine/
 
 ## Runtime: Node + TypeScript, no build step
 
-The engine is a mono-stack of **Node** (>= 22.6) and **TypeScript**. Node runs
-the `.ts` files directly via native type stripping, so there is no compile or
+The engine is a mono-stack of **Node** (>= 22.18) and **TypeScript**. Node runs
+the `.ts` files directly via native type stripping (enabled by default since
+Node 22.18 and 23.6; on older 22.x it needs a flag, so the floor is 22.18). The
+code uses only erasable TypeScript syntax (no enums or parameter properties),
+which is what type stripping supports. CI runs the latest LTS. So there is no compile or
 bundle step — `node engine/tools/merge_delta.ts ...` just works. The only
 runtime dependencies are [`js-yaml`](https://www.npmjs.com/package/js-yaml)
 (reads/writes the YAML the Typst themes parse) and
 [`he`](https://www.npmjs.com/package/he) (HTML entity decoding in the posting
 guard, matching Python's `html.unescape`). Typst is the only other runtime, for
-the PDF build. Install once with `cd engine && npm install`.
+the PDF build. Install once with `cd engine && npm ci`.
 
 ## How a Kiro Crew worker runs the flow
 
@@ -121,7 +140,7 @@ Install once, then run from `engine/`:
 
 ```bash
 cd engine
-npm install          # js-yaml + he (runtime), typescript + biome + types (dev)
+npm ci               # js-yaml + he (runtime), typescript + biome + types (dev)
 npm test             # posting guard + merge semantics + LinkedIn portal CLI
 npm run typecheck    # tsc --noEmit
 npm run lint         # biome check (lint + format)

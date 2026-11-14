@@ -4,6 +4,8 @@
   "prompt": "file://../prompts/dev.md",
   "resources": [
     "file://README.md",
+    "file://engine/README.md",
+    "file://engine/config/persons.yaml",
     "file://data/*.yaml",
     "file://i18n/*.yaml",
     "file://themes/**/*.typ"
@@ -33,7 +35,7 @@
   ],
   "toolsSettings": {
     "write": {
-      "allowedPaths": [".kiro/**", "data/**", "i18n/**", "themes/**", "bin/**", "package.json", "README.md", ".github/**"]
+      "allowedPaths": [".kiro/**", "data/**", "i18n/**", "themes/**", "engine/**", "Makefile", "builds.yaml", "README.md", ".github/**"]
     },
     "shell": {
       "autoAllowReadonly": true,

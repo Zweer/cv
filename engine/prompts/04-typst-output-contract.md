@@ -7,7 +7,7 @@ PDF.
 
 ## What the engine writes
 
-A single file: `data/applications/<person>-<company>.yaml`. It is committed (the
+A single file: `data/applications/<person>-<company>.yaml` (`<company>` is a lowercase, hyphenated slug, e.g. `acme-mobility`; add a role suffix if the same company gets a second application). It is committed (the
 application memory and the Layer-2 hook). It carries ONLY what changes for this
 posting. It is NOT a full copy of the base profile.
 

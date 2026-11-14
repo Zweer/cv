@@ -8,7 +8,7 @@
     "linkedin-search": "src/cli.ts"
   },
   "engines": {
-    "node": ">=22.6.0"
+    "node": ">=22.18.0"
   },
   "scripts": {
     "start": "node src/cli.ts",

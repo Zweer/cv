@@ -5,7 +5,7 @@ CLI for searching jobs on LinkedIn's public job listings, for **any country/regi
 
 **Data source**: LinkedIn `jobs-guest` endpoints (`seeMoreJobPostings/search` and `jobPosting/<id>`).
 **Authentication**: None required.
-**Runtime**: Node (>= 22.6) with native TypeScript type stripping — no build step.
+**Runtime**: Node (>= 22.18, where type stripping is on by default) with native TypeScript type stripping — no build step.
 **Dependencies**: None at runtime (plain `node` + global `fetch`). `npm install` is optional and only pulls dev type defs.
 
 > **Personal use only.** This uses LinkedIn's public job pages; automated access is against

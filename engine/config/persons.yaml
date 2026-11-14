@@ -16,8 +16,12 @@
 #   cv_language   The default output language for CV + cover letter. Overridable
 #                 per application, but this is the floor the fit/language gate
 #                 starts from (see engine/prompts/01-fit-and-language-gate.md).
+#   default_theme The theme used when the person does not ask for one. Must be
+#                 a folder in themes/; it mirrors the person's first entry in
+#                 builds.yaml (keep the two in sync).
 #   career_goals  What the person is steering their career toward. EMPTY until
-#                 filled at first setup (engine asks). Used to bias fit scoring
+#                 filled at first setup (the engine interviews the person,
+#                 see engine/prompts/00-flow.md step 0). Used to bias fit scoring
 #                 and the cover-letter framing, never to fabricate experience.
 #   energizers    Kinds of work/role/culture that energise the person. EMPTY
 #                 until first setup. A soft signal for ranking, not a hard gate.
@@ -28,13 +32,15 @@ persons:
   nic:
     mode: passive
     cv_language: en   # nic's CV is always in English
-    career_goals: []  # TODO: fill at first setup
-    energizers: []    # TODO: fill at first setup
-    drains: []        # TODO: fill at first setup
+    default_theme: formentera
+    career_goals: []  # empty until first setup (00-flow.md step 0)
+    energizers: []    # empty until first setup (00-flow.md step 0)
+    drains: []        # empty until first setup (00-flow.md step 0)
 
   ro:
     mode: active
     cv_language: it   # ro's CV is Italian unless a posting explicitly needs another language
-    career_goals: []  # TODO: fill at first setup
-    energizers: []    # TODO: fill at first setup
-    drains: []        # TODO: fill at first setup
+    default_theme: budapest
+    career_goals: []  # empty until first setup (00-flow.md step 0)
+    energizers: []    # empty until first setup (00-flow.md step 0)
+    drains: []        # empty until first setup (00-flow.md step 0)
