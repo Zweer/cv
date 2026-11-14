@@ -94,8 +94,12 @@ How it touches the CV data:
   make one PERSON=nic-example.resolved THEME=formentera
   ```
 
-The engine's per-person policy (language, default theme, career goals) is in
-`engine/config/persons.yaml`.
+The engine's per-person policy (language, default theme, which base profiles
+exist and when to use each, career goals) is in `engine/config/persons.yaml`.
+Besides `data/nic.yaml` (default, startup / consulting) and `data/ro.yaml`
+(default, Italian), `data/nic-enterprise.yaml` is nic's corporate / Head of
+Technology variant and `data/ro-eng.yaml` is the English edition of `ro.yaml`
+(`ro.yaml` is the source of truth: update `ro-eng.yaml` whenever it changes).
 
 ## CI
 

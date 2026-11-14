@@ -7,7 +7,10 @@ PDF.
 
 ## What the engine writes
 
-A single file: `data/applications/<person>-<company>.yaml` (`<company>` is a lowercase, hyphenated slug, e.g. `acme-mobility`; add a role suffix if the same company gets a second application). It is committed (the
+`<base>` is the base profile chosen in step 2 of `00-flow.md` (a `file` entry of
+the person's `bases` in `engine/config/persons.yaml`): `nic` or `nic-enterprise`
+for nic, `ro` or `ro-eng` for ro. The delta file name stays
+`<person>-<company>`, whichever base was used. A single file: `data/applications/<person>-<company>.yaml` (`<company>` is a lowercase, hyphenated slug, e.g. `acme-mobility`; add a role suffix if the same company gets a second application). It is committed (the
 application memory and the Layer-2 hook). It carries ONLY what changes for this
 posting. It is NOT a full copy of the base profile.
 
@@ -51,7 +54,7 @@ See `data/applications/nic-example.yaml` for a worked, committed example.
 
 ```bash
 node engine/tools/merge_delta.ts \
-  --base data/<person>.yaml \
+  --base data/<base>.yaml \
   --delta data/applications/<person>-<company>.yaml \
   --out data/<person>-<company>.resolved.yaml
 

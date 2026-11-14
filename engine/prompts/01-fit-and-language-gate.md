@@ -54,10 +54,13 @@ Rules:
    (e.g. B1) is a **hard fail** — report it; do not produce a CV in that
    language that overstates the level.
 3. Choose the output language: the person's `cv_language` default from
-   `engine/config/persons.yaml`, unless the posting requires another language
+   `engine/config/persons.yaml` (it selects the base: for ro, `it` -> `data/ro.yaml`),
+   unless the posting requires another language
    the candidate genuinely has at a sufficient level, or the person explicitly
    asked for a specific language. nic defaults to English always; ro defaults to
    Italian unless explicitly asked otherwise.
+   When ro needs English, the base becomes `data/ro-eng.yaml` (the English
+   edition of `ro.yaml`); the gate above still applies (English is B2).
 4. The chosen language sets the resolved file's `language:` key (which selects
    the i18n file) and the cover letter's greeting/closing wording.
 

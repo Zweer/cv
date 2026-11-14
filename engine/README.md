@@ -38,7 +38,7 @@ engine/
   tsconfig.json                 TypeScript config (run directly on Node, no build step)
   biome.json                    Biome lint + format config (fleet standard)
   config/
-    persons.yaml                per-person policy (mode, cv_language, default_theme, goals) — NOT render data
+    persons.yaml                per-person policy (mode, cv_language, default_theme, bases, goals) — NOT render data
   prompts/
     00-flow.md                  orchestration: posting -> fit -> draft -> review -> write -> build
     01-fit-and-language-gate.md fit scoring + Eligibility gate + Language gate
@@ -93,7 +93,7 @@ step. In short:
 
    ```bash
    node engine/tools/merge_delta.ts \
-     --base data/<person>.yaml \
+     --base data/<base>.yaml \
      --delta data/applications/<person>-<company>.yaml \
      --out data/<person>-<company>.resolved.yaml
    make one PERSON=<person>-<company>.resolved THEME=<theme>
@@ -120,7 +120,12 @@ step. In short:
 
 ## Data layout and merge
 
-- Base "big" profiles stay in `data/<person>.yaml` (unchanged).
+- Base "big" profiles live in `data/` and are hand-maintained. A person can have
+  several (`bases` in `config/persons.yaml`, each with a `use_for` hint): nic has
+  `nic` (startup / consulting, default) and `nic-enterprise` (corporate / Head of
+  Technology); ro has `ro` (Italian, default) and `ro-eng`. The engine picks one
+  explicitly and reports it (`prompts/00-flow.md` step 2). `ro.yaml` is the source
+  of truth: `ro-eng.yaml` is its English edition and must be updated with it.
 - Per-application **deltas** live in `data/applications/<person>-<company>.yaml`,
   committed. A delta carries only what changes (tailored abstract,
   reordered/filtered works, skill overrides, the `cover_letter` block). See the
