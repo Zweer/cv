@@ -46,9 +46,24 @@ persons:
         use_for: startup, scale-up, consulting and hands-on engineering-management roles
       - file: nic-enterprise
         use_for: corporate, large-organisation and Head of Technology style roles
-    career_goals: []  # empty until first setup (00-flow.md step 0)
-    energizers: []    # empty until first setup (00-flow.md step 0)
-    drains: []        # empty until first setup (00-flow.md step 0)
+    career_goals:
+      - "CTO/CIO in a small company, or a role like today's: first report of the CIO in a large company"
+      - "Or a more technical and better paid role, consulting included (e.g. AWS Senior Solution Architect)"
+      - "Main driver right now is economic growth; a company car is a plus (he drives a lot)"
+      - "Context (sector, company size, country) is not a constraint"
+      - "Full remote for a non-Italian company is fine if the pay is MUCH higher"
+    energizers:
+      - "Deep technical work together with people management (current job is a mix of both)"
+      - "Modern, easy-going, startup-like environment, even inside a corporate"
+      - "Work-life balance and at least 2-3 days a week of smart working"
+    drains:
+      - "Politics, the most draining thing"
+      - "Corporate superstructure, overly formal / old-style environments"
+      - "Some business travel is fine"
+    # Practical constraints (not goals, used for fit scoring and the offer bar):
+    #   - Splits time between Milan (work) and Genoa (partner, ro); hybrid with Milan or full remote both OK
+    #   - Current: 80k RAL plus ~5-7k/year of benefits (3 days smart working, low pressure, few crises, flexibility)
+    #   - Bar: at equal RAL only a dream job justifies leaving; otherwise needs clearly more than 80k plus benefits
 
   ro:
     mode: active
