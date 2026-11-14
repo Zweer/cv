@@ -11,8 +11,8 @@ You need from the user: the job posting (URL or pasted text), the person
 Quick reference:
 
 - Overview and status: `engine/README.md`
-- Per-person policy and defaults: `engine/config/persons.yaml`
+- Per-person policy, defaults and base profiles (`bases`): `engine/config/persons.yaml`; the engine picks and reports the base (step 2 of the flow)
 - Worked delta example: `data/applications/nic-example.yaml`
 - Setup: Node >= 22.18, `make install` (Typst), `cd engine && npm ci`
-- Build: `node engine/tools/merge_delta.ts --base data/<person>.yaml --delta data/applications/<person>-<company>.yaml --out data/<person>-<company>.resolved.yaml`, then `make one PERSON=<person>-<company>.resolved THEME=<theme>`
+- Build: `node engine/tools/merge_delta.ts --base data/<base>.yaml --delta data/applications/<person>-<company>.yaml --out data/<person>-<company>.resolved.yaml`, then `make one PERSON=<person>-<company>.resolved THEME=<theme>`
 - Never invent career goals or facts; ask the person.

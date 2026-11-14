@@ -112,5 +112,5 @@ Plus the optional `cover_letter` block. Works have a `resume: true/false` flag t
 - **Types**: `feat`, `fix`, `refactor`, `docs`, `chore`, `ci`, `build`, `perf`
 - **Scope**: theme name or component (e.g., `feat(budapest):`, `fix(i18n):`)
 - **Gitmoji**: Text codes (`:sparkles:`, `:bug:`, `:recycle:`)
-- **Interactive Kiro CLI dev agent**: never commit or push; prepare changes and suggest a commit message, the user handles git. (A Kiro Crew worker may commit and open PRs when its task says so, never to `main`.)
+- **Agents (Kiro Crew workers and the Kiro CLI dev agent)**: work on a feature branch, commit with the format above and open a PR. Never push to `main`; the owner decides when a PR is merged.
 - Language: all code, docs, comments and commit messages in English

@@ -39,7 +39,7 @@
     },
     "shell": {
       "autoAllowReadonly": true,
-      "deniedCommands": [".*git commit.*", ".*git push.*", ".*git tag .*", ".*npm publish.*"]
+      "deniedCommands": [".*git push.*main.*", ".*git tag .*", ".*npm publish.*"]
     }
   }
 }
