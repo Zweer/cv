@@ -227,7 +227,7 @@
     #line(length: 100%, stroke: 0.5pt + light-grey)
 
     // Work experience
-    #main-heading(i18n.curriculum)
+    #main-heading(i18n.work_experience)
     #for work in cv.works.filter(w => w.at("hidden", default: false) == false) {
       timeline-entry(
         work.structure,
