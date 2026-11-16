@@ -1,0 +1,28 @@
+# Application delta: Ashby, Engineering Manager - EU (base: nic, startup / hands-on EM role).
+# Reviewed with Nic on 2026-11-16: base abstract kept as is, 4 works, stack-aligned skills.
+
+works_select:
+  - Plenitude On The Road (formerly BePower) | Head of Delivery
+  - ThinkOpen @ Reply | Senior Software Engineer
+  - Moviri | APM Specialist
+  - Travelnuts | Software Developer
+
+skills_append:
+  - Node.js
+skills_remove:
+  - Agile Delivery
+  - Budget Planning
+
+cover_letter:
+  recipient:
+    company: Ashby
+    name: Colin
+    role: Director of Engineering, Europe
+  location: Milan, Italy
+  date: '2026-11-16'
+  body:
+    - I'm Head of Delivery at Plenitude On The Road, the company behind one of Europe's largest EV charging networks. I joined as the third person in ICT when it was still a startup called BePower, and I hired the whole 20-person team I run today.
+    - I run their goals, reviews and promotions, and several of them have grown from junior roles into management. When someone wasn't in the right place, I dealt with it directly, including helping two people move to roles that fit them better.
+    - Officially I don't write code anymore. In practice I still do, off the team's critical path. This year I built Argus, a nightly scanner that checks our ~300 repositories and AWS accounts for outdated runtimes and vulnerabilities and ranks what to fix first. Before management I spent ten years as an engineer, including leading five Node.js developers at ThinkOpen.
+    - Your post describes managers who coach instead of planning sprints, and engineers who own product decisions. I've spent years pushing a corporate team in that direction. I'd like to see how far it goes when it's the default.
+    - Happy to talk.
