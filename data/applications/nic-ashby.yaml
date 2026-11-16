@@ -1,5 +1,5 @@
 # Application delta: Ashby, Engineering Manager - EU (base: nic, startup / hands-on EM role).
-abstract: "Employee #3 of the ICT team, now running a 20-person delivery org behind one of Europe's largest EV charging networks. Ten years hands-on before management, and I never stopped building: Node.js teams, open-source libraries, AWS. I hire, grow and challenge people, and I'd rather make an unpopular right call than a comfortable wrong one."
+# Reviewed with Nic on 2026-11-16: base abstract kept as is, 4 works, stack-aligned skills.
 
 works_select:
   - Plenitude On The Road (formerly BePower) | Head of Delivery
@@ -9,10 +9,8 @@ works_select:
 
 skills_append:
   - Node.js
-  - TypeScript
 skills_remove:
   - Agile Delivery
-  - Vendor Management
   - Budget Planning
 
 cover_letter:
@@ -23,8 +21,8 @@ cover_letter:
   location: Milan, Italy
   date: '2026-11-16'
   body:
-    - I run a 20-person delivery org, and outside of work I still write code. I would like to bring both to your European team.
-    - I was the third person in the ICT department when BePower (now Plenitude On The Road) was a startup. I hired the whole team myself, I run their goals, reviews and promotions, and I make the team's technical calls, some alongside my manager. The platform is 100% cloud-native on AWS, at 99.99% uptime. I also guided two people out of the team toward roles that fit them better. Nobody enjoys that part of management and I do not skip it.
-    - Before managing I spent ten years building. I led five Node.js developers at ThinkOpen. In 2025 I wrote FlowRAG, a TypeScript RAG library, as sole author, and designed Bonvoy, release automation for npm monorepos with 100% test coverage. I like automating release and delivery steps myself.
-    - I have never run a team with this little process. I would like to learn how.
+    - I'm Head of Delivery at Plenitude On The Road, the company behind one of Europe's largest EV charging networks. I joined as the third person in ICT when it was still a startup called BePower, and I hired the whole 20-person team I run today.
+    - I run their goals, reviews and promotions, and several of them have grown from junior roles into management. When someone wasn't in the right place, I dealt with it directly, including helping two people move to roles that fit them better.
+    - Officially I don't write code anymore. In practice I still do, off the team's critical path. This year I built Argus, a nightly scanner that checks our ~300 repositories and AWS accounts for outdated runtimes and vulnerabilities and ranks what to fix first. Before management I spent ten years as an engineer, including leading five Node.js developers at ThinkOpen.
+    - Your post describes managers who coach instead of planning sprints, and engineers who own product decisions. I've spent years pushing a corporate team in that direction. I'd like to see how far it goes when it's the default.
     - Happy to talk.
