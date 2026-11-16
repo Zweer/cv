@@ -8,7 +8,7 @@ email: niccolo@olivieriachille.com
 phone: +39 388 64 65 482
 location: Milan, Italy
 citizenship: italian
-abstract: Technology leader who owns the strategy and architecture behind one of Europe's largest EV charging networks. I set the technical roadmap, govern cloud-first architectures and standardize the stack across teams, running a ~€10M budget and a 20-person delivery org. A decade as a hands-on engineer before management keeps my calls grounded in how systems actually get built. Tech enthusiast and incurable builder at heart.
+abstract: "Technology leader who owns the strategy and architecture behind one of Europe's largest EV charging networks. I set the technical roadmap, govern cloud-first architectures and standardize the stack across teams, running a ~€10M budget and a 20-person delivery org. Ten years as a hands-on engineer before management, and I still build: our AWS infrastructure and our internal AI tools."
 
 links:
   linkedin: https://www.linkedin.com/in/niccoloolivieri/
@@ -24,6 +24,7 @@ skills:
   - Budget Planning
   - Team Leadership
   - AWS
+  - Generative AI (AWS Bedrock)
   - EV Charging
 
 languages:
