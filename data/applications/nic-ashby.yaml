@@ -1,0 +1,30 @@
+# Application delta: Ashby, Engineering Manager - EU (base: nic, startup / hands-on EM role).
+abstract: "Employee #3 of the ICT team, now running a 20-person delivery org behind one of Europe's largest EV charging networks. Ten years hands-on before management, and I never stopped building: Node.js teams, open-source libraries, AWS. I hire, grow and challenge people, and I'd rather make an unpopular right call than a comfortable wrong one."
+
+works_select:
+  - Plenitude On The Road (formerly BePower) | Head of Delivery
+  - ThinkOpen @ Reply | Senior Software Engineer
+  - Moviri | APM Specialist
+  - Travelnuts | Software Developer
+
+skills_append:
+  - Node.js
+  - TypeScript
+skills_remove:
+  - Agile Delivery
+  - Vendor Management
+  - Budget Planning
+
+cover_letter:
+  recipient:
+    company: Ashby
+    name: Colin
+    role: Director of Engineering, Europe
+  location: Milan, Italy
+  date: '2026-11-16'
+  body:
+    - I run a 20-person delivery org, and outside of work I still write code. I would like to bring both to your European team.
+    - I was the third person in the ICT department when BePower (now Plenitude On The Road) was a startup. I hired the whole team myself, I run their goals, reviews and promotions, and I make the team's technical calls, some alongside my manager. The platform is 100% cloud-native on AWS, at 99.99% uptime. I also guided two people out of the team toward roles that fit them better. Nobody enjoys that part of management and I do not skip it.
+    - Before managing I spent ten years building. I led five Node.js developers at ThinkOpen. In 2025 I wrote FlowRAG, a TypeScript RAG library, as sole author, and designed Bonvoy, release automation for npm monorepos with 100% test coverage. I like automating release and delivery steps myself.
+    - I have never run a team with this little process. I would like to learn how.
+    - Happy to talk.
